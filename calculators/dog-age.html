@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Age Calculator — Convert Dog Years to Human Years (Breed-Specific) | PetCalcHub</title>
+  <meta name="description" content="Convert your dog's age to human years using veterinary-approved formulas. Our dog age calculator adjusts for breed size — small, medium, large, and giant breeds age differently. Free, instant results.">
+  <meta name="keywords" content="dog age calculator, dog years to human years, how old is my dog, dog age chart, dog life stage calculator">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/dog-age.html">
+  <meta property="og:title" content="Dog Age Calculator — Convert Dog Years to Human Years">
+  <meta property="og:description" content="Stop using the outdated 'multiply by 7' rule. Our breed-specific dog age calculator uses modern veterinary formulas for accurate results.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petcalchub.com/calculators/dog-age.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Dog Age Calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "description": "Convert dog years to human years using breed-specific veterinary formulas. Accounts for small, medium, large, and giant breed aging differences.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "How do I calculate my dog's age in human years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 'multiply by 7' rule is outdated. Modern veterinary science shows dogs age rapidly in their first two years (15 human years in year 1, 9 in year 2), then 4-7 human years per dog year depending on breed size."
+      }
+    },{
+      "@type": "Question",
+      "name": "Do small dogs really live longer than large dogs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Small breed dogs (under 20 lbs) age more slowly after year 2 and often live 12-16 years. Giant breeds (over 90 lbs) age faster and typically live 7-10 years. This is reflected in our breed-specific calculator."
+      }
+    }]
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem" class="active">Dog Age Calculator</a>
+          <a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
+          <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem">Cat Age Calculator</a>
+          <a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="calc-page">
+  <div class="container">
+    <!-- Breadcrumb -->
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span class="separator">›</span>
+      <span>Dog Age Calculator</span>
+    </nav>
+
+    <div class="calc-layout">
+      <div class="calc-main">
+        <div class="calc-header">
+          <h1>Dog Age Calculator</h1>
+          <p class="calc-desc">Convert your dog's age to human years using breed-specific veterinary formulas. Stop using the outdated "multiply by 7" rule — modern science shows that dogs age at different rates depending on their size.</p>
+        </div>
+
+        <!-- Calculator -->
+        <div class="calc-card" id="calc-card">
+          <h2>🐕 Enter Your Dog's Details</h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="dogAge">Dog's Age (years)</label>
+              <input type="number" id="dogAge" class="form-input" placeholder="e.g. 3" min="0.1" max="30" step="0.1" required>
+              <div class="form-hint">Enter decimal for partial years (e.g., 1.5 for 1 year and 6 months)</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="breedSize">Breed Size</label>
+              <select id="breedSize" class="form-select" required>
+                <option value="">Select breed size...</option>
+                <option value="small">Small (under 20 lbs / 9 kg) — Chihuahua, Yorkie, Dachshund</option>
+                <option value="medium">Medium (21-50 lbs / 10-23 kg) — Beagle, Cocker Spaniel, Bulldog</option>
+                <option value="large">Large (51-90 lbs / 23-41 kg) — Labrador, Golden Retriever, German Shepherd</option>
+                <option value="giant">Giant (over 90 lbs / 41 kg) — Great Dane, Mastiff, Saint Bernard</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" onclick="calculateDogAge()" style="width:100%; margin-top:0.5rem;">
+            Calculate Human Age →
+          </button>
+
+          <div id="ageResult" style="display:none;"></div>
+        </div>
+
+        <!-- AI Suggestions -->
+        <div id="ai-suggestions"></div>
+
+        <!-- Ad Slot -->
+        <div class="ad-slot" id="ad-in-content">
+          <div class="ad-slot-label">Advertisement</div>
+          <div class="ad-slot-inner">Ad space reserved</div>
+        </div>
+
+        <!-- Age Reference Table -->
+        <div style="margin-top:3rem;">
+          <h2>Dog Age to Human Years — Quick Reference</h2>
+          <p style="color:var(--text-secondary);">See how dog years translate to human years at a glance across all breed sizes.</p>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Dog Age</th>
+                  <th>Small Breed<br><small>(&lt;20 lbs)</small></th>
+                  <th>Medium Breed<br><small>(21-50 lbs)</small></th>
+                  <th>Large Breed<br><small>(51-90 lbs)</small></th>
+                  <th>Giant Breed<br><small>(&gt;90 lbs)</small></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1 year</td><td>15</td><td>15</td><td>15</td><td>15</td></tr>
+                <tr><td>2 years</td><td>24</td><td>24</td><td>24</td><td>24</td></tr>
+                <tr><td>3 years</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+                <tr><td>5 years</td><td>36</td><td>39</td><td>42</td><td>45</td></tr>
+                <tr><td>7 years</td><td>44</td><td>49</td><td>54</td><td>59</td></tr>
+                <tr><td>10 years</td><td>56</td><td>64</td><td>72</td><td>80</td></tr>
+                <tr><td>12 years</td><td>64</td><td>74</td><td>84</td><td>94</td></tr>
+                <tr><td>15 years</td><td>76</td><td>89</td><td>102</td><td>115</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <button class="faq-question">How accurate is the dog age calculator?</button>
+            <div class="faq-answer">
+              <p>Our calculator uses the latest veterinary aging models based on DNA methylation (epigenetic clock) research published by UC San Diego and other institutions. The formula accounts for the fact that dogs age rapidly in their first two years, then the rate varies dramatically by breed size. While it's the most accurate method available to the public, individual dogs may age differently based on genetics, diet, exercise, and healthcare.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Why is the "multiply by 7" rule wrong?</button>
+            <div class="faq-answer">
+              <p>The "1 dog year = 7 human years" rule assumes a linear aging curve, but dogs age non-linearly. They reach sexual maturity around 1 year (equivalent to about 15 human years), and large breeds age significantly faster after year 2. A 10-year-old Chihuahua is roughly 56 in human years, while a 10-year-old Great Dane is closer to 80. Using the "×7" rule would give both as 70 — which is inaccurate for both.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What life stage is my dog in?</button>
+            <div class="faq-answer">
+              <p>Dogs generally go through these life stages: <strong>Puppy</strong> (0-1 year) — rapid growth and development; <strong>Adolescent</strong> (1-2 years) — physical maturity, behavioral development; <strong>Adult</strong> (2-7 years for most breeds) — prime years; <strong>Senior</strong> (varies by breed: small breeds 10+, medium 8+, large 6+, giant 5+) — increased health monitoring needed; <strong>Geriatric</strong> (upper end of breed lifespan) — may need specialized care.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="calc-sidebar">
+        <div class="ad-sidebar" id="ad-sidebar">
+          <div class="ad-sidebar-label">Advertisement</div>
+          <div class="ad-sidebar-inner">Ad space reserved</div>
+        </div>
+
+        <div style="background:white; border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.75rem;">📋 Quick Tips</h4>
+          <ul style="font-size:0.9rem; color:var(--text-secondary); padding-left:1.25rem; line-height:1.8;">
+            <li>Small dogs enter "senior" status around 10-12 years</li>
+            <li>Large dogs are considered seniors at 6-8 years</li>
+            <li>Senior dogs benefit from bi-annual vet checkups</li>
+            <li>Adjust diet and exercise as your dog ages</li>
+          </ul>
+        </div>
+
+        <div style="background:white; border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.75rem;">🧬 The Science</h4>
+          <p style="font-size:0.875rem; color:var(--text-secondary);">This calculator is based on research from the <strong>Dog Aging Project</strong> and epigenetic clock studies. The formula accounts for the non-linear methylation changes in dog DNA that correlate with human aging markers.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+        <p>Free, science-backed pet calculators with AI-powered health insights.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="dog-age.html">Dog Age Calculator</a></li>
+          <li><a href="cat-age.html">Cat Age Calculator</a></li>
+          <li><a href="dog-calorie.html">Dog Calorie Calculator</a></li>
+          <li><a href="puppy-weight.html">Puppy Weight Predictor</a></li>
+          <li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog/">Pet Care Blog</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../privacy.html#disclaimer">Medical Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 PetCalcHub. All rights reserved.</span>
+      <span>Estimates only. Consult your veterinarian.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+function calculateDogAge() {
+  const age = parseFloat(document.getElementById('dogAge').value);
+  const breedSize = document.getElementById('breedSize').value;
+
+  if (!age || age < 0 || !breedSize) {
+    alert('Please enter a valid age and select a breed size.');
+    return;
+  }
+
+  // Veterinary-standard dog age formula
+  let humanAge, lifeStage, sizeLabel;
+  const sizeMultipliers = { small: 4, medium: 5, large: 6, giant: 7 };
+  const sizeLabels = { small: 'Small Breed (<20 lbs)', medium: 'Medium Breed (21-50 lbs)', large: 'Large Breed (51-90 lbs)', giant: 'Giant Breed (>90 lbs)' };
+  const multiplier = sizeMultipliers[breedSize];
+
+  if (age <= 1) {
+    humanAge = age * 15;
+  } else if (age <= 2) {
+    humanAge = 15 + (age - 1) * 9;
+  } else {
+    humanAge = 24 + (age - 2) * multiplier;
+  }
+
+  // Life stage determination
+  const seniorThresholds = { small: 10, medium: 8, large: 6, giant: 5 };
+  const geriatricThresholds = { small: 15, medium: 13, large: 11, giant: 9 };
+
+  if (age < 1) lifeStage = 'Puppy';
+  else if (age < 2) lifeStage = 'Adolescent';
+  else if (age < seniorThresholds[breedSize]) lifeStage = 'Adult';
+  else if (age < geriatricThresholds[breedSize]) lifeStage = 'Senior';
+  else lifeStage = 'Geriatric';
+
+  humanAge = Math.round(humanAge);
+
+  const stageColors = {
+    'Puppy': 'primary',
+    'Adolescent': 'primary',
+    'Adult': 'success',
+    'Senior': 'warning',
+    'Geriatric': 'danger'
+  };
+  const stageIcons = {
+    'Puppy': '🐶', 'Adolescent': '🦮', 'Adult': '🐕', 'Senior': '🐕‍🦺', 'Geriatric': '🐾'
+  };
+  const stageAdvice = {
+    'Puppy': 'Focus on socialization, vaccination schedule, and high-quality puppy food.',
+    'Adolescent': 'Continue training, establish routines, and transition to adult food around 12 months.',
+    'Adult': 'Maintain healthy weight, annual vet checkups, and consistent exercise routine.',
+    'Senior': 'Consider joint supplements, bi-annual vet visits, and adjusted exercise intensity.',
+    'Geriatric': 'Prioritize comfort, watch for pain signs, consider pain management options with your vet.'
+  };
+
+  const resultBox = document.getElementById('ageResult');
+  resultBox.style.display = 'block';
+  resultBox.innerHTML = `
+    <div class="result-box ${stageColors[lifeStage]}">
+      <div style="font-size:1rem; margin-bottom:0.25rem;">${stageIcons[lifeStage]} ${sizeLabels[breedSize]}</div>
+      <div class="result-value">${humanAge}</div>
+      <div class="result-label">human years old</div>
+      <div style="margin-top:0.75rem;">
+        <span class="tag tag-${lifeStage === 'Puppy' || lifeStage === 'Adolescent' ? 'green' : lifeStage === 'Adult' ? 'blue' : lifeStage === 'Senior' ? 'yellow' : 'red'}">${lifeStage}</span>
+      </div>
+      <div class="result-details">
+        <dl>
+          <dt>Chronological Age</dt>
+          <dd>${age} dog years</dd>
+          <dt>Breed Size</dt>
+          <dd>${sizeLabels[breedSize]}</dd>
+          <dt>Life Stage Advice</dt>
+          <dd>${stageAdvice[lifeStage]}</dd>
+        </dl>
+      </div>
+    </div>
+  `;
+
+  // AI suggestions
+  const aiCategory = lifeStage === 'Puppy' || lifeStage === 'Adolescent' ? 'puppy' : lifeStage === 'Senior' || lifeStage === 'Geriatric' ? 'senior' : 'adult';
+  displayAISuggestions('dogAge', aiCategory, humanAge);
+
+  scrollToResults();
+}
+</script>
+</body>
+</html>

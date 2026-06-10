@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat Calorie Calculator — Daily Calorie Needs for Cats | PetCalcHub</title>
+  <meta name="description" content="Calculate your cat's exact daily calorie needs using the veterinary-standard RER formula. Adjusts for weight, life stage, body condition, and activity level. Free, science-backed.">
+  <meta name="keywords" content="cat calorie calculator, how many calories does my cat need, cat food calculator, feline calorie needs, cat RER">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/cat-calorie.html">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Cat Calorie Calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "description": "Calculate your cat's daily calorie needs using the veterinary-standard RER formula. Free, science-backed.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem">Dog Age Calculator</a>
+          <a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
+          <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem">Cat Age Calculator</a>
+          <a href="cat-calorie.html" role="menuitem" class="active">Cat Calorie Calculator</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="calc-page">
+  <div class="container">
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span class="separator">›</span>
+      <a href="cat-age.html">Cat Calculators</a> <span class="separator">›</span>
+      <span>Cat Calorie Calculator</span>
+    </nav>
+
+    <div class="calc-layout">
+      <div class="calc-main">
+        <div class="calc-header">
+          <h1>Cat Calorie Calculator</h1>
+          <p class="calc-desc">Calculate your cat's daily calorie needs using the RER (Resting Energy Requirement) formula — the gold standard in feline nutrition. Adjusts for weight, life stage, body condition, and spay/neuter status.</p>
+        </div>
+
+        <div class="calc-card">
+          <h2>🐟 Enter Your Cat's Details</h2>
+
+          <div id="unitToggle" class="unit-toggle">
+            <button class="active" data-unit="lbs">Pounds (lbs)</button>
+            <button data-unit="kg">Kilograms (kg)</button>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="catWeight">Cat's Weight</label>
+            <div class="input-group">
+              <input type="number" id="catWeight" class="form-input" placeholder="e.g. 10" min="1" max="40" step="0.1" required>
+              <span class="input-group-append" id="weightUnit">lbs</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="catLifeStage">Life Stage</label>
+              <select id="catLifeStage" class="form-select" required>
+                <option value="">Select life stage...</option>
+                <option value="kitten">Kitten (under 1 year)</option>
+                <option value="adult_neutered">Adult — Neutered / Spayed</option>
+                <option value="adult_intact">Adult — Intact</option>
+                <option value="senior">Senior (11+ years)</option>
+                <option value="weight_loss">Weight Loss Program</option>
+                <option value="pregnant">Pregnant / Nursing</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="catBCS">Body Condition</label>
+              <select id="catBCS" class="form-select">
+                <option value="ideal" selected>Ideal weight (BCS 4-5)</option>
+                <option value="overweight">Overweight (BCS 6-7)</option>
+                <option value="underweight">Underweight (BCS 1-3)</option>
+                <option value="obese">Obese (BCS 8-9)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" onclick="calculateCatCalories()" style="width:100%; margin-top:0.5rem;">
+            Calculate Daily Calories →
+          </button>
+
+          <div id="calorieResult" style="display:none;"></div>
+        </div>
+
+        <div id="ai-suggestions"></div>
+        <div class="ad-slot" id="ad-in-content"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-inner">Ad space reserved</div></div>
+
+        <div style="margin-top:3rem;">
+          <h2>Cat Calorie Formula Explained</h2>
+          <div class="info-box info">
+            <strong>RER (Resting Energy Requirement)</strong> = 70 × (body weight in kg)<sup>0.75</sup><br>
+            <strong>Daily Calories</strong> = RER × Life Stage Factor<br><br>
+            Cats are obligate carnivores — their calorie needs are met primarily through protein and fat. Unlike dogs, cats cannot efficiently use carbohydrates for energy.
+          </div>
+          <table class="data-table" style="margin-top:1rem;">
+            <thead><tr><th>Life Stage</th><th>Multiplier</th><th>Example (10 lb cat)</th></tr></thead>
+            <tbody>
+              <tr><td>Kitten</td><td>2.5 × RER</td><td>~360 kcal/day</td></tr>
+              <tr><td>Adult Neutered</td><td>1.2 × RER</td><td>~215 kcal/day</td></tr>
+              <tr><td>Adult Intact</td><td>1.4 × RER</td><td>~250 kcal/day</td></tr>
+              <tr><td>Senior</td><td>1.1 × RER</td><td>~200 kcal/day</td></tr>
+              <tr><td>Weight Loss</td><td>0.8 × RER</td><td>~170 kcal/day</td></tr>
+              <tr><td>Pregnant/Nursing</td><td>2.0-4.0 × RER</td><td>~430-570 kcal/day</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <button class="faq-question">Why do neutered cats need fewer calories?</button>
+            <div class="faq-answer"><p>Spaying and neutering reduces metabolic rate by approximately 20-30% in cats. Hormonal changes lead to decreased activity and altered energy metabolism. This is why many cats gain weight after the procedure — they're being fed the same amount but burning fewer calories.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Wet food vs. dry food — which is better for weight management?</button>
+            <div class="faq-answer"><p>Wet food (canned) is generally better for weight management because it's lower in calories per volume (70-150 kcal/can vs. 300-500 kcal/cup of dry) and has higher moisture content, which helps cats feel fuller. The high water content (75-80%) also supports urinary tract health — a common concern in cats.</p></div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="calc-sidebar">
+        <div class="ad-sidebar" id="ad-sidebar"><div class="ad-sidebar-label">Advertisement</div><div class="ad-sidebar-inner">Ad space reserved</div></div>
+        <div style="background:white; border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.75rem;">🐱 Quick Facts</h4>
+          <ul style="font-size:0.85rem; color:var(--text-secondary); padding-left:1.25rem; line-height:1.8;">
+            <li>Average indoor cat: 200-250 kcal/day</li>
+            <li>1 can wet food: ~70-150 kcal</li>
+            <li>1 cup dry food: ~350-450 kcal</li>
+            <li>Treats: max 10% of daily calories</li>
+            <li>Cats should eat 2-4 small meals/day</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a><p>Free, science-backed pet calculators with AI-powered health insights.</p></div>
+      <div class="footer-col"><h4>Calculators</h4><ul><li><a href="dog-age.html">Dog Age Calculator</a></li><li><a href="cat-age.html">Cat Age Calculator</a></li><li><a href="dog-calorie.html">Dog Calorie Calculator</a></li><li><a href="puppy-weight.html">Puppy Weight Predictor</a></li><li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="../blog/">Pet Care Blog</a></li><li><a href="../about.html">About Us</a></li><li><a href="../privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../privacy.html#disclaimer">Medical Disclaimer</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 PetCalcHub.</span><span>Estimates only. Consult your veterinarian.</span></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+WeightUnit.init('unitToggle');
+WeightUnit.onChange = function() { document.getElementById('weightUnit').textContent = this.current; };
+
+function calculateCatCalories() {
+  let weight = parseFloat(document.getElementById('catWeight').value);
+  const lifeStage = document.getElementById('catLifeStage').value;
+  if (!weight || !lifeStage) { alert('Please enter weight and select life stage.'); return; }
+
+  if (WeightUnit.current === 'lbs') weight = weight / 2.20462;
+
+  const rer = 70 * Math.pow(weight, 0.75);
+  const multipliers = { kitten: 2.5, adult_neutered: 1.2, adult_intact: 1.4, senior: 1.1, weight_loss: 0.8, pregnant: 2.5 };
+  const labels = { kitten: 'Kitten', adult_neutered: 'Adult (Neutered)', adult_intact: 'Adult (Intact)', senior: 'Senior', weight_loss: 'Weight Loss', pregnant: 'Pregnant/Nursing' };
+  const der = rer * (multipliers[lifeStage] || 1.2);
+
+  document.getElementById('calorieResult').style.display = 'block';
+  document.getElementById('calorieResult').innerHTML = `
+    <div class="result-box ${lifeStage === 'weight_loss' ? 'warning' : 'primary'}">
+      <div class="result-value">${Math.round(der)} <span style="font-size:1rem;">kcal/day</span></div>
+      <div class="result-label">Daily Energy Requirement</div>
+      <div class="result-details">
+        <dl>
+          <dt>Weight</dt><dd>${weight.toFixed(1)} kg (${(weight * 2.20462).toFixed(1)} lbs)</dd>
+          <dt>Life Stage</dt><dd>${labels[lifeStage]} (DER Factor: ${multipliers[lifeStage] || 1.2}×)</dd>
+          <dt>RER</dt><dd>${Math.round(rer)} kcal/day</dd>
+          <dt>Wet Food Estimate</dt><dd>~${(der / 120).toFixed(1)} cans/day (at 120 kcal/can)</dd>
+          <dt>Dry Food Estimate</dt><dd>~${(der / 400).toFixed(2)} cups/day (at 400 kcal/cup)</dd>
+          <dt>Treat Budget (10%)</dt><dd>Max ${Math.round(der * 0.1)} kcal/day from treats</dd>
+        </dl>
+      </div>
+    </div>`;
+
+  const aiType = lifeStage === 'weight_loss' ? 'weightLoss' : 'maintenance';
+  displayAISuggestions('calorie', aiType, Math.round(der));
+  scrollToResults();
+}
+</script>
+</body>
+</html>

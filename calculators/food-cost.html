@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Food Cost Calculator — Compare Dog & Cat Food Prices | PetCalcHub</title>
+  <meta name="description" content="Compare daily and monthly pet food costs across brands. Calculate cost per day, per calorie, and per year. Find the best value dog and cat food without compromising nutrition.">
+  <meta name="keywords" content="pet food cost calculator, dog food cost, cat food cost, compare pet food prices, best value pet food">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/food-cost.html">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Pet Food Cost Calculator",
+    "applicationCategory": "LifestyleApplication", "operatingSystem": "Web",
+    "description": "Compare daily and monthly pet food costs across brands. Calculate cost per calorie and find the best value.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem">Dog Age Calculator</a><a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem">Puppy Weight Predictor</a><a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem">Cat Age Calculator</a><a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a><a href="food-cost.html" role="menuitem" class="active">Pet Food Cost Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="calc-page">
+  <div class="container">
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span class="separator">›</span>
+      <span>Pet Food Cost Calculator</span>
+    </nav>
+
+    <div class="calc-layout">
+      <div class="calc-main">
+        <div class="calc-header">
+          <h1>Pet Food Cost Calculator</h1>
+          <p class="calc-desc">Compare the true cost of different pet foods — not just the bag price, but cost per day, per calorie, and per year. Make informed decisions that balance your budget and your pet's nutrition.</p>
+        </div>
+
+        <div class="calc-card">
+          <h2>💰 Enter Food Details</h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="dailyCalories">Daily Calorie Needs (kcal)</label>
+              <input type="number" id="dailyCalories" class="form-input" placeholder="e.g. 800" min="50" step="10" required>
+              <div class="form-hint">Use our <a href="dog-calorie.html">Dog</a> or <a href="cat-calorie.html">Cat Calorie Calculator</a> first</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="foodType">Food Type</label>
+              <select id="foodType" class="form-select" required>
+                <option value="">Select type...</option>
+                <option value="dry">Dry Kibble</option>
+                <option value="wet">Wet / Canned Food</option>
+                <option value="raw">Raw / Fresh Food</option>
+                <option value="freeze">Freeze-Dried / Dehydrated</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="bagPrice">Bag / Case Price ($)</label>
+              <div class="input-group">
+                <span class="input-group-append" style="border-right:none;border-left:1.5px solid var(--border);border-radius:var(--radius-sm) 0 0 var(--radius-sm);">$</span>
+                <input type="number" id="bagPrice" class="form-input" placeholder="e.g. 55" min="1" step="0.01" required style="border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="bagWeight">Bag Weight</label>
+              <div class="input-group">
+                <input type="number" id="bagWeight" class="form-input" placeholder="e.g. 30" min="0.1" step="0.1" required>
+                <span class="input-group-append">lbs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="kcalPerCup">Calories per Cup (or per Can)</label>
+              <input type="number" id="kcalPerCup" class="form-input" placeholder="e.g. 380" min="10" step="5" required>
+              <div class="form-hint">Check the nutrition label on your pet food bag/can</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cupsPerBag">Cups (or Cans) per Bag/Case</label>
+              <input type="number" id="cupsPerBag" class="form-input" placeholder="e.g. 120" min="1" step="0.5">
+              <div class="form-hint">If unknown, estimate: ~4 cups/lb for dry kibble</div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" onclick="calculateFoodCost()" style="width:100%; margin-top:0.5rem;">
+            Calculate Food Costs →
+          </button>
+          <div id="costResult" style="display:none;"></div>
+        </div>
+
+        <div id="ai-suggestions"></div>
+        <div class="ad-slot" id="ad-in-content"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-inner">Ad space reserved</div></div>
+
+        <div style="margin-top:3rem;">
+          <h2>Pet Food Cost Comparison (Typical Values)</h2>
+          <table class="data-table">
+            <thead><tr><th>Food Tier</th><th>Price/lb</th><th>kcal/lb</th><th>Cost/1000 kcal</th><th>Monthly (50 lb dog)</th></tr></thead>
+            <tbody>
+              <tr><td>Budget Dry</td><td>$1.00-1.50</td><td>~1,600</td><td>$0.63-0.94</td><td>$15-23</td></tr>
+              <tr><td>Mid-Range Dry</td><td>$2.00-3.00</td><td>~1,700</td><td>$1.18-1.76</td><td>$28-42</td></tr>
+              <tr><td>Premium Dry</td><td>$3.50-5.00</td><td>~1,800</td><td>$1.94-2.78</td><td>$47-67</td></tr>
+              <tr><td>Wet Food</td><td>$2.00-4.00</td><td>~450</td><td>$4.44-8.89</td><td>$107-213</td></tr>
+              <tr><td>Raw/Fresh</td><td>$5.00-12.00</td><td>~1,200</td><td>$4.17-10.00</td><td>$100-240</td></tr>
+            </tbody>
+          </table>
+          <div class="info-box info" style="margin-top:1rem;">
+            <strong>Note:</strong> Cost per calorie is more meaningful than cost per pound. A cheaper bag may actually cost more if it's less calorie-dense — you'll need to feed more of it.
+          </div>
+        </div>
+      </div>
+
+      <aside class="calc-sidebar">
+        <div class="ad-sidebar" id="ad-sidebar"><div class="ad-sidebar-label">Advertisement</div><div class="ad-sidebar-inner">Ad space reserved</div></div>
+        <div style="background:white; border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.75rem;">💡 Money-Saving Tips</h4>
+          <ul style="font-size:0.85rem; color:var(--text-secondary); padding-left:1.25rem; line-height:1.8;">
+            <li>Buy larger bags — cost per lb drops 20-30%</li>
+            <li>Subscribe & save: 5-15% off auto-delivery</li>
+            <li>Store dry food properly (sealed, cool, dark)</li>
+            <li>Mix wet + dry: nutrition of wet, cost of dry</li>
+            <li>Check cost per 1,000 kcal, not cost per lb</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a><p>Free, science-backed pet calculators with AI-powered health insights.</p></div>
+      <div class="footer-col"><h4>Calculators</h4><ul><li><a href="dog-age.html">Dog Age Calculator</a></li><li><a href="cat-age.html">Cat Age Calculator</a></li><li><a href="dog-calorie.html">Dog Calorie Calculator</a></li><li><a href="puppy-weight.html">Puppy Weight Predictor</a></li><li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="../blog/">Pet Care Blog</a></li><li><a href="../about.html">About Us</a></li><li><a href="../privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../privacy.html#disclaimer">Medical Disclaimer</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 PetCalcHub.</span><span>Estimates only. Consult your veterinarian.</span></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+function calculateFoodCost(){
+  const dailyCal=parseFloat(document.getElementById('dailyCalories').value);
+  const bagPrice=parseFloat(document.getElementById('bagPrice').value);
+  const bagWeight=parseFloat(document.getElementById('bagWeight').value);
+  const kcalPerCup=parseFloat(document.getElementById('kcalPerCup').value);
+  let cupsPerBag=parseFloat(document.getElementById('cupsPerBag').value);
+
+  if(!dailyCal||!bagPrice||!bagWeight||!kcalPerCup){alert('Please fill in all required fields.');return;}
+
+  // Estimate cups per bag if not provided
+  if(!cupsPerBag||cupsPerBag<=0){
+    const foodType=document.getElementById('foodType').value;
+    const cupsPerLb={dry:4,wet:2,raw:2.5,freeze:8};
+    cupsPerBag=bagWeight*(cupsPerLb[foodType]||4);
+  }
+
+  // Convert to cups
+  const cupsPerDay=dailyCal/kcalPerCup;
+  const totalCalInBag=cupsPerBag*kcalPerCup;
+  const daysPerBag=totalCalInBag/dailyCal;
+  const costPerDay=bagPrice/daysPerBag;
+  const costPerMonth=costPerDay*30.44;
+  const costPerYear=costPerDay*365;
+  const costPer1000kcal=(bagPrice/totalCalInBag)*1000;
+  const costPerLb=bagPrice/bagWeight;
+
+  document.getElementById('costResult').style.display='block';
+  document.getElementById('costResult').innerHTML=`
+    <div class="result-box primary">
+      <div class="result-value">$${costPerDay.toFixed(2)} <span style="font-size:1rem;">/day</span></div>
+      <div class="result-label">Cost per Day</div>
+      <div class="result-details">
+        <dl>
+          <dt>Monthly Cost</dt><dd><strong>$${costPerMonth.toFixed(2)}/month</strong></dd>
+          <dt>Annual Cost</dt><dd><strong>$${costPerYear.toFixed(2)}/year</strong></dd>
+          <dt>Cost per 1,000 kcal</dt><dd>$${costPer1000kcal.toFixed(2)} — the fairest comparison metric</dd>
+          <dt>Cost per Pound</dt><dd>$${costPerLb.toFixed(2)}/lb</dd>
+          <dt>Days per Bag</dt><dd>${daysPerBag.toFixed(0)} days (${cupsPerDay.toFixed(1)} cups/day)</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="info-box success" style="margin-top:1rem;">
+      <strong>💡 Compare:</strong> Enter details for a second food and compare the cost per 1,000 kcal — that tells you the true cost regardless of bag size or calorie density.
+    </div>`;
+
+  displayAISuggestions('calorie','maintenance',dailyCal);
+  scrollToResults();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetCalcHub — Free Pet Calculators & AI-Powered Health Insights | Dog, Cat & More</title>
+  <meta name="description" content="Free, science-backed pet calculators for dogs, cats, and small pets. Calculate pet age, calories, ideal weight, pregnancy due dates, and more — with AI-powered health tips. No signup required.">
+  <meta name="keywords" content="pet calculator, dog age calculator, cat age calculator, dog calorie calculator, puppy weight calculator, pet health calculator">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="PetCalcHub">
+  <link rel="canonical" href="https://petcalchub.com/">
+  <meta property="og:title" content="PetCalcHub — Free Pet Calculators & AI-Powered Insights">
+  <meta property="og:description" content="Science-backed pet calculators for dogs, cats, and small pets. AI-powered health tips included. Free, no signup.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petcalchub.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PetCalcHub — Free Pet Calculators & AI Health Insights">
+  <meta name="twitter:description" content="Calculate pet age, calories, pregnancy dates, and more — free, science-backed, with AI tips.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PetCalcHub",
+    "url": "https://petcalchub.com",
+    "description": "Free, science-backed pet calculators with AI-powered health insights for dogs, cats, and small pets.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://petcalchub.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How accurate are pet calculators?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our calculators use veterinary-standard formulas from sources including AAHA, AAFCO, and Merck Veterinary Manual. While they provide excellent estimates, individual pets vary — always consult your veterinarian for medical decisions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to create an account to use the calculators?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All PetCalcHub calculators are completely free and require no registration. Calculations run in your browser for privacy — no data is stored on our servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate my dog's age in human years?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 'multiply by 7' rule is a myth. Modern veterinary science uses a more nuanced formula: the first year equals about 15 human years, the second year adds 9 more, and each subsequent year adds 4-7 human years depending on your dog's breed size."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="PetCalcHub Home">
+      <span class="nav-logo-icon">🐾</span>
+      PetCalcHub
+    </a>
+
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="/" role="menuitem" class="active">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="calculators/dog-age.html" role="menuitem">Dog Age Calculator</a>
+          <a href="calculators/dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="calculators/puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
+          <a href="calculators/dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="calculators/chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="calculators/cat-age.html" role="menuitem">Cat Age Calculator</a>
+          <a href="calculators/cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="calculators/cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="calculators/pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="calculators/food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">🐾 Science-Backed · Vet-Reviewed Formulas</span>
+    <h1>Free Pet Calculators<br>With AI-Powered Health Insights</h1>
+    <p class="hero-subtitle">
+      Calculate your pet's age, calories, ideal weight, pregnancy dates, and more — all backed by veterinary science. Get personalized AI tips tailored to your pet's results.
+    </p>
+    <div class="hero-actions">
+      <a href="#calculators" class="btn btn-primary btn-lg">Explore All Calculators</a>
+      <a href="calculators/dog-age.html" class="btn btn-outline btn-lg">Try Dog Age Calculator →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value">10+</div>
+        <div class="hero-stat-label">Free Calculators</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">100%</div>
+        <div class="hero-stat-label">Free · No Signup</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">AI</div>
+        <div class="hero-stat-label">Smart Health Tips</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">🔒</div>
+        <div class="hero-stat-label">Privacy First</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dog Calculators -->
+<section class="category-section" id="calculators">
+  <div class="container">
+    <div class="category-header">
+      <span class="emoji">🐕</span>
+      <h2>Dog Calculators</h2>
+    </div>
+    <div class="card-grid">
+      <a href="calculators/dog-age.html" class="card">
+        <div class="card-icon dog">🐕</div>
+        <h3>Dog Age Calculator</h3>
+        <p>Convert dog years to human years using breed-specific formulas. Stop using the outdated "multiply by 7" rule.</p>
+        <span class="card-link">Calculate Age</span>
+      </a>
+      <a href="calculators/dog-calorie.html" class="card">
+        <div class="card-icon dog">🍖</div>
+        <h3>Dog Calorie Calculator</h3>
+        <p>Find your dog's exact daily calorie needs based on weight, age, activity level, and body condition.</p>
+        <span class="card-link">Calculate Calories</span>
+      </a>
+      <a href="calculators/puppy-weight.html" class="card">
+        <div class="card-icon dog">🐶</div>
+        <h3>Puppy Weight Predictor</h3>
+        <p>Estimate your puppy's adult size using 4 veterinary methods. Plan for food, crates, and more.</p>
+        <span class="card-link">Predict Weight</span>
+      </a>
+      <a href="calculators/dog-pregnancy.html" class="card">
+        <div class="card-icon health">🤰</div>
+        <h3>Dog Pregnancy Calculator</h3>
+        <p>Calculate your dog's due date and track weekly pregnancy milestones. Essential for breeders.</p>
+        <span class="card-link">Calculate Due Date</span>
+      </a>
+      <a href="calculators/chocolate-toxicity.html" class="card">
+        <div class="card-icon health">🍫</div>
+        <h3>Chocolate Toxicity Calculator</h3>
+        <p>Assess the risk if your dog ate chocolate. Get emergency guidance based on type, amount, and your dog's weight.</p>
+        <span class="card-link">Check Risk Level</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Cat Calculators -->
+<section class="category-section">
+  <div class="container">
+    <div class="category-header">
+      <span class="emoji">🐈</span>
+      <h2>Cat Calculators</h2>
+    </div>
+    <div class="card-grid">
+      <a href="calculators/cat-age.html" class="card">
+        <div class="card-icon cat">🐈</div>
+        <h3>Cat Age Calculator</h3>
+        <p>Convert cat years to human years using AAHA/AVMA guidelines. Understand your cat's life stage and needs.</p>
+        <span class="card-link">Calculate Age</span>
+      </a>
+      <a href="calculators/cat-calorie.html" class="card">
+        <div class="card-icon cat">🐟</div>
+        <h3>Cat Calorie Calculator</h3>
+        <p>Calculate your cat's daily calorie needs based on weight, life stage, body condition, and activity level.</p>
+        <span class="card-link">Calculate Calories</span>
+      </a>
+      <a href="calculators/cat-pregnancy.html" class="card">
+        <div class="card-icon health">🐱</div>
+        <h3>Cat Pregnancy Calculator</h3>
+        <p>Determine your cat's due date and track the 65-day gestation period. Prepare for a healthy litter.</p>
+        <span class="card-link">Calculate Due Date</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Health & Wellness -->
+<section class="category-section">
+  <div class="container">
+    <div class="category-header">
+      <span class="emoji">❤️</span>
+      <h2>Health & Wellness</h2>
+    </div>
+    <div class="card-grid">
+      <a href="calculators/pet-bmi.html" class="card">
+        <div class="card-icon health">⚖️</div>
+        <h3>Pet BMI & Ideal Weight</h3>
+        <p>Assess your dog or cat's body condition score and find their ideal weight. Get a personalized weight management plan.</p>
+        <span class="card-link">Check BMI</span>
+      </a>
+      <a href="calculators/food-cost.html" class="card">
+        <div class="card-icon food">💰</div>
+        <h3>Pet Food Cost Calculator</h3>
+        <p>Compare daily and monthly food costs across brands. Find the best value without compromising nutrition.</p>
+        <span class="card-link">Compare Costs</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Ad Slot: In-Content (Hidden by default) -->
+<div class="container">
+  <div class="ad-slot" id="ad-in-content-home">
+    <div class="ad-slot-label">Advertisement</div>
+    <div class="ad-slot-inner">Ad space reserved</div>
+  </div>
+</div>
+
+<!-- Features -->
+<section class="section">
+  <div class="container">
+    <h2 style="text-align:center; margin-bottom:2.5rem;">Why Pet Parents Trust PetCalcHub</h2>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon f1">📚</div>
+        <h3>Science-Backed Formulas</h3>
+        <p>Every calculator uses veterinary-standard formulas from AAHA, AAFCO, NRC, and Merck Veterinary Manual.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon f2">🤖</div>
+        <h3>AI-Powered Insights</h3>
+        <p>Get personalized care recommendations after each calculation — tailored to your pet's age, breed, and results.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon f3">🔒</div>
+        <h3>100% Private</h3>
+        <p>All calculations run in your browser. No signup required. No data stored on servers. Your pet's info stays with you.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon f4">📱</div>
+        <h3>Works Everywhere</h3>
+        <p>Fully responsive design. Use our calculators on your phone at the vet's office, or on desktop at home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section" style="background: white;">
+  <div class="container">
+    <h2 style="text-align:center; margin-bottom:2rem;">Frequently Asked Questions</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-question">How accurate are these pet calculators?</button>
+        <div class="faq-answer">
+          <p>Our calculators use evidence-based formulas from authoritative veterinary sources including AAHA (American Animal Hospital Association), AAFCO (Association of American Feed Control Officials), NRC (National Research Council), and the Merck Veterinary Manual. While they provide excellent estimates for the average pet, individual animals can vary based on genetics, health conditions, and lifestyle. Always use these results as a starting point and consult your veterinarian for medical decisions.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do I need to create an account?</button>
+        <div class="faq-answer">
+          <p>No — and we never will require one. PetCalcHub is completely free with no registration, no email collection, and no data storage. All calculations happen entirely in your browser. We built this site because we believe every pet parent deserves access to reliable health tools without barriers.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How does the AI health insight work?</button>
+        <div class="faq-answer">
+          <p>After each calculation, our system analyzes your pet's specific results — age, weight, breed size, life stage — and generates personalized care recommendations. These insights cover nutrition, exercise, preventive care, and early warning signs. Think of it as having a knowledgeable pet care assistant that provides context for your specific situation. All AI-generated advice includes a disclaimer reminding you to consult a veterinarian for medical decisions.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Why should I trust the dog age calculator over the "multiply by 7" rule?</button>
+        <div class="faq-answer">
+          <p>The "multiply by 7" rule is an oversimplification that doesn't account for how dogs actually age. Modern veterinary research shows that dogs age rapidly in their first two years (about 15 human years in year one, 9 in year two), then the aging rate varies dramatically by breed size. A small breed dog at 10 years old may be roughly equivalent to a 56-year-old human, while a giant breed dog at the same chronological age could be closer to a 78-year-old human. Our calculator uses these breed-specific curves for accurate results.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What if my dog ate chocolate — what should I do?</button>
+        <div class="faq-answer">
+          <p>Use our Chocolate Toxicity Calculator immediately — enter your dog's weight, the type of chocolate, and the estimated amount consumed. The calculator will assess the risk level based on theobromine dose. If the result shows moderate or high risk, contact your veterinarian or call animal poison control immediately: ASPCA (888) 426-4435 or Pet Poison Helpline (855) 764-7661. Do not wait for symptoms to appear — early treatment is far more effective.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How often should I use the calorie calculator?</button>
+        <div class="faq-answer">
+          <p>Re-calculate your pet's calorie needs whenever there's a significant change: after spaying/neutering (metabolism drops 20-30%), switching from puppy/kitten to adult food, reaching senior age (typically 7+ for dogs, 10+ for cats), significant weight gain or loss, or changes in activity level (e.g., post-surgery recovery, starting a new exercise routine). For healthy adult pets, re-checking every 6 months alongside regular weigh-ins is a good practice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<div class="container">
+  <section class="cta-section">
+    <h2>Ready to Be a More Informed Pet Parent?</h2>
+    <p>Try our most popular calculator — the Dog Age Calculator — and get AI-powered insights tailored to your dog's breed and life stage.</p>
+    <a href="calculators/dog-age.html" class="btn btn-lg">Calculate Your Dog's Age Now →</a>
+  </section>
+</div>
+
+<!-- Ad Slot: Bottom (Hidden by default) -->
+<div class="container">
+  <div class="ad-slot" id="ad-bottom-home">
+    <div class="ad-slot-label">Advertisement</div>
+    <div class="ad-slot-inner">Ad space reserved</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">
+          <span class="nav-logo-icon">🐾</span>
+          PetCalcHub
+        </a>
+        <p>Free, science-backed pet calculators with AI-powered health insights. Helping pet parents make informed decisions — no signup, no tracking, always free.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="calculators/dog-age.html">Dog Age Calculator</a></li>
+          <li><a href="calculators/cat-age.html">Cat Age Calculator</a></li>
+          <li><a href="calculators/dog-calorie.html">Dog Calorie Calculator</a></li>
+          <li><a href="calculators/puppy-weight.html">Puppy Weight Predictor</a></li>
+          <li><a href="calculators/chocolate-toxicity.html">Chocolate Toxicity</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog/">Pet Care Blog</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="privacy.html#disclaimer">Medical Disclaimer</a></li>
+          <li><a href="privacy.html#affiliate">Affiliate Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 PetCalcHub. All rights reserved.</span>
+      <span>Calculations are estimates only. Consult your veterinarian for medical advice.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

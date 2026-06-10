@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Calorie Calculator — Daily Calorie Needs for Dogs (Vet Formula) | PetCalcHub</title>
+  <meta name="description" content="Calculate your dog's exact daily calorie needs using the NRC/AAFCO RER×DER formula. Adjusts for weight, age, activity level, and body condition. Free veterinary-standard calculator.">
+  <meta name="keywords" content="dog calorie calculator, how many calories does my dog need, dog food calculator, dog feeding calculator, RER dog">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/dog-calorie.html">
+  <meta property="og:title" content="Dog Calorie Calculator — Daily Calorie Needs for Dogs">
+  <meta property="og:description" content="Find your dog's exact daily calorie needs with our vet-standard calculator. Get personalized feeding recommendations.">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Dog Calorie Calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "description": "Calculate daily calorie needs for dogs using NRC/AAFCO RER×DER formula. Free, science-backed.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "How many calories does my dog need per day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A dog's daily calorie needs depend on weight, age, activity level, and whether they are spayed/neutered. Our calculator uses the veterinary-standard RER (Resting Energy Requirement) × DER (Daily Energy Requirement) formula to provide personalized results."
+      }
+    }]
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem">Dog Age Calculator</a>
+          <a href="dog-calorie.html" role="menuitem" class="active">Dog Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
+          <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem">Cat Age Calculator</a>
+          <a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="calc-page">
+  <div class="container">
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span class="separator">›</span>
+      <span>Dog Calorie Calculator</span>
+    </nav>
+
+    <div class="calc-layout">
+      <div class="calc-main">
+        <div class="calc-header">
+          <h1>Dog Calorie Calculator</h1>
+          <p class="calc-desc">Calculate your dog's exact daily calorie needs using the veterinary-standard RER (Resting Energy Requirement) × DER (Daily Energy Requirement) formula — endorsed by AAFCO and NRC.</p>
+        </div>
+
+        <div class="calc-card" id="calc-card">
+          <h2>🍖 Enter Your Dog's Details</h2>
+
+          <div id="unitToggle" class="unit-toggle">
+            <button class="active" data-unit="lbs">Pounds (lbs)</button>
+            <button data-unit="kg">Kilograms (kg)</button>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="dogWeight">Dog's Weight</label>
+            <div class="input-group">
+              <input type="number" id="dogWeight" class="form-input" placeholder="e.g. 50" min="1" max="150" step="0.1" required>
+              <span class="input-group-append" id="weightUnit">lbs</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="dogLifeStage">Life Stage</label>
+              <select id="dogLifeStage" class="form-select" required>
+                <option value="">Select life stage...</option>
+                <option value="puppy_young">Puppy (under 4 months)</option>
+                <option value="puppy_older">Puppy (4 months to adult)</option>
+                <option value="adult_neutered">Adult — Neutered / Spayed</option>
+                <option value="adult_intact">Adult — Intact</option>
+                <option value="senior">Senior (7+ years)</option>
+                <option value="weight_loss">Weight Loss Program</option>
+                <option value="active">Active / Working Dog</option>
+                <option value="pregnant">Pregnant (last 3 weeks)</option>
+                <option value="nursing">Nursing (peak lactation)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="dogActivity">Activity Level</label>
+              <select id="dogActivity" class="form-select">
+                <option value="low">Low (couch potato, limited walks)</option>
+                <option value="moderate" selected>Moderate (daily walks, some play)</option>
+                <option value="high">High (running, agility, working dog)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" onclick="calculateDogCalories()" style="width:100%; margin-top:0.5rem;">
+            Calculate Daily Calories →
+          </button>
+
+          <div id="calorieResult" style="display:none;"></div>
+        </div>
+
+        <div id="ai-suggestions"></div>
+        <div class="ad-slot" id="ad-in-content"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-inner">Ad space reserved</div></div>
+
+        <div style="margin-top:3rem;">
+          <h2>How the Dog Calorie Formula Works</h2>
+          <div class="info-box info" style="margin-top:1rem;">
+            <strong>RER (Resting Energy Requirement)</strong> = 70 × (body weight in kg)<sup>0.75</sup><br>
+            <strong>DER (Daily Energy Requirement)</strong> = RER × Activity Factor<br>
+            This is the gold-standard formula used by veterinarians, AAFCO, and NRC for canine nutrition.
+          </div>
+          <div style="overflow-x:auto; margin-top:1.5rem;">
+            <table class="data-table">
+              <thead><tr><th>Life Stage / Condition</th><th>DER Multiplier</th></tr></thead>
+              <tbody>
+                <tr><td>Weight Loss</td><td>1.0 × RER</td></tr>
+                <tr><td>Adult — Neutered/Spayed</td><td>1.6 × RER</td></tr>
+                <tr><td>Adult — Intact</td><td>1.8 × RER</td></tr>
+                <tr><td>Puppy (under 4 months)</td><td>3.0 × RER</td></tr>
+                <tr><td>Puppy (4 months to adult)</td><td>2.0 × RER</td></tr>
+                <tr><td>Active / Working Dog</td><td>2.0-5.0 × RER</td></tr>
+                <tr><td>Senior (7+ years)</td><td>1.4 × RER</td></tr>
+                <tr><td>Pregnant (last 3 weeks)</td><td>1.8-2.2 × RER</td></tr>
+                <tr><td>Nursing (peak lactation)</td><td>4.0-8.0 × RER</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <button class="faq-question">How often should I re-calculate my dog's calorie needs?</button>
+            <div class="faq-answer"><p>Re-calculate after spay/neuter (metabolism drops 20-30%), when switching from puppy to adult food, reaching senior age (7+), significant weight changes, or changes in activity level. For healthy adult dogs, re-check every 6 months along with regular weigh-ins.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Should I follow the dog food bag's feeding guide?</button>
+            <div class="faq-answer"><p>Dog food bag guidelines are typically designed for intact, active adult dogs and often overestimate needs by 20-30%. They're a starting point, but a calculator based on your dog's specific profile (spay/neuter status, activity level, body condition) will give you a much more accurate target.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How many calories are in a cup of dog food?</button>
+            <div class="faq-answer"><p>It varies dramatically by brand and formula — typically 300-500 kcal per cup for dry kibble. Always check the "kcal per cup" on the bag, as it can differ even between flavors from the same brand. Wet food is much less calorie-dense at around 70-150 kcal per can.</p></div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="calc-sidebar">
+        <div class="ad-sidebar" id="ad-sidebar"><div class="ad-sidebar-label">Advertisement</div><div class="ad-sidebar-inner">Ad space reserved</div></div>
+        <div style="background:white; border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.75rem;">⚡ Quick Formula</h4>
+          <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.7;">
+            <strong>Step 1:</strong> RER = 70 × (kg)<sup>0.75</sup><br>
+            <strong>Step 2:</strong> Calories = RER × Factor<br>
+            <strong>Step 3:</strong> Divide into 2 meals
+          </p>
+        </div>
+        <div style="background:var(--warning-bg); border:1px solid #FDE68A; border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.5rem;">⚠️ Important</h4>
+          <p style="font-size:0.85rem; color:#92400E;">Treats should not exceed <strong>10%</strong> of daily calories. For a dog needing 800 kcal/day, that means no more than 80 calories from treats.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a><p>Free, science-backed pet calculators with AI-powered health insights.</p></div>
+      <div class="footer-col"><h4>Calculators</h4><ul><li><a href="dog-age.html">Dog Age Calculator</a></li><li><a href="cat-age.html">Cat Age Calculator</a></li><li><a href="dog-calorie.html">Dog Calorie Calculator</a></li><li><a href="puppy-weight.html">Puppy Weight Predictor</a></li><li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="../blog/">Pet Care Blog</a></li><li><a href="../about.html">About Us</a></li><li><a href="../privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../privacy.html#disclaimer">Medical Disclaimer</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 PetCalcHub.</span><span>Estimates only. Consult your veterinarian.</span></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+WeightUnit.init('unitToggle');
+
+function calculateDogCalories() {
+  let weight = parseFloat(document.getElementById('dogWeight').value);
+  const lifeStage = document.getElementById('dogLifeStage').value;
+
+  if (!weight || weight <= 0 || !lifeStage) { alert('Please enter a valid weight and select a life stage.'); return; }
+
+  if (WeightUnit.current === 'lbs') weight = weight / 2.20462; // convert to kg
+
+  const rer = 70 * Math.pow(weight, 0.75);
+  const multipliers = {
+    weight_loss: 1.0, adult_neutered: 1.6, adult_intact: 1.8, senior: 1.4,
+    puppy_young: 3.0, puppy_older: 2.0, active: 2.5, pregnant: 2.0, nursing: 5.0
+  };
+  const labels = {
+    weight_loss: 'Weight Loss', adult_neutered: 'Adult (Neutered)', adult_intact: 'Adult (Intact)',
+    senior: 'Senior', puppy_young: 'Puppy (<4 months)', puppy_older: 'Puppy (4+ months)',
+    active: 'Active/Working', pregnant: 'Pregnant', nursing: 'Nursing'
+  };
+
+  const multiplier = multipliers[lifeStage] || 1.6;
+  const der = rer * multiplier;
+  const kcalPerCup = 380; // average dry kibble
+  const cupsPerDay = der / kcalPerCup;
+
+  const weightDisplay = WeightUnit.current === 'lbs' ? (weight * 2.20462).toFixed(1) + ' lbs (' + weight.toFixed(1) + ' kg)' : weight.toFixed(1) + ' kg (' + (weight * 2.20462).toFixed(1) + ' lbs)';
+
+  document.getElementById('calorieResult').style.display = 'block';
+  const resultColor = lifeStage === 'weight_loss' ? 'warning' : 'primary';
+  document.getElementById('calorieResult').innerHTML = `
+    <div class="result-box ${resultColor}">
+      <div class="result-value">${Math.round(der)} <span style="font-size:1rem;">kcal/day</span></div>
+      <div class="result-label">Daily Energy Requirement</div>
+      <div class="result-details">
+        <dl>
+          <dt>Weight</dt><dd>${weightDisplay}</dd>
+          <dt>Life Stage</dt><dd>${labels[lifeStage]} (DER Factor: ${multiplier}×)</dd>
+          <dt>Resting Energy (RER)</dt><dd>${Math.round(rer)} kcal/day</dd>
+          <dt>Approximate Dry Food</dt><dd>~${cupsPerDay.toFixed(1)} cups/day (at 380 kcal/cup)</dd>
+          <dt>Per Meal (2 meals/day)</dt><dd>~${(cupsPerDay / 2).toFixed(1)} cups per meal</dd>
+        </dl>
+      </div>
+      <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.75rem;">
+        † Based on average dry kibble at 380 kcal/cup. Check your food's label for exact values.
+      </div>
+    </div>`;
+
+  const aiType = lifeStage === 'weight_loss' ? 'weightLoss' : 'maintenance';
+  displayAISuggestions('calorie', aiType, Math.round(der));
+  scrollToResults();
+}
+
+WeightUnit.onChange = function() {
+  document.getElementById('weightUnit').textContent = this.current;
+};
+</script>
+</body>
+</html>

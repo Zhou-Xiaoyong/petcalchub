@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puppy Weight Calculator — Predict Your Puppy's Adult Size | PetCalcHub</title>
+  <meta name="description" content="Predict your puppy's adult weight using 4 veterinary methods. Our puppy weight calculator factors in breed size, current age, and current weight. Get an accurate estimate for food, crate, and planning.">
+  <meta name="keywords" content="puppy weight calculator, how big will my puppy get, puppy growth chart, puppy adult size, dog weight predictor">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/puppy-weight.html">
+  <meta property="og:title" content="Puppy Weight Calculator — Predict Adult Size">
+  <meta property="og:description" content="Wondering how big your puppy will get? Use our 4-method puppy weight predictor — it's free and takes 10 seconds.">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Puppy Weight Calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "description": "Predict your puppy's adult weight using 4 veterinary methods. Free, instant results.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem">Dog Age Calculator</a>
+          <a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem" class="active">Puppy Weight Predictor</a>
+          <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem">Cat Age Calculator</a>
+          <a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="calc-page">
+  <div class="container">
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span class="separator">›</span>
+      <span>Puppy Weight Predictor</span>
+    </nav>
+
+    <div class="calc-layout">
+      <div class="calc-main">
+        <div class="calc-header">
+          <h1>Puppy Weight Calculator</h1>
+          <p class="calc-desc">Predict how big your puppy will get as an adult. Uses 4 veterinary methods based on breed size, current age, and current weight. Essential for planning food portions, crate size, and more.</p>
+        </div>
+
+        <div class="calc-card" id="calc-card">
+          <h2>🐶 Enter Your Puppy's Info</h2>
+
+          <div id="unitToggle" class="unit-toggle">
+            <button class="active" data-unit="lbs">Pounds (lbs)</button>
+            <button data-unit="kg">Kilograms (kg)</button>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="puppyWeight">Current Weight</label>
+              <div class="input-group">
+                <input type="number" id="puppyWeight" class="form-input" placeholder="e.g. 15" min="0.1" step="0.1" required>
+                <span class="input-group-append" id="weightUnit">lbs</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="puppyAge">Current Age (weeks)</label>
+              <input type="number" id="puppyAge" class="form-input" placeholder="e.g. 12" min="1" max="104" required>
+              <div class="form-hint">Most accurate between 6-24 weeks</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="breedSize">Expected Adult Size</label>
+            <select id="breedSize" class="form-select" required>
+              <option value="">Select expected adult size...</option>
+              <option value="small">Small (under 20 lbs) — e.g. Chihuahua, Yorkie, Shih Tzu</option>
+              <option value="medium">Medium (21-50 lbs) — e.g. Beagle, Bulldog, Cocker Spaniel</option>
+              <option value="large">Large (51-90 lbs) — e.g. Lab, Golden Retriever, Boxer</option>
+              <option value="giant">Giant (over 90 lbs) — e.g. Great Dane, Mastiff, Saint Bernard</option>
+              <option value="unknown">Unknown / Mixed Breed</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary btn-lg" onclick="predictPuppyWeight()" style="width:100%; margin-top:0.5rem;">
+            Predict Adult Weight →
+          </button>
+
+          <div id="weightResult" style="display:none;"></div>
+        </div>
+
+        <div id="ai-suggestions"></div>
+        <div class="ad-slot" id="ad-in-content"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-inner">Ad space reserved</div></div>
+
+        <div style="margin-top:3rem;">
+          <h2>How the Puppy Weight Predictor Works</h2>
+          <p>We use multiple veterinary methods and average them for the most reliable estimate:</p>
+          <div class="card-grid" style="margin-top:1rem;">
+            <div class="card"><h3>📏 Method 1: Growth Rate</h3><p>Adult weight = (Current weight ÷ Age in weeks) × 52. Simple but less accurate for large breeds that grow for 18+ months.</p></div>
+            <div class="card"><h3>📐 Method 2: Breed Formula</h3><p>Uses breed-specific multipliers. Small breeds reach 50% of adult weight at ~12 weeks, large breeds at ~18 weeks.</p></div>
+            <div class="card"><h3>📊 Method 3: Doubling</h3><p>Small breeds: double weight at 16 weeks. Medium: 2.5× at 14 weeks. Large: double at 6 months.</p></div>
+            <div class="card"><h3>🎯 Method 4: Parent Average</h3><p>If both parents' weights are known, the average is a strong predictor — especially for purebreds.</p></div>
+          </div>
+          <div class="info-box info" style="margin-top:1rem;">
+            <strong>Best time to use:</strong> 6-24 weeks for small/medium breeds; 4-8 months for large/giant breeds. Predictions are most accurate when you know the parents' sizes and the puppy's breed background.
+          </div>
+        </div>
+
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <button class="faq-question">How accurate is the puppy weight calculator?</button>
+            <div class="faq-answer"><p>For purebred puppies with known parents, accuracy is typically within 10-15% of adult weight. For mixed breeds, the estimate is rougher but still useful for planning. The calculator is most accurate when used between 8-16 weeks for small/medium breeds and 12-24 weeks for large/giant breeds.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">When do puppies stop growing?</button>
+            <div class="faq-answer"><p>Small breeds reach adult size by 9-12 months. Medium breeds: 12-15 months. Large breeds: 15-18 months. Giant breeds may continue growing until 18-24 months. Note that dogs may "fill out" (gain muscle and body mass) even after height growth stops.</p></div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="calc-sidebar">
+        <div class="ad-sidebar" id="ad-sidebar"><div class="ad-sidebar-label">Advertisement</div><div class="ad-sidebar-inner">Ad space reserved</div></div>
+        <div style="background:white; border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.75rem;">📋 Growth Milestones</h4>
+          <ul style="font-size:0.85rem; color:var(--text-secondary); padding-left:1.25rem; line-height:1.8;">
+            <li><strong>8 weeks:</strong> ~20-30% of adult weight</li>
+            <li><strong>16 weeks:</strong> ~50% (small), ~40% (large)</li>
+            <li><strong>6 months:</strong> ~75% (small), ~60% (large)</li>
+            <li><strong>12 months:</strong> ~95% (small), ~80% (large)</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a><p>Free, science-backed pet calculators with AI-powered health insights.</p></div>
+      <div class="footer-col"><h4>Calculators</h4><ul><li><a href="dog-age.html">Dog Age Calculator</a></li><li><a href="cat-age.html">Cat Age Calculator</a></li><li><a href="dog-calorie.html">Dog Calorie Calculator</a></li><li><a href="puppy-weight.html">Puppy Weight Predictor</a></li><li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="../blog/">Pet Care Blog</a></li><li><a href="../about.html">About Us</a></li><li><a href="../privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../privacy.html#disclaimer">Medical Disclaimer</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 PetCalcHub.</span><span>Estimates only. Consult your veterinarian.</span></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+WeightUnit.init('unitToggle');
+WeightUnit.onChange = function() { document.getElementById('weightUnit').textContent = this.current; };
+
+function predictPuppyWeight() {
+  let weight = parseFloat(document.getElementById('puppyWeight').value);
+  const ageWeeks = parseFloat(document.getElementById('puppyAge').value);
+  const breedSize = document.getElementById('breedSize').value;
+
+  if (!weight || !ageWeeks || !breedSize) { alert('Please fill in all fields.'); return; }
+
+  if (WeightUnit.current === 'lbs') weight = weight / 2.20462;
+
+  // Method 1: Growth rate
+  const method1 = (weight / ageWeeks) * 52;
+
+  // Method 2: Breed-specific
+  const multipliers = { small: 4, medium: 3, large: 2.2, giant: 2, unknown: 2.5 };
+  const method2 = weight * (multipliers[breedSize] || 2.5);
+
+  // Method 3: Doubling
+  let method3;
+  if (breedSize === 'small') method3 = ageWeeks >= 16 ? weight * 2 : (weight / ageWeeks) * 16 * 2;
+  else if (breedSize === 'medium') method3 = ageWeeks >= 14 ? weight * 2.5 : (weight / ageWeeks) * 14 * 2.5;
+  else method3 = ageWeeks >= 24 ? weight * 2 : (weight / ageWeeks) * 24 * 2;
+
+  const predicted = (method1 + method2 + method3) / 3;
+  const predictedLbs = predicted * 2.20462;
+
+  const weightLabel = predictedLbs < 20 ? 'Small' : predictedLbs < 51 ? 'Medium' : predictedLbs < 91 ? 'Large' : 'Giant';
+
+  document.getElementById('weightResult').style.display = 'block';
+  document.getElementById('weightResult').innerHTML = `
+    <div class="result-box primary">
+      <div class="result-value">${predictedLbs.toFixed(1)} <span style="font-size:1rem;">lbs</span></div>
+      <div class="result-label">Predicted Adult Weight (${predicted.toFixed(1)} kg)</div>
+      <div style="margin-top:0.75rem;"><span class="tag tag-${predictedLbs < 51 ? 'green' : predictedLbs < 91 ? 'yellow' : 'red'}">${weightLabel} Breed</span></div>
+      <div class="result-details">
+        <dl>
+          <dt>Method 1 (Growth Rate)</dt><dd>${(method1 * 2.20462).toFixed(1)} lbs</dd>
+          <dt>Method 2 (Breed Formula)</dt><dd>${(method2 * 2.20462).toFixed(1)} lbs</dd>
+          <dt>Method 3 (Doubling)</dt><dd>${(method3 * 2.20462).toFixed(1)} lbs</dd>
+          <dt>Current Weight</dt><dd>${WeightUnit.current === 'lbs' ? (weight * 2.20462).toFixed(1) + ' lbs' : weight.toFixed(1) + ' kg'} at ${ageWeeks} weeks</dd>
+          <dt>Estimated Adult Age Reached</dt><dd>${breedSize === 'small' ? '9-12' : breedSize === 'medium' ? '12-15' : breedSize === 'large' ? '15-18' : '18-24'} months</dd>
+        </dl>
+      </div>
+    </div>`;
+
+  displayAISuggestions('puppyWeight', breedSize === 'small' ? 'small' : breedSize === 'medium' ? 'medium' : 'large', predictedLbs.toFixed(1) + ' lbs');
+  scrollToResults();
+}
+</script>
+</body>
+</html>

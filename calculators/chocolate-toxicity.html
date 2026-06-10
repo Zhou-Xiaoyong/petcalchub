@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chocolate Toxicity Calculator for Dogs — Is It an Emergency? | PetCalcHub</title>
+  <meta name="description" content="Dog ate chocolate? Instantly assess the toxicity risk. Enter your dog's weight, chocolate type, and amount — get an emergency-level assessment with actionable next steps.">
+  <meta name="keywords" content="chocolate toxicity calculator, dog ate chocolate, theobromine toxicity, dog chocolate poisoning, ASPCA poison control">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/chocolate-toxicity.html">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Chocolate Toxicity Calculator for Dogs",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "description": "Assess theobromine toxicity risk if your dog ate chocolate. Enter weight, chocolate type, and amount for an emergency risk assessment.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem">Dog Age Calculator</a>
+          <a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
+          <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem" class="active">Chocolate Toxicity Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem">Cat Age Calculator</a>
+          <a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="calc-page">
+  <div class="container">
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span class="separator">›</span>
+      <span>Chocolate Toxicity Calculator</span>
+    </nav>
+
+    <div class="info-box warning" style="margin-bottom:1.5rem;">
+      <strong>⚠️ EMERGENCY?</strong> If your dog is showing symptoms (vomiting, tremors, rapid heart rate, seizures), <strong>call your vet or animal poison control immediately</strong>. ASPCA: (888) 426-4435 · Pet Poison Helpline: (855) 764-7661. This calculator is for risk assessment only.
+    </div>
+
+    <div class="calc-layout">
+      <div class="calc-main">
+        <div class="calc-header">
+          <h1>Chocolate Toxicity Calculator for Dogs</h1>
+          <p class="calc-desc">Quickly assess whether your dog needs emergency veterinary care after eating chocolate. Based on theobromine concentration by chocolate type and your dog's weight.</p>
+        </div>
+
+        <div class="calc-card" id="calc-card">
+          <h2>🍫 Enter the Details</h2>
+
+          <div id="unitToggle" class="unit-toggle">
+            <button class="active" data-unit="lbs">Pounds (lbs)</button>
+            <button data-unit="kg">Kilograms (kg)</button>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="dogWeight">Dog's Weight</label>
+            <div class="input-group">
+              <input type="number" id="dogWeight" class="form-input" placeholder="e.g. 40" min="1" max="200" step="0.1" required>
+              <span class="input-group-append" id="weightUnit">lbs</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="chocType">Type of Chocolate</label>
+              <select id="chocType" class="form-select" required>
+                <option value="">Select type...</option>
+                <option value="white">White Chocolate (negligible theobromine)</option>
+                <option value="milk">Milk Chocolate (1-2 mg/g)</option>
+                <option value="dark">Dark Chocolate (5-10 mg/g)</option>
+                <option value="baking">Baking Chocolate / Unsweetened (15-25 mg/g)</option>
+                <option value="cocoa">Cocoa Powder (20-30 mg/g)</option>
+                <option value="semisweet">Semi-Sweet Chocolate Chips (5-7 mg/g)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="chocAmount">Amount Eaten</label>
+              <div class="input-group">
+                <input type="number" id="chocAmount" class="form-input" placeholder="e.g. 3" min="0.1" step="0.1" required>
+                <span class="input-group-append">oz</span>
+              </div>
+              <div class="form-hint">1 oz = ~28 grams = ~2 tbsp cocoa powder</div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" onclick="calculateToxicity()" style="width:100%; margin-top:0.5rem;">
+            Assess Toxicity Risk →
+          </button>
+
+          <div id="toxResult" style="display:none;"></div>
+        </div>
+
+        <div id="ai-suggestions"></div>
+        <div class="ad-slot" id="ad-in-content"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-inner">Ad space reserved</div></div>
+
+        <div style="margin-top:3rem;">
+          <h2>Theobromine Content by Chocolate Type</h2>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead><tr><th>Chocolate Type</th><th>Theobromine (mg/oz)</th><th>Risk Level (50 lb dog, 3 oz)</th></tr></thead>
+              <tbody>
+                <tr><td>White Chocolate</td><td>~0.25</td><td><span class="tag tag-green">Very Low</span></td></tr>
+                <tr><td>Milk Chocolate</td><td>~44</td><td><span class="tag tag-yellow">Low-Moderate</span></td></tr>
+                <tr><td>Semi-Sweet Chips</td><td>~170</td><td><span class="tag tag-yellow">Moderate</span></td></tr>
+                <tr><td>Dark Chocolate (60-70%)</td><td>~210</td><td><span class="tag tag-red">High</span></td></tr>
+                <tr><td>Dark Chocolate (85%+)</td><td>~300</td><td><span class="tag tag-red">High</span></td></tr>
+                <tr><td>Baking Chocolate</td><td>~450</td><td><span class="tag tag-red">Severe</span></td></tr>
+                <tr><td>Cocoa Powder</td><td>~700</td><td><span class="tag tag-red">Severe</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="info-box info" style="margin-top:1rem;">
+            <strong>Toxicity Thresholds:</strong> Mild signs at 20 mg/kg · Severe at 40 mg/kg · Seizures at 60 mg/kg. The darker and more concentrated the chocolate, the more dangerous it is — a small amount of baking chocolate can be far more toxic than a large milk chocolate bar.
+          </div>
+        </div>
+      </div>
+
+      <aside class="calc-sidebar">
+        <div class="ad-sidebar" id="ad-sidebar"><div class="ad-sidebar-label">Advertisement</div><div class="ad-sidebar-inner">Ad space reserved</div></div>
+        <div style="background:var(--danger-bg); border:1px solid #FECACA; border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="color:var(--danger); margin-bottom:0.5rem;">🚨 Emergency Contacts</h4>
+          <p style="font-size:0.85rem; color:#991B1B; line-height:1.7;">
+            <strong>ASPCA Animal Poison Control:</strong><br>(888) 426-4435<br><br>
+            <strong>Pet Poison Helpline:</strong><br>(855) 764-7661<br><br>
+            <em>Both services may charge a consultation fee.</em>
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a><p>Free, science-backed pet calculators with AI-powered health insights.</p></div>
+      <div class="footer-col"><h4>Calculators</h4><ul><li><a href="dog-age.html">Dog Age Calculator</a></li><li><a href="cat-age.html">Cat Age Calculator</a></li><li><a href="dog-calorie.html">Dog Calorie Calculator</a></li><li><a href="puppy-weight.html">Puppy Weight Predictor</a></li><li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="../blog/">Pet Care Blog</a></li><li><a href="../about.html">About Us</a></li><li><a href="../privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../privacy.html#disclaimer">Medical Disclaimer</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 PetCalcHub.</span><span>Not a substitute for veterinary care. Call a vet in emergencies.</span></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+WeightUnit.init('unitToggle');
+WeightUnit.onChange = function() { document.getElementById('weightUnit').textContent = this.current; };
+
+function calculateToxicity() {
+  let weight = parseFloat(document.getElementById('dogWeight').value);
+  const chocType = document.getElementById('chocType').value;
+  const amountOz = parseFloat(document.getElementById('chocAmount').value);
+
+  if (!weight || !chocType || !amountOz) { alert('Please fill in all fields.'); return; }
+
+  if (WeightUnit.current === 'lbs') weight = weight / 2.20462;
+
+  const theobrominePerOz = { white: 0.25, milk: 44, dark: 210, baking: 450, cocoa: 700, semisweet: 170 };
+  const chocNames = { white: 'White Chocolate', milk: 'Milk Chocolate', dark: 'Dark Chocolate', baking: 'Baking Chocolate', cocoa: 'Cocoa Powder', semisweet: 'Semi-Sweet Chocolate' };
+
+  const totalTheobromine = theobrominePerOz[chocType] * amountOz;
+  const doseMgKg = totalTheobromine / weight;
+
+  let riskLevel, riskColor, riskTag, action;
+
+  if (doseMgKg < 10) {
+    riskLevel = 'Low Risk'; riskColor = 'success'; riskTag = 'green';
+    action = 'No treatment typically needed. Monitor for mild GI upset.';
+  } else if (doseMgKg < 20) {
+    riskLevel = 'Mild Concern'; riskColor = 'warning'; riskTag = 'yellow';
+    action = 'Monitor closely. May see vomiting and diarrhea. Call your vet for guidance.';
+  } else if (doseMgKg < 40) {
+    riskLevel = 'Moderate Risk'; riskColor = 'warning'; riskTag = 'yellow';
+    action = 'Contact your veterinarian. Treatment may be needed — activated charcoal, IV fluids, and monitoring.';
+  } else if (doseMgKg < 60) {
+    riskLevel = 'High Risk'; riskColor = 'danger'; riskTag = 'red';
+    action = 'Seek veterinary care immediately. Risk of cardiac arrhythmias, tremors, and seizures.';
+  } else {
+    riskLevel = 'SEVERE Risk — Emergency!'; riskColor = 'danger'; riskTag = 'red';
+    action = 'GO TO THE EMERGENCY VET NOW. Risk of life-threatening seizures, cardiac failure, and death. Do not wait for symptoms.';
+  }
+
+  document.getElementById('toxResult').style.display = 'block';
+  document.getElementById('toxResult').innerHTML = `
+    <div class="result-box ${riskColor}">
+      <div style="font-size:1rem; margin-bottom:0.25rem;">🍫 ${chocNames[chocType]} · ${amountOz} oz · ${weight.toFixed(1)} kg dog</div>
+      <div class="result-value">${doseMgKg.toFixed(1)} <span style="font-size:1rem;">mg/kg</span></div>
+      <div class="result-label">Theobromine Dose</div>
+      <div style="margin-top:0.75rem;">
+        <span class="tag tag-${riskTag}" style="font-size:0.95rem; padding:0.3rem 0.8rem;">${riskLevel}</span>
+      </div>
+      <div class="result-details">
+        <dl>
+          <dt>Total Theobromine Ingested</dt><dd>~${totalTheobromine.toFixed(0)} mg</dd>
+          <dt>Chocolate Type</dt><dd>${chocNames[chocType]} (${theobrominePerOz[chocType]} mg theobromine/oz)</dd>
+          <dt>Recommended Action</dt><dd style="font-weight:600;">${action}</dd>
+        </dl>
+      </div>
+    </div>
+    <div style="margin-top:1rem;">
+      <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Toxicity Scale</h4>
+      <div class="dist-bar" style="height:24px;">
+        <div class="dist-bar-segment" style="width:30%; background:#D1FAE5;"></div>
+        <div class="dist-bar-segment" style="width:20%; background:#FEF3C7;"></div>
+        <div class="dist-bar-segment" style="width:25%; background:#FED7AA;"></div>
+        <div class="dist-bar-segment" style="width:25%; background:#FECACA;"></div>
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--text-muted); margin-top:0.25rem;">
+        <span>Safe</span><span>Mild</span><span>Moderate</span><span>Severe</span>
+      </div>
+    </div>`;
+
+  const aiRisk = doseMgKg >= 40 ? 'high' : doseMgKg >= 20 ? 'moderate' : 'low';
+  displayAISuggestions('chocolate', doseMgKg >= 40 ? 'high' : doseMgKg >= 20 ? 'moderate' : 'low', doseMgKg);
+  scrollToResults();
+}
+</script>
+</body>
+</html>

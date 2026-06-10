@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat Age Calculator — Convert Cat Years to Human Years | PetCalcHub</title>
+  <meta name="description" content="Convert your cat's age to human years using AAHA/AVMA veterinary guidelines. Understand your cat's life stage — kitten, adult, senior, or geriatric — with our free cat age calculator.">
+  <meta name="keywords" content="cat age calculator, cat years to human years, how old is my cat, cat life stage, senior cat age">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/cat-age.html">
+  <meta property="og:title" content="Cat Age Calculator — Convert Cat Years to Human Years">
+  <meta property="og:description" content="Find out how old your cat is in human years using veterinary guidelines. Free, instant results.">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Cat Age Calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "description": "Convert cat years to human years using AAHA/AVMA veterinary guidelines. Free and instant results.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "How do I calculate my cat's age in human years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cats age rapidly in their first two years: the first year equals 15 human years, the second adds 9 more (24 total). Each subsequent cat year equals about 4 human years. A 10-year-old cat is approximately 56 in human years."
+      }
+    }]
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem">Dog Age Calculator</a>
+          <a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
+          <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem" class="active">Cat Age Calculator</a>
+          <a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="calc-page">
+  <div class="container">
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span class="separator">›</span>
+      <span>Cat Age Calculator</span>
+    </nav>
+
+    <div class="calc-layout">
+      <div class="calc-main">
+        <div class="calc-header">
+          <h1>Cat Age Calculator</h1>
+          <p class="calc-desc">Convert your cat's age to human years using AAHA/AVMA veterinary guidelines. Understand your cat's life stage and what care they need at every age.</p>
+        </div>
+
+        <div class="calc-card" id="calc-card">
+          <h2>🐈 Enter Your Cat's Age</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="catAgeYears">Years</label>
+              <input type="number" id="catAgeYears" class="form-input" placeholder="e.g. 3" min="0" max="35" value="" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="catAgeMonths">Months (optional)</label>
+              <input type="number" id="catAgeMonths" class="form-input" placeholder="e.g. 6" min="0" max="11" value="0">
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg" onclick="calculateCatAge()" style="width:100%; margin-top:0.5rem;">
+            Calculate Human Age →
+          </button>
+          <div id="ageResult" style="display:none;"></div>
+        </div>
+
+        <div id="ai-suggestions"></div>
+
+        <div class="ad-slot" id="ad-in-content">
+          <div class="ad-slot-label">Advertisement</div>
+          <div class="ad-slot-inner">Ad space reserved</div>
+        </div>
+
+        <!-- Age Reference -->
+        <div style="margin-top:3rem;">
+          <h2>Cat Age to Human Years — Quick Reference</h2>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr><th>Cat Age</th><th>Human Years</th><th>Life Stage</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>6 months</td><td>10</td><td>Kitten</td></tr>
+                <tr><td>1 year</td><td>15</td><td>Junior</td></tr>
+                <tr><td>2 years</td><td>24</td><td>Young Adult</td></tr>
+                <tr><td>3 years</td><td>28</td><td>Adult</td></tr>
+                <tr><td>5 years</td><td>36</td><td>Adult</td></tr>
+                <tr><td>7 years</td><td>44</td><td>Mature</td></tr>
+                <tr><td>10 years</td><td>56</td><td>Senior</td></tr>
+                <tr><td>13 years</td><td>68</td><td>Senior</td></tr>
+                <tr><td>15 years</td><td>76</td><td>Geriatric</td></tr>
+                <tr><td>18 years</td><td>88</td><td>Geriatric</td></tr>
+                <tr><td>20 years</td><td>96</td><td>Geriatric</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <button class="faq-question">How do indoor cats age differently from outdoor cats?</button>
+            <div class="faq-answer">
+              <p>Indoor cats typically live 12-18 years, while outdoor cats average only 2-5 years due to risks like traffic, predators, disease, and accidents. Our calculator provides a baseline — indoor cats may live longer and healthier lives with proper care.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">At what age is a cat considered a "senior"?</button>
+            <div class="faq-answer">
+              <p>Veterinarians typically classify cats as "senior" at 10-11 years and "geriatric" at 15+. However, many cats remain active and healthy well into their senior years. The AAFP (American Association of Feline Practitioners) recommends bi-annual checkups starting at age 10 to catch age-related conditions early.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What health issues should I watch for in older cats?</button>
+            <div class="faq-answer">
+              <p>Common age-related conditions in cats include: chronic kidney disease (affects 30-50% of cats over 15), hyperthyroidism, dental disease, arthritis, and cognitive dysfunction. Annual blood panels become essential for senior cats to catch these conditions in treatable stages.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="calc-sidebar">
+        <div class="ad-sidebar" id="ad-sidebar">
+          <div class="ad-sidebar-label">Advertisement</div>
+          <div class="ad-sidebar-inner">Ad space reserved</div>
+        </div>
+        <div style="background:white; border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.75rem;">🐱 Cat Life Stages</h4>
+          <ul style="font-size:0.9rem; color:var(--text-secondary); padding-left:1.25rem; line-height:1.8;">
+            <li><strong>Kitten:</strong> 0-6 months</li>
+            <li><strong>Junior:</strong> 6 months-2 years</li>
+            <li><strong>Adult:</strong> 3-6 years</li>
+            <li><strong>Mature:</strong> 7-10 years</li>
+            <li><strong>Senior:</strong> 11-14 years</li>
+            <li><strong>Geriatric:</strong> 15+ years</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+        <p>Free, science-backed pet calculators with AI-powered health insights.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="dog-age.html">Dog Age Calculator</a></li>
+          <li><a href="cat-age.html">Cat Age Calculator</a></li>
+          <li><a href="dog-calorie.html">Dog Calorie Calculator</a></li>
+          <li><a href="puppy-weight.html">Puppy Weight Predictor</a></li>
+          <li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul><li><a href="../blog/">Pet Care Blog</a></li><li><a href="../about.html">About Us</a></li><li><a href="../privacy.html">Privacy Policy</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../privacy.html#disclaimer">Medical Disclaimer</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 PetCalcHub. All rights reserved.</span>
+      <span>Estimates only. Consult your veterinarian.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+function calculateCatAge() {
+  const years = parseInt(document.getElementById('catAgeYears').value) || 0;
+  const months = parseInt(document.getElementById('catAgeMonths').value) || 0;
+  const totalYears = years + months / 12;
+
+  if (totalYears <= 0) { alert('Please enter a valid age.'); return; }
+
+  let humanAge;
+  if (totalYears <= 1) {
+    humanAge = totalYears * 15;
+  } else if (totalYears <= 2) {
+    humanAge = 15 + (totalYears - 1) * 9;
+  } else {
+    humanAge = 24 + (totalYears - 2) * 4;
+  }
+
+  let lifeStage;
+  if (totalYears < 0.5) lifeStage = 'Kitten';
+  else if (totalYears < 2) lifeStage = 'Junior';
+  else if (totalYears < 6) lifeStage = 'Adult';
+  else if (totalYears < 10) lifeStage = 'Mature';
+  else if (totalYears < 15) lifeStage = 'Senior';
+  else lifeStage = 'Geriatric';
+
+  humanAge = Math.round(humanAge);
+  const stageColor = lifeStage === 'Kitten' || lifeStage === 'Junior' ? 'primary' : lifeStage === 'Adult' || lifeStage === 'Mature' ? 'success' : lifeStage === 'Senior' ? 'warning' : 'danger';
+  const stageTag = lifeStage === 'Kitten' || lifeStage === 'Junior' ? 'green' : lifeStage === 'Adult' || lifeStage === 'Mature' ? 'blue' : lifeStage === 'Senior' ? 'yellow' : 'red';
+
+  document.getElementById('ageResult').style.display = 'block';
+  document.getElementById('ageResult').innerHTML = `
+    <div class="result-box ${stageColor}">
+      <div style="font-size:1rem; margin-bottom:0.25rem;">🐈 ${totalYears.toFixed(1)} Cat Years</div>
+      <div class="result-value">${humanAge}</div>
+      <div class="result-label">human years old</div>
+      <div style="margin-top:0.75rem;"><span class="tag tag-${stageTag}">${lifeStage}</span></div>
+      <div class="result-details">
+        <dl>
+          <dt>Life Stage</dt>
+          <dd>${lifeStage} — ${getStageDescription(lifeStage)}</dd>
+          <dt>AAHA/AVMA Formula</dt>
+          <dd>15 human years for year 1, +9 for year 2, +4 per year after</dd>
+        </dl>
+      </div>
+    </div>`;
+
+  const aiCat = lifeStage === 'Kitten' || lifeStage === 'Junior' ? 'young' : lifeStage === 'Senior' || lifeStage === 'Geriatric' ? 'senior' : 'adult';
+  displayAISuggestions('catAge', aiCat, humanAge);
+  scrollToResults();
+}
+
+function getStageDescription(stage) {
+  const map = {
+    'Kitten': 'Rapid growth, socialization, vaccination series',
+    'Junior': 'Reaching full size, high energy, establishing routines',
+    'Adult': 'Prime years — maintain healthy weight and annual checkups',
+    'Mature': 'Monitor for early signs of age-related conditions',
+    'Senior': 'Bi-annual vet visits recommended, consider joint support',
+    'Geriatric': 'Comfort-focused care, monitor kidney function and mobility'
+  };
+  return map[stage] || '';
+}
+</script>
+</body>
+</html>
