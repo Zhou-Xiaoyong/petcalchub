@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKCZHTY5WH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WKCZHTY5WH');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat Water Intake Calculator — How Much Water Should Your Cat Drink? | PetCalcHub</title>
+  <meta name="description" content="Calculate your cat's daily water needs based on weight and diet. Cats naturally drink less than dogs — learn how to encourage proper hydration and prevent kidney disease.">
+  <meta name="keywords" content="cat water intake calculator, how much water should my cat drink, cat dehydration, cat water needs, cat hydration guide">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/cat-water.html">
+  <meta property="og:title" content="Cat Water Intake Calculator — How Much Water Should Your Cat Drink? | PetCalcHub">
+  <meta property="og:description" content="Calculate your cat's daily water needs based on weight and diet. Learn how to encourage proper hydration and prevent kidney disease.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petcalchub.com/calculators/cat-water.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cat Water Intake Calculator — How Much Water Should Your Cat Drink? | PetCalcHub">
+  <meta name="twitter:description" content="Calculate your cat's daily water needs based on weight and diet. Learn how to encourage proper hydration and prevent kidney disease.">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Cat Water Intake Calculator",
+    "applicationCategory": "HealthApplication", "operatingSystem": "Web",
+    "description": "Calculate your cat's daily water needs based on weight and diet type. Cats are prone to dehydration — use this calculator to ensure proper hydration.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem">Dog Age Calculator</a>
+          <a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
+          <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+          <a href="dog-water.html" role="menuitem">Dog Water Intake</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem">Cat Age Calculator</a>
+          <a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+          <a href="cat-water.html" role="menuitem" class="active">Cat Water Intake</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="food-cost.html" role="menuitem">Food Cost Calculator</a>
+          <a href="pet-insurance.html" role="menuitem">Pet Insurance Cost</a>
+        </div>
+      </li>
+      <li role="none"><a href="../blog/" role="menuitem">Blog</a></li>
+      <li role="none"><a href="../about.html" role="menuitem">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a> &rsaquo; <a href="../index.html#calculators">Cat Calculators</a> &rsaquo; <span>Cat Water Intake Calculator</span>
+  </nav>
+
+  <div class="calc-header">
+    <h1>🐈 Cat Water Intake Calculator</h1>
+    <p class="calc-subtitle">Cats are desert-evolved animals with a naturally low thirst drive. Calculate how much water your cat truly needs — and learn how to prevent dehydration-related kidney problems.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="calc-layout">
+    <div class="calc-main">
+      <div class="calc-card" id="calc-card">
+        <div class="calc-form">
+          <div class="form-group">
+            <label for="catWeight">Your Cat's Weight</label>
+            <div class="input-with-unit">
+              <input type="number" id="catWeight" placeholder="e.g. 4.5" min="0.5" max="20" step="0.1">
+              <div class="unit-toggle" id="weightUnit">
+                <button class="unit-btn active" data-unit="kg">kg</button>
+                <button class="unit-btn" data-unit="lbs">lbs</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="dietType">Diet Type</label>
+            <select id="dietType">
+              <option value="dry">Dry Kibble (low moisture ~10%)</option>
+              <option value="wet">Wet / Canned Food (high moisture ~78%)</option>
+              <option value="mixed" selected>Mixed Diet (kibble + wet food)</option>
+              <option value="raw">Raw / Fresh Food (~70% moisture)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="lifestyle">Lifestyle</label>
+            <select id="lifestyle">
+              <option value="indoor" selected>Indoor Only</option>
+              <option value="outdoor">Outdoor / Indoor-Outdoor</option>
+              <option value="senior">Senior Cat (10+ years)</option>
+              <option value="kitten">Kitten (under 1 year)</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary btn-block btn-lg" onclick="calculateWater()" id="calcBtn">💧 Calculate Water Needs</button>
+        </div>
+
+        <div id="waterResult" style="display:none;"></div>
+      </div>
+
+      <!-- Ad Slot: In-Content (Hidden by default) -->
+      <div class="ad-slot" id="ad-in-content"></div>
+
+      <!-- AI Suggestions -->
+      <div class="ai-suggestions" id="ai-suggestions" style="display:none;"></div>
+    </div>
+
+    <div class="calc-sidebar">
+      <!-- Ad Slot: Sidebar (Hidden by default) -->
+      <div class="ad-slot ad-sidebar" id="ad-sidebar"></div>
+
+      <div class="sidebar-card">
+        <h4>Other Cat Calculators</h4>
+        <ul>
+          <li><a href="cat-age.html">Cat Age Calculator</a></li>
+          <li><a href="cat-calorie.html">Cat Calorie Calculator</a></li>
+          <li><a href="cat-pregnancy.html">Cat Pregnancy Calculator</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Why does my cat drink so little water?</button>
+        <div class="faq-answer"><p>Cats evolved from desert-dwelling ancestors and naturally have a low thirst drive. In the wild, cats get most of their water from prey (which is ~70% water). A cat eating dry kibble (only ~10% moisture) may not drink enough to compensate, putting them at risk for chronic dehydration and kidney disease — the leading cause of death in older cats. This is why many veterinarians recommend incorporating wet food into a cat's diet. If your cat drinks very little, try a pet water fountain (cats prefer moving water), place multiple water bowls around the house, and keep water separate from their food bowl.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How can I tell if my cat is dehydrated?</button>
+        <div class="faq-answer"><p>The easiest at-home test is the skin tent test: gently pinch the skin between your cat's shoulder blades, pull it up slightly, and release. In a well-hydrated cat, the skin should snap back immediately. If it stays tented or returns slowly, your cat may be dehydrated. Other signs include: dry or sticky gums, sunken eyes, lethargy, decreased appetite, and constipation. If your cat shows multiple signs, offer fresh water and wet food. If symptoms don't improve within a few hours, see your vet — dehydration can lead to serious complications in cats.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is it normal for my cat to drink a lot of water?</button>
+        <div class="faq-answer"><p>Excessive drinking (polydipsia) — defined as more than 100ml per kg of body weight per day — can be a sign of underlying health conditions in cats, including: chronic kidney disease, diabetes mellitus, hyperthyroidism, or a urinary tract infection. If your cat suddenly starts drinking significantly more water than usual (more than the amount our calculator shows for their diet type), make an appointment with your veterinarian for blood work and a urinalysis. Early detection of these conditions dramatically improves treatment outcomes.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="container">
+  <div class="cta-section">
+    <h2>Check Your Cat's Ideal Weight</h2>
+    <p>Proper hydration goes hand-in-hand with proper nutrition. Use our Cat Calorie Calculator to ensure your cat is eating the right amount for their ideal weight.</p>
+    <a href="cat-calorie.html" class="btn btn-lg">Try Cat Calorie Calculator →</a>
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="../index.html" class="footer-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+      <p>Free, science-backed pet calculators with AI-powered health insights. Helping pet parents make informed decisions — no signup, no tracking, always free.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <ul>
+        <li><a href="dog-age.html">Dog Age Calculator</a></li>
+        <li><a href="cat-age.html">Cat Age Calculator</a></li>
+        <li><a href="dog-calorie.html">Dog Calorie Calculator</a></li>
+        <li><a href="cat-calorie.html">Cat Calorie Calculator</a></li>
+        <li><a href="puppy-weight.html">Puppy Weight Predictor</a></li>
+        <li><a href="dog-pregnancy.html">Dog Pregnancy Calculator</a></li>
+        <li><a href="cat-pregnancy.html">Cat Pregnancy Calculator</a></li>
+        <li><a href="pet-bmi.html">Pet BMI & Ideal Weight</a></li>
+        <li><a href="food-cost.html">Food Cost Calculator</a></li>
+        <li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="../blog/">Pet Care Blog</a></li>
+        <li><a href="../about.html">About Us</a></li>
+        <li><a href="../privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 PetCalcHub. All calculators are for informational purposes only and do not replace professional veterinary advice. Always consult your veterinarian for health concerns. <a href="../privacy.html">Medical Disclaimer</a></p>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+// Weight unit toggle
+(function() {
+  const btns = document.querySelectorAll('#weightUnit .unit-btn');
+  btns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      btns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+})();
+
+function calculateWater() {
+  const weightInput = parseFloat(document.getElementById('catWeight').value);
+  if (!weightInput || weightInput <= 0) {
+    alert('Please enter a valid weight for your cat.');
+    return;
+  }
+
+  const weightUnit = document.querySelector('#weightUnit .unit-btn.active').dataset.unit;
+  const weightKg = weightUnit === 'lbs' ? weightInput * 0.453592 : weightInput;
+  const weightLbs = weightUnit === 'kg' ? weightInput * 2.20462 : weightInput;
+
+  const dietType = document.getElementById('dietType').value;
+  const lifestyle = document.getElementById('lifestyle').value;
+
+  // Cats need 40-60ml per kg per day (veterinary standard)
+  let baseMlPerKg = 50;
+
+  // Diet adjustment
+  const dietMultiplier = {
+    'dry': 1.3,    // Dry only — cat needs significantly more drinking water
+    'wet': 0.45,   // Canned — ~78% moisture
+    'mixed': 0.80, // Mixed
+    'raw': 0.50    // Raw — ~70% moisture
+  };
+  const dietFactor = dietMultiplier[dietType] || 1.0;
+
+  // Lifestyle adjustment
+  const lifestyleMultiplier = {
+    'indoor': 0.9,
+    'outdoor': 1.15,
+    'senior': 1.1,   // Senior cats benefit from more hydration for kidney health
+    'kitten': 1.2     // Growing kittens have higher metabolic rate
+  };
+  const lifestyleFactor = lifestyleMultiplier[lifestyle] || 1.0;
+
+  const totalMl = Math.round(weightKg * baseMlPerKg * dietFactor * lifestyleFactor);
+  const totalCups = (totalMl / 236.6).toFixed(1);
+  const totalOz = (totalMl / 29.574).toFixed(1);
+
+  const dietLabels = {
+    'dry': 'Dry Kibble (low moisture)',
+    'wet': 'Wet / Canned Food (high moisture)',
+    'mixed': 'Mixed Diet',
+    'raw': 'Raw / Fresh Food'
+  };
+  const lifestyleLabels = {
+    'indoor': 'Indoor Only',
+    'outdoor': 'Outdoor / Indoor-Outdoor',
+    'senior': 'Senior Cat (10+ years)',
+    'kitten': 'Kitten (under 1 year)'
+  };
+
+  let hydrationTip = '';
+  if (dietType === 'dry') {
+    hydrationTip = 'Cats on dry-only diets are at higher risk for chronic dehydration and kidney issues. Consider adding wet food to their diet or investing in a cat water fountain — cats instinctively prefer moving water.';
+  } else if (lifestyle === 'senior') {
+    hydrationTip = 'Senior cats are prone to kidney disease. Ensure fresh water is always available and consider a water fountain to encourage drinking. Annual blood work is strongly recommended for cats 10+.';
+  }
+
+  const resultEl = document.getElementById('waterResult');
+  resultEl.style.display = 'block';
+  resultEl.innerHTML = `
+    <div class="result-box">
+      <h3>💧 Daily Water Needs</h3>
+      <div class="result-value">${totalMl} <span class="result-unit">ml / day</span></div>
+      <div class="result-breakdown">
+        <div class="breakdown-item"><span class="breakdown-label">In Cups</span><span class="breakdown-value">${totalCups} cups</span></div>
+        <div class="breakdown-item"><span class="breakdown-label">In Fluid Ounces</span><span class="breakdown-value">${totalOz} fl oz</span></div>
+      </div>
+      <p class="result-note">Based on <strong>${weightKg.toFixed(1)} kg</strong> (${weightLbs.toFixed(1)} lbs) body weight<br>
+      Diet: ${dietLabels[dietType]} &bull; Lifestyle: ${lifestyleLabels[lifestyle]}</p>
+      ${hydrationTip ? `<p class="result-tip" style="margin-top:.75rem;padding:.75rem;background:var(--primary-50);border-radius:var(--radius-md);font-size:.9rem;">💡 ${hydrationTip}</p>` : ''}
+    </div>
+  `;
+
+  scrollToResults();
+
+  // AI Suggestions
+  displayAISuggestions('catWater', 'default', {
+    weight: weightKg, unit: 'kg'
+  });
+}
+</script>
+</body>
+</html>

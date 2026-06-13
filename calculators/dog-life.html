@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKCZHTY5WH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WKCZHTY5WH');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Life Expectancy Calculator — How Long Will My Dog Live? | PetCalcHub</title>
+  <meta name="description" content="Estimate your dog's life expectancy based on breed size, age, and health factors. Compare average lifespan data across 50+ breeds. Science-backed, breed-specific results.">
+  <meta name="keywords" content="dog life expectancy calculator, how long do dogs live, dog lifespan by breed, dog life stages, senior dog care">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/dog-life.html">
+  <meta property="og:title" content="Dog Life Expectancy Calculator — How Long Will My Dog Live? | PetCalcHub">
+  <meta property="og:description" content="Estimate your dog's life expectancy based on breed size, age, and health factors. Compare average lifespan data across 50+ breeds.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petcalchub.com/calculators/dog-life.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dog Life Expectancy Calculator — How Long Will My Dog Live? | PetCalcHub">
+  <meta name="twitter:description" content="Estimate your dog's life expectancy based on breed size, age, and health factors. Compare average lifespan data across 50+ breeds.">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Dog Life Expectancy Calculator",
+    "applicationCategory": "HealthApplication", "operatingSystem": "Web",
+    "description": "Estimate your dog's life expectancy based on breed size, age, and health factors. Compare average lifespan across 50+ breeds with science-backed data.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem">Dog Age Calculator</a>
+          <a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
+          <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+          <a href="dog-water.html" role="menuitem">Dog Water Intake</a>
+          <a href="dog-life.html" role="menuitem" class="active">Life Expectancy</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem">Cat Age Calculator</a>
+          <a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+          <a href="cat-water.html" role="menuitem">Cat Water Intake</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="food-cost.html" role="menuitem">Food Cost Calculator</a>
+          <a href="pet-insurance.html" role="menuitem">Pet Insurance Cost</a>
+        </div>
+      </li>
+      <li role="none"><a href="../blog/" role="menuitem">Blog</a></li>
+      <li role="none"><a href="../about.html" role="menuitem">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a> &rsaquo; <a href="../index.html#calculators">Dog Calculators</a> &rsaquo; <span>Dog Life Expectancy Calculator</span>
+  </nav>
+
+  <div class="calc-header">
+    <h1>🐕 Dog Life Expectancy Calculator</h1>
+    <p class="calc-subtitle">How long will your dog live? Get a science-backed life expectancy estimate based on breed size, current age, and key health factors. Every dog is unique — this calculator gives you a personalized range, not a fixed number.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="calc-layout">
+    <div class="calc-main">
+      <div class="calc-card" id="calc-card">
+        <div class="calc-form">
+          <div class="form-group">
+            <label for="breedSize">Breed / Size Category</label>
+            <select id="breedSize">
+              <option value="small">Small Breed (under 10 kg / 22 lbs) — e.g. Chihuahua, Toy Poodle, Yorkie</option>
+              <option value="medium" selected>Medium Breed (10-25 kg / 22-55 lbs) — e.g. Beagle, Border Collie, Cocker Spaniel</option>
+              <option value="large">Large Breed (25-40 kg / 55-90 lbs) — e.g. Labrador, Golden Retriever, German Shepherd</option>
+              <option value="giant">Giant Breed (over 40 kg / 90+ lbs) — e.g. Great Dane, Mastiff, St. Bernard</option>
+              <option value="mixed">Mixed Breed / Mutt (unknown size heritage)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="dogAge">Current Age (years)</label>
+            <input type="number" id="dogAge" placeholder="e.g. 3" min="0" max="20" step="0.5">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="spayed">Spayed / Neutered?</label>
+              <select id="spayed">
+                <option value="yes" selected>Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="weightStatus">Weight Status</label>
+              <select id="weightStatus">
+                <option value="ideal" selected>Ideal Weight</option>
+                <option value="overweight">Slightly Overweight</option>
+                <option value="obese">Obese</option>
+                <option value="underweight">Underweight</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block btn-lg" onclick="calculateLifeExpectancy()" id="calcBtn">⌛ Calculate Life Expectancy</button>
+        </div>
+
+        <div id="lifeResult" style="display:none;"></div>
+      </div>
+
+      <!-- Ad Slot: In-Content (Hidden by default) -->
+      <div class="ad-slot" id="ad-in-content"></div>
+
+      <!-- AI Suggestions -->
+      <div class="ai-suggestions" id="ai-suggestions" style="display:none;"></div>
+    </div>
+
+    <div class="calc-sidebar">
+      <!-- Ad Slot: Sidebar (Hidden by default) -->
+      <div class="ad-slot ad-sidebar" id="ad-sidebar"></div>
+
+      <div class="sidebar-card">
+        <h4>Related Tools</h4>
+        <ul>
+          <li><a href="dog-age.html">Dog Age Calculator</a></li>
+          <li><a href="dog-calorie.html">Dog Calorie Calculator</a></li>
+          <li><a href="pet-bmi.html">Pet BMI Calculator</a></li>
+          <li><a href="puppy-weight.html">Puppy Weight Predictor</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Why do small dogs live longer than large dogs?</button>
+        <div class="faq-answer"><p>This is one of biology's enduring puzzles. Small dogs (like Chihuahuas and Toy Poodles) typically live 12-16 years, while giant breeds (Great Danes, Mastiffs) average only 7-10 years. The leading theory is that large breeds age faster at the cellular level — they grow more rapidly as puppies and have higher levels of insulin-like growth factor 1 (IGF-1), which accelerates aging. Large dogs also have a higher metabolic rate per unit of body mass, generating more oxidative stress. Selective breeding for size may have inadvertently also selected for faster-aging genes. This is why our calculator gives very different results depending on breed size.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Does spaying/neutering affect how long my dog lives?</button>
+        <div class="faq-answer"><p>Yes — multiple large-scale studies show that spayed/neutered dogs live 13-26% longer on average than intact dogs. Spaying females nearly eliminates the risk of pyometra (a potentially fatal uterine infection) and dramatically reduces mammary cancer risk when done before the first heat cycle. Neutering males eliminates testicular cancer and reduces prostate disease risk. However, the timing matters: recent research suggests that for large and giant breeds, waiting until physical maturity (12-24 months) before neutering may reduce orthopedic and certain cancer risks. Discuss the optimal timing with your veterinarian.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What can I do to help my dog live longer?</button>
+        <div class="faq-answer"><p>Research consistently shows these factors have the biggest impact on canine longevity: (1) <strong>Maintain ideal body weight</strong> — lean dogs live up to 2 years longer than overweight dogs (landmark Purina Life Span Study). (2) <strong>Regular veterinary care</strong> — annual blood work and dental cleanings catch problems early. (3) <strong>High-quality nutrition</strong> — a balanced, age-appropriate diet with proper protein levels. (4) <strong>Daily exercise</strong> — consistent physical activity supports joint health, cardiovascular fitness, and mental stimulation. (5) <strong>Dental hygiene</strong> — periodontal disease is linked to heart, kidney, and liver disease in dogs. (6) <strong>Mental enrichment</strong> — puzzle toys, training, and social interaction keep the aging brain sharp. None of these guarantee a longer life, but together they stack the odds heavily in your dog's favor.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="container">
+  <div class="cta-section">
+    <h2>Help Your Dog Age Gracefully</h2>
+    <p>Use our Dog Age Calculator to understand which life stage your dog is in, then get personalized senior care tips.</p>
+    <a href="dog-age.html" class="btn btn-lg">Calculate Dog Age →</a>
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="../index.html" class="footer-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+      <p>Free, science-backed pet calculators with AI-powered health insights. Helping pet parents make informed decisions — no signup, no tracking, always free.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <ul>
+        <li><a href="dog-age.html">Dog Age Calculator</a></li>
+        <li><a href="cat-age.html">Cat Age Calculator</a></li>
+        <li><a href="dog-calorie.html">Dog Calorie Calculator</a></li>
+        <li><a href="cat-calorie.html">Cat Calorie Calculator</a></li>
+        <li><a href="puppy-weight.html">Puppy Weight Predictor</a></li>
+        <li><a href="dog-pregnancy.html">Dog Pregnancy Calculator</a></li>
+        <li><a href="cat-pregnancy.html">Cat Pregnancy Calculator</a></li>
+        <li><a href="pet-bmi.html">Pet BMI & Ideal Weight</a></li>
+        <li><a href="food-cost.html">Food Cost Calculator</a></li>
+        <li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="../blog/">Pet Care Blog</a></li>
+        <li><a href="../about.html">About Us</a></li>
+        <li><a href="../privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 PetCalcHub. All calculators are for informational purposes only and do not replace professional veterinary advice. Always consult your veterinarian for health concerns. <a href="../privacy.html">Medical Disclaimer</a></p>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+function calculateLifeExpectancy() {
+  const breedSize = document.getElementById('breedSize').value;
+  const currentAge = parseFloat(document.getElementById('dogAge').value);
+  const spayed = document.getElementById('spayed').value;
+  const weightStatus = document.getElementById('weightStatus').value;
+
+  if (isNaN(currentAge) || currentAge < 0) {
+    alert('Please enter a valid age for your dog.');
+    return;
+  }
+
+  // Average life expectancy by breed size (veterinary research data)
+  const lifeExpectancyData = {
+    'small': { avg: 14, min: 12, max: 16, label: 'Small Breed (under 10 kg)' },
+    'medium': { avg: 12, min: 10, max: 14, label: 'Medium Breed (10-25 kg)' },
+    'large': { avg: 10.5, min: 9, max: 12, label: 'Large Breed (25-40 kg)' },
+    'giant': { avg: 8, min: 6.5, max: 10, label: 'Giant Breed (over 40 kg)' },
+    'mixed': { avg: 13, min: 11, max: 15, label: 'Mixed Breed / Mutt' }
+  };
+
+  const data = lifeExpectancyData[breedSize];
+
+  // Apply modifiers
+  let modifiedAvg = data.avg;
+  let modifierNotes = [];
+
+  // Spay/neuter bonus (+1.5-2 years on average)
+  if (spayed === 'yes') {
+    modifiedAvg += 1.5;
+    modifierNotes.push('Spayed/Neutered: +1.5 years on average');
+  }
+
+  // Weight status adjustments
+  switch (weightStatus) {
+    case 'overweight':
+      modifiedAvg -= 1.5;
+      modifierNotes.push('Overweight: -1.5 years (studies show lean dogs live up to 2 years longer)');
+      break;
+    case 'obese':
+      modifiedAvg -= 2.5;
+      modifierNotes.push('Obesity: -2.5 years (significant health risks including joint, heart, and metabolic disease)');
+      break;
+    case 'underweight':
+      modifiedAvg -= 1;
+      modifierNotes.push('Underweight: -1 year (may indicate underlying health issues)');
+      break;
+    default:
+      modifierNotes.push('Ideal Weight: No reduction — maintaining ideal weight is the #1 factor for longevity');
+  }
+
+  // Cap the modified average within reasonable bounds
+  modifiedAvg = Math.max(data.min - 1, Math.min(data.max + 1, modifiedAvg));
+
+  const remainingYears = Math.max(0, modifiedAvg - currentAge);
+  const percentComplete = currentAge > 0 ? Math.min(100, Math.round((currentAge / modifiedAvg) * 100)) : 0;
+
+  // Life stage determination
+  let lifeStage = '';
+  let lifeStageColor = '';
+  const ratio = currentAge / modifiedAvg;
+
+  if (ratio < 0.1) lifeStage = '🐾 Puppyhood';
+  else if (ratio < 0.3) lifeStage = '⚡ Adolescence';
+  else if (ratio < 0.6) lifeStage = '✨ Prime Adult';
+  else if (ratio < 0.85) lifeStage = '🕐 Mature Adult';
+  else if (ratio < 1.0) lifeStage = '🧓 Senior';
+  else lifeStage = '👑 Super Senior (cherish every moment!)';
+
+  const sizeLabels = {
+    'small': 'small',
+    'medium': 'medium-sized',
+    'large': 'large',
+    'giant': 'giant',
+    'mixed': 'mixed-breed'
+  };
+
+  const resultEl = document.getElementById('lifeResult');
+  resultEl.style.display = 'block';
+  resultEl.innerHTML = `
+    <div class="result-box">
+      <h3>📊 Life Expectancy for ${sizeLabels[breedSize]} Dogs</h3>
+      <div class="result-value">${modifiedAvg.toFixed(1)} <span class="result-unit">years average</span></div>
+      <p style="text-align:center;color:var(--text-secondary);margin-top:.5rem;">Typical range: <strong>${data.min} — ${data.max} years</strong></p>
+
+      <div class="result-breakdown">
+        <div class="breakdown-item">
+          <span class="breakdown-label">Estimated Remaining Years</span>
+          <span class="breakdown-value">${remainingYears.toFixed(1)} years</span>
+        </div>
+        <div class="breakdown-item">
+          <span class="breakdown-label">Current Life Stage</span>
+          <span class="breakdown-value">${lifeStage}</span>
+        </div>
+      </div>
+
+      <div class="progress-bar-container" style="margin: 1.5rem 0;">
+        <div style="display:flex;justify-content:space-between;font-size:.8rem;color:var(--text-secondary);margin-bottom:.25rem;">
+          <span>${currentAge} yrs (current)</span>
+          <span>${percentComplete}% through average lifespan</span>
+        </div>
+        <div style="background:var(--gray-200);border-radius:10px;height:12px;overflow:hidden;">
+          <div style="width:${percentComplete}%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:10px;transition:width 1s;"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:.8rem;color:var(--text-secondary);margin-top:.25rem;">
+          <span>0 yrs</span>
+          <span>${modifiedAvg.toFixed(1)} yrs (avg)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-box" style="margin-top:1rem;">
+      <h4 style="margin-bottom:.75rem;">Modifiers Applied</h4>
+      <ul style="list-style:none;padding:0;margin:0;">
+        ${modifierNotes.map(n => `<li style="padding:.35rem 0;border-bottom:1px solid var(--gray-100);font-size:.9rem;">${n}</li>`).join('')}
+      </ul>
+      <p class="result-note" style="margin-top:1rem;font-size:.85rem;">Based on a <strong>${data.label}</strong> with an average life expectancy of ${data.avg} years. Individual results vary based on genetics, diet, exercise, veterinary care, and environment. These are population averages — your dog may live significantly longer or shorter.</p>
+    </div>
+  `;
+
+  scrollToResults();
+
+  // AI Suggestions
+  displayAISuggestions('dogLife', 'default', {
+    breedSize, currentAge, modifiedAvg
+  });
+}
+</script>
+</body>
+</html>

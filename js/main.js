@@ -375,6 +375,69 @@ const AIEngine = {
           'Your target weight is approximately ' + idealWeight + ' — commit to monthly vet weigh-ins for accountability.'
         ]
       };
+    },
+    dogWater: {
+      default: function(params) {
+        const { weight, unit, activeMinutes } = params;
+        const weightKg = unit === 'lbs' ? weight / 2.20462 : weight;
+        const baseNeed = weightKg * 50;
+        const activeBonus = activeMinutes > 60 ? 200 : 0;
+        return {
+          title: 'Keep Your Dog Hydrated & Healthy',
+          items: [
+            `Your dog needs approximately ${Math.round((baseNeed + activeBonus) / 100) / 10} cups of water daily. Monitor intake during hot weather and after exercise.`,
+            'Dogs on dry kibble need more water than those on wet/canned food. Consider adding water to dry food.',
+            'Place multiple water bowls around the house — some dogs prefer drinking away from their food area.',
+            'Clean water bowls daily — biofilm builds up quickly and can harbor harmful bacteria.',
+            'Watch for signs of dehydration: dry gums, loss of skin elasticity, lethargy. Offer water immediately if noticed.'
+          ]
+        };
+      }
+    },
+    catWater: {
+      default: function(params) {
+        const { weight, unit } = params;
+        const weightKg = unit === 'lbs' ? weight / 2.20462 : weight;
+        return {
+          title: 'Cats Need Encouragement to Drink',
+          items: [
+            `Your cat needs about ${Math.round(weightKg * 40 / 100) / 10} cups of water daily. Cats have a low thirst drive — they evolved as desert animals.`,
+            'Feed wet/canned food to increase water intake — a cat on 100% dry food is mildly dehydrated 24/7.',
+            'Use a cat fountain — running water entices many cats to drink more. Most cats prefer moving water.',
+            'Place water bowls AWAY from food and litter boxes — cats instinctively avoid water near food or waste areas.',
+            'Flavor the water with a splash of tuna juice or low-sodium broth to encourage drinking.'
+          ]
+        };
+      }
+    },
+    dogLife: {
+      default: function(params) {
+        return {
+          title: 'Maximize Your Dog\'s Lifespan',
+          items: [
+            'Keep your dog at ideal weight — studies show lean dogs live 1.8-2.5 years longer than overweight dogs.',
+            'Prioritize dental care — periodontal disease is linked to heart, liver, and kidney disease in dogs.',
+            'Exercise daily but avoid "weekend warrior" syndrome — consistent moderate exercise is better than sporadic intense activity.',
+            'Feed a high-quality diet appropriate for your dog\'s life stage. Nutrition is the #1 factor you can control for longevity.',
+            'Build a relationship with a trusted vet — preventive care catches issues before they become expensive, life-threatening problems.'
+          ]
+        };
+      }
+    },
+    petInsurance: {
+      default: function(params) {
+        const { hasCondition } = params;
+        return {
+          title: 'Make Informed Pet Insurance Decisions',
+          items: [
+            'Enroll early — premiums are lower for young, healthy pets, and pre-existing conditions are never covered.',
+            'Choose annual limit over per-incident limit — one serious accident can exceed per-incident caps quickly.',
+            hasCondition ? 'Since your pet has a pre-existing condition, look for insurers who cover curable conditions after 12 months symptom-free.' : 'Compare deductibles: higher deductible = lower premium but more out-of-pocket costs when you file a claim.',
+            'Check if the plan covers hereditary/congenital conditions — important for purebred dogs.',
+            'Read the fine print on "wellness" add-ons — some are just prepaid vet visits at retail prices, not real insurance.'
+          ]
+        };
+      }
     }
   },
 
@@ -468,10 +531,14 @@ function formatDate(date) {
 
 // --- Scroll to results ---
 function scrollToResults() {
-  const resultEl = document.getElementById('calc-results');
-  if (resultEl) {
-    setTimeout(() => {
-      resultEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 100);
+  const resultIds = ['ageResult', 'calorieResult', 'pregResult', 'toxResult', 'bmiResult', 'costResult', 'weightResult'];
+  for (const id of resultIds) {
+    const el = document.getElementById(id);
+    if (el && el.style.display !== 'none' && el.innerHTML.trim() !== '') {
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+      return;
+    }
   }
 }
