@@ -240,7 +240,10 @@ function calculateDogCalories() {
   if (WeightUnit.current === 'lbs') weight = weight / 2.20462; // convert to kg
 
   const rer = 70 * Math.pow(weight, 0.75);
-  const multipliers = {
+  const activityLevel = document.getElementById('dogActivity').value;
+  
+  // DER multipliers by life stage (base values)
+  const lifeStageMultipliers = {
     weight_loss: 1.0, adult_neutered: 1.6, adult_intact: 1.8, senior: 1.4,
     puppy_young: 3.0, puppy_older: 2.0, active: 2.5, pregnant: 2.0, nursing: 5.0
   };
@@ -250,12 +253,18 @@ function calculateDogCalories() {
     active: 'Active/Working', pregnant: 'Pregnant', nursing: 'Nursing'
   };
 
-  const multiplier = multipliers[lifeStage] || 1.6;
+  // Activity level adjustment factors
+  const activityAdjustments = { low: 0.8, moderate: 1.0, high: 1.2 };
+  const activityFactor = activityAdjustments[activityLevel] || 1.0;
+
+  const baseMultiplier = lifeStageMultipliers[lifeStage] || 1.6;
+  const multiplier = baseMultiplier * activityFactor;
   const der = rer * multiplier;
   const kcalPerCup = 380; // average dry kibble
   const cupsPerDay = der / kcalPerCup;
 
   const weightDisplay = WeightUnit.current === 'lbs' ? (weight * 2.20462).toFixed(1) + ' lbs (' + weight.toFixed(1) + ' kg)' : weight.toFixed(1) + ' kg (' + (weight * 2.20462).toFixed(1) + ' lbs)';
+  const activityLabels = { low: 'Low', moderate: 'Moderate', high: 'High' };
 
   document.getElementById('calorieResult').style.display = 'block';
   const resultColor = lifeStage === 'weight_loss' ? 'warning' : 'primary';
@@ -266,7 +275,9 @@ function calculateDogCalories() {
       <div class="result-details">
         <dl>
           <dt>Weight</dt><dd>${weightDisplay}</dd>
-          <dt>Life Stage</dt><dd>${labels[lifeStage]} (DER Factor: ${multiplier}×)</dd>
+          <dt>Life Stage</dt><dd>${labels[lifeStage]}</dd>
+          <dt>Activity Level</dt><dd>${activityLabels[activityLevel]} (adjustment: ${activityFactor}×)</dd>
+          <dt>DER Factor (Total)</dt><dd>${multiplier.toFixed(2)}× RER</dd>
           <dt>Resting Energy (RER)</dt><dd>${Math.round(rer)} kcal/day</dd>
           <dt>Approximate Dry Food</dt><dd>~${cupsPerDay.toFixed(1)} cups/day (at 380 kcal/cup)</dd>
           <dt>Per Meal (2 meals/day)</dt><dd>~${(cupsPerDay / 2).toFixed(1)} cups per meal</dd>

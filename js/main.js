@@ -378,19 +378,17 @@ const AIEngine = {
     },
     dogWater: {
       default: function(params) {
-        const { weight, unit, activeMinutes } = params;
-        const weightKg = unit === 'lbs' ? weight / 2.20462 : weight;
-        const baseNeed = weightKg * 50;
-        const activeBonus = activeMinutes > 60 ? 200 : 0;
+        const { weightKg, weightLbs, totalMl, totalCups, dietType, activityLevel } = params;
+        const tips = [
+          `A ${weightLbs.toFixed(1)} lb dog needs ~${totalCups} cups of water daily.`,
+          'Dogs eating dry food need more water than those on wet/canned food.',
+          'Place multiple water bowls around the house — some dogs prefer drinking away from their food area.',
+          'Clean water bowls daily — biofilm builds up quickly and can harbor harmful bacteria.',
+          'Watch for signs of dehydration: dry gums, loss of skin elasticity, lethargy. Offer water immediately if noticed.'
+        ];
         return {
           title: 'Keep Your Dog Hydrated & Healthy',
-          items: [
-            `Your dog needs approximately ${Math.round((baseNeed + activeBonus) / 100) / 10} cups of water daily. Monitor intake during hot weather and after exercise.`,
-            'Dogs on dry kibble need more water than those on wet/canned food. Consider adding water to dry food.',
-            'Place multiple water bowls around the house — some dogs prefer drinking away from their food area.',
-            'Clean water bowls daily — biofilm builds up quickly and can harbor harmful bacteria.',
-            'Watch for signs of dehydration: dry gums, loss of skin elasticity, lethargy. Offer water immediately if noticed.'
-          ]
+          items: tips
         };
       }
     },

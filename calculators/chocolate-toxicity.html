@@ -174,13 +174,13 @@
             <table class="data-table">
               <thead><tr><th>Chocolate Type</th><th>Theobromine (mg/oz)</th><th>Risk Level (50 lb dog, 3 oz)</th></tr></thead>
               <tbody>
-                <tr><td>White Chocolate</td><td>~0.25</td><td><span class="tag tag-green">Very Low</span></td></tr>
+                <tr><td>White Chocolate</td><td>~8</td><td><span class="tag tag-green">Very Low</span></td></tr>
                 <tr><td>Milk Chocolate</td><td>~44</td><td><span class="tag tag-yellow">Low-Moderate</span></td></tr>
-                <tr><td>Semi-Sweet Chips</td><td>~170</td><td><span class="tag tag-yellow">Moderate</span></td></tr>
-                <tr><td>Dark Chocolate (60-70%)</td><td>~210</td><td><span class="tag tag-red">High</span></td></tr>
+                <tr><td>Semi-Sweet Chips</td><td>~175</td><td><span class="tag tag-yellow">Moderate</span></td></tr>
+                <tr><td>Dark Chocolate (60-70%)</td><td>~210</td><td><span class="tag tag-orange">High</span></td></tr>
                 <tr><td>Dark Chocolate (85%+)</td><td>~300</td><td><span class="tag tag-red">High</span></td></tr>
                 <tr><td>Baking Chocolate</td><td>~450</td><td><span class="tag tag-red">Severe</span></td></tr>
-                <tr><td>Cocoa Powder</td><td>~700</td><td><span class="tag tag-red">Severe</span></td></tr>
+                <tr><td>Cocoa Powder</td><td>~735</td><td><span class="tag tag-red">Severe</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -231,7 +231,16 @@ function calculateToxicity() {
 
   if (WeightUnit.current === 'lbs') weight = weight / 2.20462;
 
-  const theobrominePerOz = { white: 0.25, milk: 44, dark: 210, baking: 450, cocoa: 700, semisweet: 170 };
+  // Theobromine content per oz (mg/oz) - veterinary accurate values
+  // Source: Merck Veterinary Manual, ASPCA Poison Control
+  const theobrominePerOz = { 
+    white: 8,       // ~0.3 mg/g, very low but not zero
+    milk: 44,       // ~1.5 mg/g 
+    dark: 210,      // ~7.5 mg/g (60-70% cacao)
+    baking: 450,    // ~16 mg/g (unsweetened)
+    cocoa: 735,     // ~26 mg/g (dry powder)
+    semisweet: 175  // ~6 mg/g (chocolate chips)
+  };
   const chocNames = { white: 'White Chocolate', milk: 'Milk Chocolate', dark: 'Dark Chocolate', baking: 'Baking Chocolate', cocoa: 'Cocoa Powder', semisweet: 'Semi-Sweet Chocolate' };
 
   const totalTheobromine = theobrominePerOz[chocType] * amountOz;

@@ -46,7 +46,7 @@
     <ul class="nav-links" id="navLinks" role="menubar">
       <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
       <li class="nav-dropdown" role="none">
-        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐕 Dogs</a>
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐕 Dogs</a>
         <div class="nav-dropdown-menu" role="menu">
           <a href="dog-age.html" role="menuitem">Dog Age Calculator</a>
           <a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
@@ -54,10 +54,11 @@
           <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
           <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
           <a href="dog-water.html" role="menuitem" class="active">Dog Water Intake</a>
+          <a href="dog-life.html" role="menuitem">Life Expectancy</a>
         </div>
       </li>
       <li class="nav-dropdown" role="none">
-        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐈 Cats</a>
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐈 Cats</a>
         <div class="nav-dropdown-menu" role="menu">
           <a href="cat-age.html" role="menuitem">Cat Age Calculator</a>
           <a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
@@ -66,176 +67,181 @@
         </div>
       </li>
       <li class="nav-dropdown" role="none">
-        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">❤️ Health</a>
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">❤️ Health</a>
         <div class="nav-dropdown-menu" role="menu">
           <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
-          <a href="food-cost.html" role="menuitem">Food Cost Calculator</a>
+          <a href="food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
           <a href="pet-insurance.html" role="menuitem">Pet Insurance Cost</a>
         </div>
       </li>
-      <li role="none"><a href="../blog/" role="menuitem">Blog</a></li>
-      <li role="none"><a href="../about.html" role="menuitem">About</a></li>
     </ul>
   </div>
 </nav>
 
-<main>
-<div class="container">
-  <nav class="breadcrumb">
-    <a href="../index.html">Home</a> &rsaquo; <a href="../index.html#calculators">Dog Calculators</a> &rsaquo; <span>Dog Water Intake Calculator</span>
-  </nav>
+<main class="calc-page">
+  <div class="container">
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span class="separator">›</span>
+      <span>Dog Water Intake Calculator</span>
+    </nav>
 
-  <div class="calc-header">
-    <h1>🐕 Dog Water Intake Calculator</h1>
-    <p class="calc-subtitle">Calculate how much water your dog needs each day based on weight, diet, and activity level — backed by veterinary hydration guidelines.</p>
-  </div>
-</div>
+    <div class="calc-layout">
+      <div class="calc-main">
+        <div class="calc-header">
+          <h1>Dog Water Intake Calculator</h1>
+          <p class="calc-desc">Calculate how much water your dog needs each day based on weight, diet, and activity level — backed by veterinary hydration guidelines.</p>
+        </div>
 
-<div class="container">
-  <div class="calc-layout">
-    <div class="calc-main">
-      <div class="calc-card" id="calc-card">
-        <div class="calc-form">
+        <div class="calc-card" id="calc-card">
+          <h2>💧 Enter Your Dog's Details</h2>
+
+          <div id="unitToggle" class="unit-toggle">
+            <button class="active" data-unit="lbs">Pounds (lbs)</button>
+            <button data-unit="kg">Kilograms (kg)</button>
+          </div>
+
           <div class="form-group">
-            <label for="dogWeight">Your Dog's Weight</label>
-            <div class="input-with-unit">
-              <input type="number" id="dogWeight" placeholder="e.g. 20" min="1" max="200" step="0.1">
-              <div class="unit-toggle" id="weightUnit">
-                <button class="unit-btn active" data-unit="kg">kg</button>
-                <button class="unit-btn" data-unit="lbs">lbs</button>
-              </div>
+            <label class="form-label" for="dogWeight">Dog's Weight</label>
+            <div class="input-group">
+              <input type="number" id="dogWeight" class="form-input" placeholder="e.g. 50" min="1" max="200" step="0.1" required>
+              <span class="input-group-append" id="weightUnit">lbs</span>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="dietType">Diet Type</label>
-            <select id="dietType">
-              <option value="dry">Dry Kibble (low moisture ~10%)</option>
-              <option value="wet">Wet / Canned Food (high moisture ~75%)</option>
-              <option value="mixed" selected>Mixed Diet (kibble + wet food)</option>
-              <option value="raw">Raw / Fresh Food (~70% moisture)</option>
-            </select>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="dietType">Diet Type</label>
+              <select id="dietType" class="form-select">
+                <option value="dry">Dry Kibble (low moisture ~10%)</option>
+                <option value="wet">Wet / Canned Food (high moisture ~75%)</option>
+                <option value="mixed" selected>Mixed Diet (kibble + wet food)</option>
+                <option value="raw">Raw / Fresh Food (~70% moisture)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="activityLevel">Activity Level</label>
+              <select id="activityLevel" class="form-select">
+                <option value="low">Low (senior, couch potato)</option>
+                <option value="moderate" selected>Moderate (1 walk per day)</option>
+                <option value="high">High (2+ walks, active play)</option>
+                <option value="very_high">Very High (working dog, daily running)</option>
+              </select>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="activityLevel">Activity Level</label>
-            <select id="activityLevel">
-              <option value="low">Low (senior, couch potato)</option>
-              <option value="moderate" selected>Moderate (1 walk per day)</option>
-              <option value="high">High (2+ walks, active play)</option>
-              <option value="very_high">Very High (working dog, daily running)</option>
-            </select>
-          </div>
+          <button class="btn btn-primary btn-lg" onclick="calculateWater()" style="width:100%; margin-top:0.5rem;">
+            Calculate Water Needs →
+          </button>
 
-          <button class="btn btn-primary btn-block btn-lg" onclick="calculateWater()" id="calcBtn">💧 Calculate Water Needs</button>
+          <div id="waterResult" style="display:none;"></div>
         </div>
 
-        <div id="waterResult" style="display:none;"></div>
+        <div id="ai-suggestions"></div>
+
+        <div class="ad-slot" id="ad-in-content">
+          <div class="ad-slot-label">Advertisement</div>
+          <div class="ad-slot-inner">Ad space reserved</div>
+        </div>
+
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <button class="faq-question">How do I know if my dog is dehydrated?</button>
+            <div class="faq-answer">
+              <p>Key signs of dehydration in dogs include: dry or sticky gums, loss of skin elasticity (gently pinch the skin between the shoulder blades — if it doesn't snap back quickly, dehydration may be present), sunken eyes, lethargy, and excessive panting. A well-hydrated dog's gums should be moist and pink. If your dog shows multiple dehydration signs, provide fresh water immediately and call your vet if symptoms persist. Severe dehydration is a medical emergency.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Can my dog drink too much water?</button>
+            <div class="faq-answer">
+              <p>Yes — excessive water intake (polydipsia) can indicate underlying health issues such as diabetes, kidney disease, Cushing's disease, or a urinary tract infection. Water intoxication (hyponatremia) is rare but can occur if a dog drinks extreme amounts in a short time, especially during pool play or after intense exercise. Symptoms include nausea, bloating, vomiting, lethargy, and in severe cases, seizures. If your dog is drinking significantly more than the calculated amount — especially more than 100ml per kg per day — consult your veterinarian.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Does my dog's diet affect how much water they need?</button>
+            <div class="faq-answer">
+              <p>Absolutely. Dogs eating dry kibble (only ~10% moisture) need significantly more drinking water than dogs on wet, raw, or fresh food diets (~70-75% moisture). A dog eating canned food gets most of their hydration from their meal and may drink noticeably less water — this is normal. This is why our calculator adjusts the recommended water intake based on diet type. If you recently switched your dog's food from dry to wet (or vice versa), expect their drinking habits to change accordingly.</p>
+            </div>
+          </div>
+        </section>
       </div>
 
-      <!-- Ad Slot: In-Content (Hidden by default) -->
-      <div class="ad-slot" id="ad-in-content"></div>
+      <aside class="calc-sidebar">
+        <div class="ad-sidebar" id="ad-sidebar">
+          <div class="ad-sidebar-label">Advertisement</div>
+          <div class="ad-sidebar-inner">Ad space reserved</div>
+        </div>
 
-      <!-- AI Suggestions -->
-      <div class="ai-suggestions" id="ai-suggestions" style="display:none;"></div>
-    </div>
-
-    <div class="calc-sidebar">
-      <!-- Ad Slot: Sidebar (Hidden by default) -->
-      <div class="ad-slot ad-sidebar" id="ad-sidebar"></div>
-
-      <div class="sidebar-card">
-        <h4>Other Dog Calculators</h4>
-        <ul>
-          <li><a href="dog-age.html">Dog Age Calculator</a></li>
-          <li><a href="dog-calorie.html">Dog Calorie Calculator</a></li>
-          <li><a href="puppy-weight.html">Puppy Weight Predictor</a></li>
-          <li><a href="dog-pregnancy.html">Dog Pregnancy Calculator</a></li>
-          <li><a href="chocolate-toxicity.html">Chocolate Toxicity Calculator</a></li>
-        </ul>
-      </div>
+        <div style="background:white; border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.75rem;">💡 Hydration Tips</h4>
+          <ul style="font-size:0.9rem; color:var(--text-secondary); padding-left:1.25rem; line-height:1.8;">
+            <li>Place multiple water bowls around the house</li>
+            <li>Clean bowls daily — biofilm builds up quickly</li>
+            <li>Use a pet fountain — many dogs prefer moving water</li>
+            <li>Add water to dry kibble for extra hydration</li>
+          </ul>
+        </div>
+      </aside>
     </div>
   </div>
-</div>
-
-<!-- FAQ Section -->
-<section class="faq-section">
-  <div class="container">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question">How do I know if my dog is dehydrated?</button>
-        <div class="faq-answer"><p>Key signs of dehydration in dogs include: dry or sticky gums, loss of skin elasticity (gently pinch the skin between the shoulder blades &mdash; if it doesn't snap back quickly, dehydration may be present), sunken eyes, lethargy, and excessive panting. A well-hydrated dog's gums should be moist and pink. If you press on the gum, the color should return within 1-2 seconds (capillary refill time). If your dog shows multiple dehydration signs, provide fresh water immediately and call your vet if symptoms persist. Severe dehydration is a medical emergency.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Can my dog drink too much water?</button>
-        <div class="faq-answer"><p>Yes &mdash; excessive water intake (polydipsia) can indicate underlying health issues such as diabetes, kidney disease, Cushing's disease, or a urinary tract infection. Water intoxication (hyponatremia) is rare but can occur if a dog drinks extreme amounts in a short time, especially during pool play or after intense exercise. Symptoms include nausea, bloating, vomiting, lethargy, and in severe cases, seizures. If your dog is drinking significantly more than the calculated amount &mdash; especially more than 100ml per kg per day &mdash; consult your veterinarian.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Does my dog's diet affect how much water they need?</button>
-        <div class="faq-answer"><p>Absolutely. Dogs eating dry kibble (only ~10% moisture) need significantly more drinking water than dogs on wet, raw, or fresh food diets (~70-75% moisture). A dog eating canned food gets most of their hydration from their meal and may drink noticeably less water &mdash; this is normal. This is why our calculator adjusts the recommended water intake based on diet type. If you recently switched your dog's food from dry to wet (or vice versa), expect their drinking habits to change accordingly.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<div class="container">
-  <div class="cta-section">
-    <h2>Calculate Your Dog's Calorie Needs Too</h2>
-    <p>Now that you know how much water your dog needs, make sure they're eating the right amount. Try our Dog Calorie Calculator for personalized feeding recommendations.</p>
-    <a href="dog-calorie.html" class="btn btn-lg">Try Dog Calorie Calculator →</a>
-  </div>
-</div>
 </main>
 
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="../index.html" class="footer-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
-      <p>Free, science-backed pet calculators with AI-powered health insights. Helping pet parents make informed decisions — no signup, no tracking, always free.</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+        <p>Free, science-backed pet calculators with AI-powered health insights.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="dog-age.html">Dog Age Calculator</a></li>
+          <li><a href="cat-age.html">Cat Age Calculator</a></li>
+          <li><a href="dog-calorie.html">Dog Calorie Calculator</a></li>
+          <li><a href="cat-calorie.html">Cat Calorie Calculator</a></li>
+          <li><a href="puppy-weight.html">Puppy Weight Predictor</a></li>
+          <li><a href="dog-pregnancy.html">Dog Pregnancy Calculator</a></li>
+          <li><a href="cat-pregnancy.html">Cat Pregnancy Calculator</a></li>
+          <li><a href="pet-bmi.html">Pet BMI & Ideal Weight</a></li>
+          <li><a href="food-cost.html">Food Cost Calculator</a></li>
+          <li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li>
+          <li><a href="dog-water.html">Dog Water Intake</a></li>
+          <li><a href="cat-water.html">Cat Water Intake</a></li>
+          <li><a href="dog-life.html">Life Expectancy</a></li>
+          <li><a href="pet-insurance.html">Pet Insurance Cost</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog/">Pet Care Blog</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../privacy.html#disclaimer">Medical Disclaimer</a></li>
+          <li><a href="../privacy.html#affiliate">Affiliate Disclosure</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Calculators</h4>
-      <ul>
-        <li><a href="dog-age.html">Dog Age Calculator</a></li>
-        <li><a href="cat-age.html">Cat Age Calculator</a></li>
-        <li><a href="dog-calorie.html">Dog Calorie Calculator</a></li>
-        <li><a href="cat-calorie.html">Cat Calorie Calculator</a></li>
-        <li><a href="puppy-weight.html">Puppy Weight Predictor</a></li>
-        <li><a href="dog-pregnancy.html">Dog Pregnancy Calculator</a></li>
-        <li><a href="cat-pregnancy.html">Cat Pregnancy Calculator</a></li>
-        <li><a href="pet-bmi.html">Pet BMI & Ideal Weight</a></li>
-        <li><a href="food-cost.html">Food Cost Calculator</a></li>
-        <li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <span>&copy; 2026 PetCalcHub. All rights reserved.</span>
+      <span>Estimates only. Consult your veterinarian.</span>
     </div>
-    <div class="footer-col">
-      <h4>Resources</h4>
-      <ul>
-        <li><a href="../blog/">Pet Care Blog</a></li>
-        <li><a href="../about.html">About Us</a></li>
-        <li><a href="../privacy.html">Privacy Policy</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2026 PetCalcHub. All calculators are for informational purposes only and do not replace professional veterinary advice. Always consult your veterinarian for health concerns. <a href="../privacy.html">Medical Disclaimer</a></p>
   </div>
 </footer>
 
 <script src="../js/main.js"></script>
 <script>
-// Weight unit toggle
-(function() {
-  const btns = document.querySelectorAll('#weightUnit .unit-btn');
-  btns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      btns.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
-})();
+WeightUnit.init('unitToggle');
+WeightUnit.onChange = function() {
+  document.getElementById('weightUnit').textContent = this.current;
+};
 
 function calculateWater() {
   const weightInput = parseFloat(document.getElementById('dogWeight').value);
@@ -245,8 +251,8 @@ function calculateWater() {
   }
 
   // Convert to kg if needed
-  const weightUnit = document.querySelector('#weightUnit .unit-btn.active').dataset.unit;
-  const weightKg = weightUnit === 'lbs' ? weightInput * 0.453592 : weightInput;
+  const weightUnit = WeightUnit.current;
+  const weightKg = weightUnit === 'lbs' ? weightInput / 2.20462 : weightInput;
   const weightLbs = weightUnit === 'kg' ? weightInput * 2.20462 : weightInput;
 
   const dietType = document.getElementById('dietType').value;
@@ -300,16 +306,19 @@ function calculateWater() {
   const resultEl = document.getElementById('waterResult');
   resultEl.style.display = 'block';
   resultEl.innerHTML = `
-    <div class="result-box">
-      <h3>💧 Daily Water Needs</h3>
-      <div class="result-value">${totalMl} <span class="result-unit">ml / day</span></div>
-      <div class="result-breakdown">
-        <div class="breakdown-item"><span class="breakdown-label">In Cups</span><span class="breakdown-value">${totalCups} cups</span></div>
-        <div class="breakdown-item"><span class="breakdown-label">In Fluid Ounces</span><span class="breakdown-value">${totalOz} fl oz</span></div>
+    <div class="result-box primary">
+      <div class="result-value">${totalMl} <span style="font-size:1rem;">ml / day</span></div>
+      <div class="result-label">Daily Water Needs</div>
+      <div class="result-details">
+        <dl>
+          <dt>Weight</dt><dd>${weightLbs.toFixed(1)} lbs (${weightKg.toFixed(1)} kg)</dd>
+          <dt>In Cups</dt><dd>~${totalCups} cups per day</dd>
+          <dt>In Fluid Ounces</dt><dd>~${totalOz} fl oz per day</dd>
+          <dt>Diet Type</dt><dd>${dietLabels[dietType]}</dd>
+          <dt>Activity Level</dt><dd>${activityLabels[activityLevel]}</dd>
+        </dl>
       </div>
-      <p class="result-note">Based on <strong>${weightKg.toFixed(1)} kg</strong> (${weightLbs.toFixed(1)} lbs) body weight<br>
-      Diet: ${dietLabels[dietType]} &bull; Activity: ${activityLabels[activityLevel]}</p>
-      ${hydrationTip ? `<p class="result-tip" style="margin-top:.75rem;padding:.75rem;background:var(--primary-50);border-radius:var(--radius-md);font-size:.9rem;">💡 ${hydrationTip}</p>` : ''}
+      ${hydrationTip ? '<div style="margin-top:0.75rem;padding:0.75rem;background:var(--primary-50);border-radius:var(--radius-sm);font-size:0.9rem;">💡 ' + hydrationTip + '</div>' : ''}
     </div>
   `;
 
@@ -317,7 +326,12 @@ function calculateWater() {
 
   // AI Suggestions
   displayAISuggestions('dogWater', 'default', {
-    weight: weightKg, unit: 'kg', activeMinutes: activityLevel === 'high' ? 90 : 60
+    weightKg: weightKg,
+    weightLbs: weightLbs,
+    totalMl: totalMl,
+    totalCups: totalCups,
+    dietType: dietType,
+    activityLevel: activityLevel
   });
 }
 </script>
