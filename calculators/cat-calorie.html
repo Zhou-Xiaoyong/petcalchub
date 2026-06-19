@@ -214,11 +214,26 @@ WeightUnit.onChange = function() { document.getElementById('weightUnit').textCon
 function calculateCatCalories() {
   let weight = parseFloat(document.getElementById('catWeight').value);
   const lifeStage = document.getElementById('catLifeStage').value;
+  const bcs = document.getElementById('catBCS').value;
   if (!weight || !lifeStage) { alert('Please enter weight and select life stage.'); return; }
 
   if (WeightUnit.current === 'lbs') weight = weight / 2.20462;
 
-  const rer = 70 * Math.pow(weight, 0.75);
+  // Adjust weight based on body condition
+  let adjustedWeight = weight;
+  let bcsNote = '';
+  if (bcs === 'overweight') {
+    adjustedWeight = weight * 0.85; // Target: 85% of current weight
+    bcsNote = ' (adjusted for overweight: using 85% of current weight as target)';
+  } else if (bcs === 'obese') {
+    adjustedWeight = weight * 0.75; // Target: 75% of current weight
+    bcsNote = ' (adjusted for obesity: using 75% of current weight as target)';
+  } else if (bcs === 'underweight') {
+    adjustedWeight = weight * 1.1; // Target: 110% of current weight
+    bcsNote = ' (adjusted for underweight: using 110% of current weight as target)';
+  }
+
+  const rer = 70 * Math.pow(adjustedWeight, 0.75);
   const multipliers = { kitten: 2.5, adult_neutered: 1.2, adult_intact: 1.4, senior: 1.1, weight_loss: 0.8, pregnant: 2.5 };
   const labels = { kitten: 'Kitten', adult_neutered: 'Adult (Neutered)', adult_intact: 'Adult (Intact)', senior: 'Senior', weight_loss: 'Weight Loss', pregnant: 'Pregnant/Nursing' };
   const der = rer * (multipliers[lifeStage] || 1.2);
@@ -230,9 +245,11 @@ function calculateCatCalories() {
       <div class="result-label">Daily Energy Requirement</div>
       <div class="result-details">
         <dl>
-          <dt>Weight</dt><dd>${weight.toFixed(1)} kg (${(weight * 2.20462).toFixed(1)} lbs)</dd>
+          <dt>Current Weight</dt><dd>${weight.toFixed(1)} kg (${(weight * 2.20462).toFixed(1)} lbs)</dd>
+          <dt>Body Condition</dt><dd>${bcs === 'ideal' ? 'Ideal (BCS 4-5)' : bcs === 'overweight' ? 'Overweight (BCS 6-7)' : bcs === 'underweight' ? 'Underweight (BCS 1-3)' : 'Obese (BCS 8-9)'}${bcsNote}</dd>
+          <dt>Target Weight</dt><dd>${adjustedWeight.toFixed(1)} kg (${(adjustedWeight * 2.20462).toFixed(1)} lbs)</dd>
           <dt>Life Stage</dt><dd>${labels[lifeStage]} (DER Factor: ${multipliers[lifeStage] || 1.2}×)</dd>
-          <dt>RER</dt><dd>${Math.round(rer)} kcal/day</dd>
+          <dt>RER (at target weight)</dt><dd>${Math.round(rer)} kcal/day</dd>
           <dt>Wet Food Estimate</dt><dd>~${(der / 120).toFixed(1)} cans/day (at 120 kcal/can)</dd>
           <dt>Dry Food Estimate</dt><dd>~${(der / 400).toFixed(2)} cups/day (at 400 kcal/cup)</dd>
           <dt>Treat Budget (10%)</dt><dd>Max ${Math.round(der * 0.1)} kcal/day from treats</dd>
