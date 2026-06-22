@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKCZHTY5WH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WKCZHTY5WH');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aquarium Calculator — Tank Volume, Stocking, Heater & Filter Guide | PetCalcHub</title>
+  <meta name="description" content="Calculate your aquarium volume, safe fish stocking levels, heater wattage, and filter flow rate. Complete aquarium planning tool for freshwater and saltwater tanks.">
+  <meta name="keywords" content="aquarium calculator, fish tank volume calculator, aquarium stocking calculator, fish tank heater size, aquarium filter flow rate, tank gallon calculator">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/aquarium-calculator.html">
+  <meta property="og:title" content="Aquarium Calculator — Tank Volume, Stocking, Heater & Filter Guide | PetCalcHub">
+  <meta property="og:description" content="Calculate your aquarium volume, safe fish stocking levels, heater wattage, and filter flow rate. Complete aquarium planning tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petcalchub.com/calculators/aquarium-calculator.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aquarium Calculator — Tank Volume, Stocking, Heater & Filter Guide | PetCalcHub">
+  <meta name="twitter:description" content="Calculate your aquarium volume, safe fish stocking levels, heater wattage, and filter flow rate. Complete aquarium planning tool.">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Aquarium Calculator",
+    "applicationCategory": "LifestyleApplication", "operatingSystem": "Web",
+    "description": "Calculate aquarium volume in gallons and liters, safe fish stocking levels, heater wattage requirements, and filter flow rates for freshwater and saltwater tanks.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem">Dog Age Calculator</a>
+          <a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
+          <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+          <a href="dog-water.html" role="menuitem">Dog Water Intake</a>
+          <a href="dog-life.html" role="menuitem">Life Expectancy</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem">Cat Age Calculator</a>
+          <a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+          <a href="cat-water.html" role="menuitem">Cat Water Intake</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
+          <a href="pet-insurance.html" role="menuitem">Pet Insurance Cost</a>
+          <a href="pet-travel-cost.html" role="menuitem">Pet Travel Cost</a>
+          <a href="pet-sitting-rate.html" role="menuitem">Pet Sitting Rate</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐠 Aquarium</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="aquarium-calculator.html" role="menuitem" class="active">Aquarium Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="calc-page">
+  <div class="container">
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span class="separator">›</span>
+      <span>Aquarium Calculator</span>
+    </nav>
+
+    <div class="calc-layout">
+      <div class="calc-main">
+        <div class="calc-header">
+          <h1>Aquarium Calculator</h1>
+          <p class="calc-desc">Calculate your fish tank volume, safe stocking levels, heater wattage, and filter flow requirements. Essential planning tool for freshwater and saltwater aquarium keepers.</p>
+        </div>
+
+        <div class="calc-card" id="calc-card">
+          <h2>🐠 Tank Dimensions</h2>
+
+          <div id="unitToggle" class="unit-toggle">
+            <button class="active" data-unit="in">Inches & Gallons</button>
+            <button data-unit="cm">Centimeters & Liters</button>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="tankLength">Length <span id="lenUnit">(inches)</span></label>
+              <input type="number" id="tankLength" class="form-input" placeholder="e.g. 36" min="4" max="240" step="0.5" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="tankWidth">Width / Depth <span id="widUnit">(inches)</span></label>
+              <input type="number" id="tankWidth" class="form-input" placeholder="e.g. 18" min="4" max="120" step="0.5" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="tankHeight">Height <span id="hgtUnit">(inches)</span></label>
+              <input type="number" id="tankHeight" class="form-input" placeholder="e.g. 16" min="4" max="120" step="0.5" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="tankType">Tank Type</label>
+              <select id="tankType" class="form-select">
+                <option value="freshwater">Freshwater (Tropical)</option>
+                <option value="coldwater">Coldwater (Goldfish, etc.)</option>
+                <option value="saltwater_fish">Saltwater — Fish Only (FOWLR)</option>
+                <option value="saltwater_reef">Saltwater — Reef Tank</option>
+                <option value="planted">Planted Tank (High-Tech)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="roomTemp">Room Temperature</label>
+              <select id="roomTemp" class="form-select">
+                <option value="65">Cool (60-65°F / 16-18°C)</option>
+                <option value="70" selected>Average (68-72°F / 20-22°C)</option>
+                <option value="75">Warm (73-77°F / 23-25°C)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="substrateDepth">Substrate Depth <span id="subUnit">(inches)</span></label>
+              <input type="number" id="substrateDepth" class="form-input" placeholder="e.g. 2" min="0" max="6" step="0.5" value="2">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="decorationFactor">Decoration Displacement</label>
+              <select id="decorationFactor" class="form-select">
+                <option value="5">Minimal (bare bottom)</option>
+                <option value="10" selected>Light (few rocks/wood)</option>
+                <option value="15">Moderate (standard aquascape)</option>
+                <option value="20">Heavy (large rocks, driftwood)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" onclick="calculateAquarium()" style="width:100%; margin-top:0.5rem;">
+            Calculate Aquarium Specs →
+          </button>
+
+          <div id="aquariumResult" style="display:none;"></div>
+        </div>
+
+        <div id="ai-suggestions"></div>
+
+        <div class="ad-slot" id="ad-in-content">
+          <div class="ad-slot-label">Advertisement</div>
+          <div class="ad-slot-inner">Ad space reserved</div>
+        </div>
+
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <button class="faq-question">How do I calculate aquarium volume?</button>
+            <div class="faq-answer">
+              <p>The formula is: Length × Width × Height (in inches) ÷ 231 = gallons (for rectangular tanks). For metric: Length × Width × Height (in cm) ÷ 1000 = liters. However, this gives you the theoretical volume of an empty tank. In practice, you lose volume to substrate (gravel/sand — typically 1-3 inches deep), decorations, equipment, and the fact that you never fill water to the very rim (leave ~1 inch gap). Our calculator accounts for all these factors to give you the actual usable water volume, which is what matters for stocking, dosing, and equipment sizing.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How many fish can I put in my tank?</button>
+            <div class="faq-answer">
+              <p>The outdated "1 inch of fish per gallon" rule doesn't account for fish body mass, swimming behavior, or bioload. Modern aquarists use the surface area method and bioload approach. Our calculator uses a tiered system: small community fish (tetras, rasboras) can be stocked at ~1" per gallon, medium fish (gouramis, angelfish) ~1" per 2 gallons, and large/high-bioload fish (goldfish, cichlids, plecos) ~1" per 3-5 gallons. Saltwater has stricter limits due to lower dissolved oxygen. Always stock gradually — add fish in small groups, wait 2-3 weeks between additions to let the biological filter adapt.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What size heater does my aquarium need?</button>
+            <div class="faq-answer">
+              <p>The basic rule is 3-5 watts per gallon, but this varies by room temperature and desired tank temperature. If your room is 68°F and you need 78°F (10°F increase), you need ~5 watts/gallon. If the room is already 75°F and you need 78°F, ~2.5 watts/gallon suffices. For tanks over 55 gallons, using two smaller heaters on opposite ends is better than one large heater — it provides more even heating and redundancy if one fails. Our calculator gives precise wattage based on your room temperature and tank type.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="calc-sidebar">
+        <div class="ad-sidebar" id="ad-sidebar">
+          <div class="ad-sidebar-label">Advertisement</div>
+          <div class="ad-sidebar-inner">Ad space reserved</div>
+        </div>
+
+        <div style="background:white; border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.75rem;">📐 Common Tank Sizes</h4>
+          <ul style="font-size:0.85rem; color:var(--text-secondary); padding-left:1.25rem; line-height:2;">
+            <li><strong>10 Gal:</strong> 20"×10"×12"</li>
+            <li><strong>20 Gal High:</strong> 24"×12"×16"</li>
+            <li><strong>20 Gal Long:</strong> 30"×12"×12"</li>
+            <li><strong>29 Gal:</strong> 30"×12"×18"</li>
+            <li><strong>40 Gal Breeder:</strong> 36"×18"×16"</li>
+            <li><strong>55 Gal:</strong> 48"×13"×20"</li>
+            <li><strong>75 Gal:</strong> 48"×18"×21"</li>
+            <li><strong>125 Gal:</strong> 72"×18"×22"</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+        <p>Free, science-backed pet calculators with AI-powered health insights.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="dog-age.html">Dog Age Calculator</a></li>
+          <li><a href="cat-age.html">Cat Age Calculator</a></li>
+          <li><a href="dog-calorie.html">Dog Calorie Calculator</a></li>
+          <li><a href="cat-calorie.html">Cat Calorie Calculator</a></li>
+          <li><a href="puppy-weight.html">Puppy Weight Predictor</a></li>
+          <li><a href="dog-pregnancy.html">Dog Pregnancy Calculator</a></li>
+          <li><a href="cat-pregnancy.html">Cat Pregnancy Calculator</a></li>
+          <li><a href="pet-bmi.html">Pet BMI & Ideal Weight</a></li>
+          <li><a href="food-cost.html">Food Cost Calculator</a></li>
+          <li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li>
+          <li><a href="dog-water.html">Dog Water Intake</a></li>
+          <li><a href="cat-water.html">Cat Water Intake</a></li>
+          <li><a href="dog-life.html">Life Expectancy</a></li>
+          <li><a href="pet-insurance.html">Pet Insurance Cost</a></li>
+          <li><a href="pet-travel-cost.html">Pet Travel Cost</a></li>
+          <li><a href="pet-sitting-rate.html">Pet Sitting Rate</a></li>
+          <li><a href="aquarium-calculator.html">Aquarium Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog/">Pet Care Blog</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../privacy.html#disclaimer">Medical Disclaimer</a></li>
+          <li><a href="../privacy.html#affiliate">Affiliate Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 PetCalcHub. All rights reserved.</span>
+      <span>Estimates only. Consult your veterinarian.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+let aquariumUnit = 'in';
+
+WeightUnit.init('unitToggle');
+WeightUnit.onChange = function() {
+  aquariumUnit = this.current;
+  document.getElementById('lenUnit').textContent = aquariumUnit === 'in' ? '(inches)' : '(cm)';
+  document.getElementById('widUnit').textContent = aquariumUnit === 'in' ? '(inches)' : '(cm)';
+  document.getElementById('hgtUnit').textContent = aquariumUnit === 'in' ? '(inches)' : '(cm)';
+  document.getElementById('subUnit').textContent = aquariumUnit === 'in' ? '(inches)' : '(cm)';
+};
+
+function calculateAquarium() {
+  let length = parseFloat(document.getElementById('tankLength').value);
+  let width = parseFloat(document.getElementById('tankWidth').value);
+  let height = parseFloat(document.getElementById('tankHeight').value);
+  const substrateDepth = parseFloat(document.getElementById('substrateDepth').value) || 0;
+  const tankType = document.getElementById('tankType').value;
+  const roomTemp = parseInt(document.getElementById('roomTemp').value);
+  const decorPercent = parseInt(document.getElementById('decorationFactor').value);
+
+  if (!length || !width || !height || length <= 0 || width <= 0 || height <= 0) {
+    alert('Please enter valid tank dimensions.');
+    return;
+  }
+
+  // Convert to inches if in cm
+  if (aquariumUnit === 'cm') {
+    length = length / 2.54;
+    width = width / 2.54;
+    height = height / 2.54;
+  }
+
+  // --- Volume Calculations ---
+  const theoreticalGal = (length * width * height) / 231;
+  
+  // Subtract substrate displacement
+  const substrateGal = (length * width * substrateDepth) / 231;
+  
+  // Decoration displacement (percentage of remaining volume)
+  const afterSubstrateGal = theoreticalGal - substrateGal;
+  const decorGal = afterSubstrateGal * (decorPercent / 100);
+  
+  // Water line gap (top 1 inch)
+  const waterLineGal = (length * width * 1) / 231;
+  
+  // Actual usable water volume
+  const actualGal = afterSubstrateGal - decorGal - waterLineGal;
+  const actualLiters = actualGal * 3.78541;
+
+  // --- Stocking Level ---
+  let inchesPerGallon;
+  let stockingNote;
+  switch (tankType) {
+    case 'freshwater':
+      inchesPerGallon = 1.0;
+      stockingNote = 'Standard tropical community (tetras, rasboras, livebearers, corydoras)';
+      break;
+    case 'coldwater':
+      inchesPerGallon = 0.3;
+      stockingNote = 'Goldfish produce 2-3× the waste of tropical fish. Fancy goldfish need 20 gal for first fish + 10 gal per additional.';
+      break;
+    case 'saltwater_fish':
+      inchesPerGallon = 0.5;
+      stockingNote = 'Saltwater fish need more swimming space. Use 1" of adult fish length per 2 gallons minimum.';
+      break;
+    case 'saltwater_reef':
+      inchesPerGallon = 0.3;
+      stockingNote = 'Reef tanks have very low bioload tolerance. Stock very lightly — 1" per 3-5 gallons. Corals and inverts count toward bioload.';
+      break;
+    case 'planted':
+      inchesPerGallon = 0.8;
+      stockingNote = 'Heavily planted tanks can support slightly more fish (plants absorb nitrates). Still stock conservatively.';
+      break;
+    default:
+      inchesPerGallon = 0.8;
+      stockingNote = 'Standard stocking guideline';
+  }
+
+  const maxFishInches = Math.round(actualGal * inchesPerGallon);
+
+  // --- Heater Wattage ---
+  const targetTemp = tankType === 'coldwater' ? 68 : (tankType.includes('saltwater') ? 78 : 78);
+  const tempDiff = targetTemp - roomTemp;
+  const baseWatts = actualGal * 4;
+  const adjustedWatts = Math.round(baseWatts * (tempDiff / 10));
+  const heaterWatts = Math.max(25, Math.round(adjustedWatts / 25) * 25); // Round to nearest 25W
+  
+  let heaterRec;
+  if (actualGal >= 55 && heaterWatts > 200) {
+    heaterRec = `Use TWO ${Math.round(heaterWatts / 2)}W heaters (one on each side) for even heating and redundancy.`;
+  } else {
+    heaterRec = `Use a single ${heaterWatts}W heater.`;
+  }
+
+  // --- Filter Flow Rate ---
+  let flowMultiplier;
+  switch (tankType) {
+    case 'saltwater_reef': flowMultiplier = 10; break;
+    case 'saltwater_fish': flowMultiplier = 8; break;
+    case 'planted': flowMultiplier = 5; break;
+    case 'coldwater': flowMultiplier = 5; break;
+    default: flowMultiplier = 5; break;
+  }
+  const filterGPH = Math.round(actualGal * flowMultiplier);
+
+  // --- Lighting ---
+  let wattsPerGallon;
+  let lightRec;
+  switch (tankType) {
+    case 'planted':
+      wattsPerGallon = 3;
+      lightRec = 'High-output LED or T5HO — aim for 40-60 PAR at substrate level. CO₂ injection recommended.';
+      break;
+    case 'saltwater_reef':
+      wattsPerGallon = 5;
+      lightRec = 'Reef LED or metal halide — 200-400 PAR for SPS corals, 100-200 PAR for LPS/soft corals.';
+      break;
+    case 'saltwater_fish':
+      wattsPerGallon = 2;
+      lightRec = 'Standard LED — enough to view fish. No special spectrum needed.';
+      break;
+    default:
+      wattsPerGallon = 1.5;
+      lightRec = 'Basic LED fixture — enough for low-light plants (Anubias, Java Fern) and fish viewing.';
+      break;
+  }
+  const lightWatts = Math.round(actualGal * wattsPerGallon);
+
+  const typeLabels = {
+    freshwater: 'Freshwater (Tropical)',
+    coldwater: 'Coldwater (Goldfish)',
+    saltwater_fish: 'Saltwater — Fish Only',
+    saltwater_reef: 'Saltwater — Reef',
+    planted: 'Planted Tank (High-Tech)'
+  };
+
+  const resultEl = document.getElementById('aquariumResult');
+  resultEl.style.display = 'block';
+  resultEl.innerHTML = `
+    <div class="result-box primary">
+      <div class="result-value">${actualGal.toFixed(1)} <span style="font-size:1rem;">gallons</span></div>
+      <div class="result-label">Actual Water Volume (${actualLiters.toFixed(1)} liters)</div>
+      <div class="result-details">
+        <dl>
+          <dt>Tank Dimensions</dt><dd>${length.toFixed(1)}" × ${width.toFixed(1)}" × ${height.toFixed(1)}"</dd>
+          <dt>Theoretical Volume</dt><dd>${theoreticalGal.toFixed(1)} gal — before substrate, decor & water line</dd>
+          <dt>Tank Type</dt><dd>${typeLabels[tankType]}</dd>
+          <dt>Substrate</dt><dd>${substrateDepth.toFixed(1)}" depth — displaces ~${substrateGal.toFixed(1)} gal</dd>
+          <dt>Decoration</dt><dd>~${decorPercent}% displacement — reduces ~${decorGal.toFixed(1)} gal</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="result-box" style="margin-top:1rem; border-left-color: var(--secondary);">
+      <div class="result-value" style="color:var(--secondary);">${maxFishInches}" <span style="font-size:1rem;">total fish length</span></div>
+      <div class="result-label">Safe Stocking Level</div>
+      <div class="result-details">
+        <p style="font-size:0.9rem; color:var(--text-secondary);">${stockingNote}</p>
+        <p style="font-size:0.85rem; margin-top:0.5rem;"><strong>Examples:</strong> ~${Math.floor(maxFishInches / 1.5)} neon tetras, ~${Math.floor(maxFishInches / 3)} platies, or ~${Math.floor(maxFishInches / 6)} angelfish. Stock gradually over several weeks.</p>
+      </div>
+    </div>
+
+    <div class="result-box" style="margin-top:1rem; border-left-color: var(--accent);">
+      <div class="result-value" style="color:var(--accent);">${heaterWatts}W <span style="font-size:1rem;">heater</span></div>
+      <div class="result-label">Heater Recommendation</div>
+      <div class="result-details">
+        <dl>
+          <dt>Target Temp</dt><dd>${targetTemp}°F (room is ${roomTemp}°F → ${tempDiff}°F difference)</dd>
+          <dt>Recommendation</dt><dd>${heaterRec}</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="result-box" style="margin-top:1rem; border-left-color: #10b981;">
+      <div class="result-value" style="color:#10b981;">${filterGPH} <span style="font-size:1rem;">GPH</span></div>
+      <div class="result-label">Filter Flow Rate</div>
+      <div class="result-details">
+        <dl>
+          <dt>Turnover Rate</dt><dd>${flowMultiplier}× tank volume per hour</dd>
+          <dt>Filter Type</dt><dd>${actualGal < 20 ? 'HOB or sponge filter' : actualGal < 55 ? 'Canister or HOB filter' : 'Canister filter or sump system'}</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="result-box" style="margin-top:1rem; border-left-color: #f59e0b;">
+      <div class="result-value" style="color:#f59e0b;">~${lightWatts}W <span style="font-size:1rem;">LED</span></div>
+      <div class="result-label">Lighting Guide</div>
+      <div class="result-details">
+        <p style="font-size:0.9rem; color:var(--text-secondary);">${lightRec}</p>
+        <p style="font-size:0.85rem; margin-top:0.5rem;">LED equivalent wattage shown. For traditional fluorescent, multiply by ~1.5×.</p>
+      </div>
+    </div>
+  `;
+
+  scrollToResults();
+
+  displayAISuggestions('aquarium', 'default', {
+    actualGal, actualLiters, tankType, maxFishInches, heaterWatts, filterGPH, lightWatts
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKCZHTY5WH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WKCZHTY5WH');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Travel Cost Calculator — Estimate Trip Expenses With Your Pet | PetCalcHub</title>
+  <meta name="description" content="Plan your pet-friendly trip budget. Calculate airline pet fees, car travel costs, health certificates, pet-friendly hotel surcharges, and total trip expenses for traveling with dogs or cats.">
+  <meta name="keywords" content="pet travel cost calculator, pet airline fees, pet road trip cost, pet travel expenses, traveling with dog cost, pet relocation costs">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/pet-travel-cost.html">
+  <meta property="og:title" content="Pet Travel Cost Calculator — Estimate Trip Expenses With Your Pet | PetCalcHub">
+  <meta property="og:description" content="Plan your pet-friendly trip budget. Calculate airline pet fees, car travel costs, health certificates, pet-friendly hotel surcharges.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petcalchub.com/calculators/pet-travel-cost.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pet Travel Cost Calculator — Estimate Trip Expenses With Your Pet | PetCalcHub">
+  <meta name="twitter:description" content="Plan your pet-friendly trip budget. Calculate airline pet fees, car travel costs, health certificates, and hotel surcharges.">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Pet Travel Cost Calculator",
+    "applicationCategory": "TravelApplication", "operatingSystem": "Web",
+    "description": "Estimate the total cost of traveling with your pet including airline fees, fuel, health certificates, and accommodations.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem">Dog Age Calculator</a>
+          <a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
+          <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+          <a href="dog-water.html" role="menuitem">Dog Water Intake</a>
+          <a href="dog-life.html" role="menuitem">Life Expectancy</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem">Cat Age Calculator</a>
+          <a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+          <a href="cat-water.html" role="menuitem">Cat Water Intake</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
+          <a href="pet-insurance.html" role="menuitem">Pet Insurance Cost</a>
+          <a href="pet-travel-cost.html" role="menuitem" class="active">Pet Travel Cost</a>
+          <a href="pet-sitting-rate.html" role="menuitem">Pet Sitting Rate</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐠 Aquarium</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="aquarium-calculator.html" role="menuitem">Aquarium Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="calc-page">
+  <div class="container">
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span class="separator">›</span>
+      <span>Pet Travel Cost Calculator</span>
+    </nav>
+
+    <div class="calc-layout">
+      <div class="calc-main">
+        <div class="calc-header">
+          <h1>Pet Travel Cost Calculator</h1>
+          <p class="calc-desc">Estimate the total cost of traveling with your pet. Covers airline fees, car fuel, health certificates, pet-friendly accommodations, and incidentals — so you can budget your trip accurately.</p>
+        </div>
+
+        <div class="calc-card" id="calc-card">
+          <h2>✈️ Trip Details</h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="petType">Pet Type</label>
+              <select id="petType" class="form-select">
+                <option value="dog_small">Small Dog (under 20 lbs)</option>
+                <option value="dog_medium">Medium Dog (20-50 lbs)</option>
+                <option value="dog_large">Large Dog (50+ lbs)</option>
+                <option value="cat">Cat</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="travelMode">Travel Mode</label>
+              <select id="travelMode" class="form-select" onchange="updateTravelUI()">
+                <option value="car">🚗 Car / Road Trip</option>
+                <option value="plane_cabin">✈️ Plane — Cabin (small pet)</option>
+                <option value="plane_cargo">✈️ Plane — Cargo Hold</option>
+                <option value="train">🚂 Train (Amtrak / Rail)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" id="distanceGroup">
+              <label class="form-label" for="distance">Trip Distance (miles, round-trip)</label>
+              <input type="number" id="distance" class="form-input" placeholder="e.g. 600" min="10" max="10000" step="10">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="tripDays">Trip Duration (days)</label>
+              <input type="number" id="tripDays" class="form-input" placeholder="e.g. 5" min="1" max="90" step="1" value="3">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="hasCarrier">Need a Pet Carrier/Crate?</label>
+              <select id="hasCarrier" class="form-select">
+                <option value="no">Already have one</option>
+                <option value="soft">Need soft-sided carrier</option>
+                <option value="hard">Need hard-sided crate</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="hasHealthCert">Need Health Certificate?</label>
+              <select id="hasHealthCert" class="form-select">
+                <option value="yes">Yes (required for flights)</option>
+                <option value="no">No / Already have one</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="hotelType">Accommodation</label>
+              <select id="hotelType" class="form-select">
+                <option value="pet_friendly">Pet-Friendly Hotel ($25-75/night pet fee)</option>
+                <option value="budget">Budget Motel ($10-25/night pet fee)</option>
+                <option value="airbnb">Airbnb/VRBO (varies)</option>
+                <option value="none">Staying with friends/family (no fee)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="extras">Extra Services</label>
+              <select id="extras" class="form-select" multiple size="3">
+                <option value="grooming">Pre-trip grooming ($40-80)</option>
+                <option value="microchip">Microchip implant ($25-60)</option>
+                <option value="pet_sitter">Pet sitter at destination ($25-50/day)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" onclick="calculateTravelCost()" style="width:100%; margin-top:0.5rem;">
+            Calculate Travel Costs →
+          </button>
+
+          <div id="travelResult" style="display:none;"></div>
+        </div>
+
+        <div id="ai-suggestions"></div>
+
+        <div class="ad-slot" id="ad-in-content">
+          <div class="ad-slot-label">Advertisement</div>
+          <div class="ad-slot-inner">Ad space reserved</div>
+        </div>
+
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <button class="faq-question">How much does it cost to fly with a dog?</button>
+            <div class="faq-answer">
+              <p>Airline pet fees vary significantly: in-cabin pets typically cost $95-$125 each way on major U.S. carriers (Delta, United, American). Pets traveling as checked baggage or cargo range from $200-$600+ depending on size and distance. International flights can cost $500-$2,500+. Always check your specific airline's pet policy — some no longer accept pets as checked baggage; others restrict breeds (snub-nosed dogs/cats are often banned from cargo). Additional costs include an airline-approved carrier ($40-120) and a health certificate from your vet ($50-150).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Do all hotels charge pet fees?</button>
+            <div class="faq-answer">
+              <p>Most pet-friendly hotels charge a nightly pet fee ranging from $10-$75, with the average around $25-$50. Some chains are notably pet-friendly: Kimpton Hotels welcomes all pets with no additional fee; Motel 6 and Red Roof Inn typically charge $10-$15/night with no weight limits. La Quinta, Best Western, and Drury Hotels generally charge $20-$40/night. Always confirm pet policies when booking — weight limits, breed restrictions, and maximum number of pets vary by property. Airbnb/VRBO pet fees are set by individual hosts.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What documents do I need for pet travel?</button>
+            <div class="faq-answer">
+              <p>For domestic U.S. air travel: a Certificate of Veterinary Inspection (health certificate) issued within 10 days of travel, proof of rabies vaccination, and an airline-compliant carrier. For international travel: requirements vary by destination — some countries require microchips, rabies titer tests, import permits, and quarantine upon arrival. For road trips: bring your pet's vaccination records, a recent photo (in case they get lost), and your regular vet's contact information. Always check USDA APHIS requirements for international travel at least 6 months in advance.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="calc-sidebar">
+        <div class="ad-sidebar" id="ad-sidebar">
+          <div class="ad-sidebar-label">Advertisement</div>
+          <div class="ad-sidebar-inner">Ad space reserved</div>
+        </div>
+
+        <div style="background:white; border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.75rem;">🧳 Travel Checklist</h4>
+          <ul style="font-size:0.9rem; color:var(--text-secondary); padding-left:1.25rem; line-height:1.8;">
+            <li>Health certificate (within 10 days)</li>
+            <li>Vaccination records & ID tags</li>
+            <li>Pet carrier or travel crate</li>
+            <li>Food, water & portable bowls</li>
+            <li>Leash, harness & waste bags</li>
+            <li>First-aid kit & medications</li>
+            <li>Favorite toy or blanket</li>
+            <li>Recent photo of your pet</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+        <p>Free, science-backed pet calculators with AI-powered health insights.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="dog-age.html">Dog Age Calculator</a></li>
+          <li><a href="cat-age.html">Cat Age Calculator</a></li>
+          <li><a href="dog-calorie.html">Dog Calorie Calculator</a></li>
+          <li><a href="cat-calorie.html">Cat Calorie Calculator</a></li>
+          <li><a href="puppy-weight.html">Puppy Weight Predictor</a></li>
+          <li><a href="dog-pregnancy.html">Dog Pregnancy Calculator</a></li>
+          <li><a href="cat-pregnancy.html">Cat Pregnancy Calculator</a></li>
+          <li><a href="pet-bmi.html">Pet BMI & Ideal Weight</a></li>
+          <li><a href="food-cost.html">Food Cost Calculator</a></li>
+          <li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li>
+          <li><a href="dog-water.html">Dog Water Intake</a></li>
+          <li><a href="cat-water.html">Cat Water Intake</a></li>
+          <li><a href="dog-life.html">Life Expectancy</a></li>
+          <li><a href="pet-insurance.html">Pet Insurance Cost</a></li>
+          <li><a href="pet-travel-cost.html">Pet Travel Cost</a></li>
+          <li><a href="pet-sitting-rate.html">Pet Sitting Rate</a></li>
+          <li><a href="aquarium-calculator.html">Aquarium Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog/">Pet Care Blog</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../privacy.html#disclaimer">Medical Disclaimer</a></li>
+          <li><a href="../privacy.html#affiliate">Affiliate Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 PetCalcHub. All rights reserved.</span>
+      <span>Estimates only. Consult your veterinarian.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+function updateTravelUI() {
+  const mode = document.getElementById('travelMode').value;
+  const distanceGroup = document.getElementById('distanceGroup');
+  if (mode === 'plane_cabin' || mode === 'plane_cargo') {
+    distanceGroup.querySelector('input').placeholder = 'e.g. 1200 (for reference)';
+  } else {
+    distanceGroup.querySelector('input').placeholder = 'e.g. 600';
+  }
+}
+
+function calculateTravelCost() {
+  const petType = document.getElementById('petType').value;
+  const travelMode = document.getElementById('travelMode').value;
+  const distance = parseFloat(document.getElementById('distance').value) || 0;
+  const tripDays = parseInt(document.getElementById('tripDays').value) || 3;
+  const hasCarrier = document.getElementById('hasCarrier').value;
+  const hasHealthCert = document.getElementById('hasHealthCert').value;
+  const hotelType = document.getElementById('hotelType').value;
+  const extrasSelect = document.getElementById('extras');
+
+  const petLabels = {
+    dog_small: 'Small Dog (< 20 lbs)',
+    dog_medium: 'Medium Dog (20-50 lbs)',
+    dog_large: 'Large Dog (50+ lbs)',
+    cat: 'Cat'
+  };
+
+  // --- Transportation Cost ---
+  let transportCost = 0;
+  let transportLabel = '';
+
+  if (travelMode === 'car') {
+    // IRS standard mileage rate ~$0.67/mile for 2026 (includes gas, maintenance, depreciation)
+    // Pet-specific additions: more frequent stops, potential cleanup
+    const costPerMile = 0.15; // incremental pet-related cost (extra stops, supplies)
+    transportCost = Math.round(distance * costPerMile);
+    transportLabel = `Road trip — pet-related costs (extra stops, supplies) for ${distance} miles`;
+  } else if (travelMode === 'plane_cabin') {
+    transportCost = 125; // average US airline in-cabin pet fee each way
+    transportLabel = 'Airline in-cabin pet fee (one-way estimate)';
+  } else if (travelMode === 'plane_cargo') {
+    const cargoFees = { dog_small: 250, dog_medium: 350, dog_large: 500, cat: 200 };
+    transportCost = cargoFees[petType] || 300;
+    transportLabel = 'Airline cargo pet fee (one-way estimate, varies by airline)';
+  } else if (travelMode === 'train') {
+    transportCost = 26; // Amtrak pet fee
+    transportLabel = 'Amtrak pet fee (one-way)';
+  }
+
+  // --- Carrier / Crate Cost ---
+  let carrierCost = 0;
+  if (hasCarrier === 'soft') carrierCost = 55;
+  if (hasCarrier === 'hard') carrierCost = 85;
+
+  // --- Health Certificate ---
+  let healthCertCost = 0;
+  if (hasHealthCert === 'yes') healthCertCost = 85;
+
+  // --- Accommodation Pet Fees ---
+  let hotelCost = 0;
+  let hotelNightly = 0;
+  if (hotelType === 'pet_friendly') hotelNightly = 45;
+  if (hotelType === 'budget') hotelNightly = 18;
+  if (hotelType === 'airbnb') hotelNightly = 35;
+  hotelCost = Math.round(hotelNightly * tripDays);
+
+  // --- Extra Services ---
+  let extrasCost = 0;
+  let extrasItems = [];
+  for (const opt of extrasSelect.selectedOptions) {
+    if (opt.value === 'grooming') { extrasCost += 60; extrasItems.push('Pre-trip grooming: $60'); }
+    if (opt.value === 'microchip') { extrasCost += 40; extrasItems.push('Microchip implant: $40'); }
+    if (opt.value === 'pet_sitter') { extrasCost += 35 * tripDays; extrasItems.push(`Pet sitter at destination (${tripDays} days): $${35 * tripDays}`); }
+  }
+
+  const totalCost = transportCost + carrierCost + healthCertCost + hotelCost + extrasCost;
+
+  const resultEl = document.getElementById('travelResult');
+  resultEl.style.display = 'block';
+  resultEl.innerHTML = `
+    <div class="result-box primary">
+      <div class="result-value">$${totalCost} <span style="font-size:1rem;">estimated total</span></div>
+      <div class="result-label">Estimated Pet Travel Cost</div>
+      <div class="result-details">
+        <dl>
+          <dt>Pet Type</dt><dd>${petLabels[petType]}</dd>
+          <dt>Travel Mode</dt><dd>${travelMode.replace('_', ' ')}</dd>
+          <dt>Transportation</dt><dd>$${transportCost} — ${transportLabel}</dd>
+          ${carrierCost > 0 ? `<dt>Pet Carrier</dt><dd>$${carrierCost} — ${hasCarrier === 'soft' ? 'Soft-sided carrier' : 'Hard-sided crate'}</dd>` : ''}
+          ${healthCertCost > 0 ? `<dt>Health Certificate</dt><dd>$${healthCertCost} — Vet examination + documentation</dd>` : ''}
+          <dt>Accommodation</dt><dd>$${hotelCost} — ${tripDays} nights × $${hotelNightly}/night pet fee</dd>
+          ${extrasItems.length > 0 ? '<dt>Extra Services</dt><dd>' + extrasItems.join('<br>') + '</dd>' : ''}
+        </dl>
+      </div>
+      <div style="margin-top:1rem; padding-top:0.75rem; border-top:1px solid var(--border);">
+        <div style="display:flex; justify-content:space-between; font-weight:700;">
+          <span>Total Estimated Cost</span>
+          <span style="color:var(--primary); font-size:1.2rem;">$${totalCost}</span>
+        </div>
+      </div>
+    </div>
+  `;
+
+  scrollToResults();
+
+  displayAISuggestions('petTravelCost', 'default', {
+    petType, travelMode, distance, tripDays, totalCost, transportCost, hotelCost
+  });
+}
+</script>
+</body>
+</html>

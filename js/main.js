@@ -436,6 +436,54 @@ const AIEngine = {
           ]
         };
       }
+    },
+    petTravelCost: {
+      default: function(params) {
+        const { petType, travelMode, distance, tripDays, totalCost } = params;
+        const items = [
+          'Book pet-friendly accommodations early — rooms with pet amenities sell out first during peak travel seasons.',
+          'Pack a pet travel kit: food, water, bowls, leash, waste bags, medications, vaccination records, and a recent photo.',
+          travelMode === 'plane_cabin' || travelMode === 'plane_cargo' ? 'For air travel: check your airline\'s pet policy 2-4 weeks before departure. Snub-nosed breeds may face restrictions.' : 'For road trips: plan rest stops every 2-3 hours for potty breaks and water. Never leave your pet in a parked car.',
+          'Microchip your pet and ensure ID tags are up-to-date with your current phone number before traveling.',
+          tripDays > 5 ? `For a ${tripDays}-day trip, consider pet travel insurance that covers emergency vet visits at your destination.` : 'Keep your regular vet\'s contact info handy — they can often advise by phone if minor issues arise during travel.'
+        ];
+        return {
+          title: 'Travel Smart With Your Pet — Budget & Safety Tips',
+          items
+        };
+      }
+    },
+    petSitting: {
+      default: function(params) {
+        const { serviceType, petType, numDays, location } = params;
+        const items = [
+          'Book pet sitters 2-4 weeks in advance — quality sitters fill up fast, especially during holidays and summer.',
+          'Schedule a meet-and-greet before booking — watch how the sitter interacts with your pet and check their references.',
+          serviceType === 'boarding' ? 'For boarding: bring your pet\'s own food, bed, and a familiar toy to reduce stress in the new environment.' : 'For in-home sitting: leave detailed written instructions for feeding, medications, emergency contacts, and your pet\'s routine.',
+          location === 'urban' ? 'In major metro areas, rates are higher but you have more options. Consider a sitter 1-2 miles outside the city center for better rates.' : 'Compare at least 3 sitters using platforms like Rover or Wag — read reviews carefully and verify insurance/bonding.',
+          numDays > 7 ? `For a ${numDays}-day absence, arrange a backup contact (friend or neighbor) in case the sitter has an emergency.` : 'Leave your vet\'s contact info and a signed emergency care authorization with the sitter.'
+        ];
+        return {
+          title: 'Find the Right Pet Care While You\'re Away',
+          items
+        };
+      }
+    },
+    aquarium: {
+      default: function(params) {
+        const { actualGal, tankType, maxFishInches, heaterWatts, filterGPH } = params;
+        const items = [
+          `Your ${actualGal.toFixed(1)} gallon tank needs cycling before adding fish — the nitrogen cycle takes 4-8 weeks. Test ammonia, nitrite, and nitrate levels weekly.`,
+          tankType === 'planted' ? 'For a planted tank: invest in quality substrate (aquasoil), CO₂ injection, and a full-spectrum LED. Start with easy plants: Anubias, Java Fern, Amazon Sword.' : tankType === 'saltwater_reef' ? 'Reef tanks require patience — wait at least 3-4 months before adding sensitive corals. Maintain stable parameters: salinity 1.024-1.026, alkalinity 8-12 dKH, calcium 400-450 ppm.' : 'Perform 25-30% weekly water changes to maintain water quality. Use a gravel vacuum to remove debris from the substrate.',
+          `With ${maxFishInches}" of stocking capacity, add fish in 2-3 small groups over several weeks. Quarantine new fish for 2 weeks before adding to the main tank.`,
+          filterGPH > 300 ? `Your filter should turn over ${filterGPH} GPH — clean the filter media monthly in tank water (not tap water) to preserve beneficial bacteria.` : 'A sponge filter or small HOB filter works well for this tank size. Clean gently to preserve the biological filtration.',
+          heaterWatts > 150 ? 'Place your heater near the filter outflow for even heat distribution. Use a separate thermometer to verify temperature — heater thermostats can be inaccurate by 2-4°F.' : 'A reliable heater with an external thermostat controller adds an extra safety layer — heater failures are the #1 cause of tank crashes.'
+        ];
+        return {
+          title: 'Build a Thriving Aquarium Ecosystem',
+          items
+        };
+      }
     }
   },
 

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKCZHTY5WH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WKCZHTY5WH');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Sitting Rate Calculator — Compare Boarding, Sitting & Walking Costs | PetCalcHub</title>
+  <meta name="description" content="Calculate and compare pet sitting, boarding, dog walking, and house sitting costs. Get rate estimates by service type, pet type, duration, and your location. Plan your pet care budget when you travel.">
+  <meta name="keywords" content="pet sitting rate calculator, pet boarding cost, dog walking rates, pet sitter prices, house sitting cost, pet care while on vacation">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/pet-sitting-rate.html">
+  <meta property="og:title" content="Pet Sitting Rate Calculator — Compare Boarding, Sitting & Walking Costs | PetCalcHub">
+  <meta property="og:description" content="Calculate and compare pet sitting, boarding, dog walking, and house sitting costs. Plan your pet care budget when you travel.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petcalchub.com/calculators/pet-sitting-rate.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pet Sitting Rate Calculator — Compare Boarding, Sitting & Walking Costs | PetCalcHub">
+  <meta name="twitter:description" content="Calculate and compare pet sitting, boarding, dog walking, and house sitting costs. Plan your pet care budget.">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Pet Sitting Rate Calculator",
+    "applicationCategory": "LifestyleApplication", "operatingSystem": "Web",
+    "description": "Estimate and compare pet sitting, boarding, and dog walking costs by service type, pet type, and duration.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem">Dog Age Calculator</a>
+          <a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
+          <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+          <a href="dog-water.html" role="menuitem">Dog Water Intake</a>
+          <a href="dog-life.html" role="menuitem">Life Expectancy</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem">Cat Age Calculator</a>
+          <a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+          <a href="cat-water.html" role="menuitem">Cat Water Intake</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
+          <a href="pet-insurance.html" role="menuitem">Pet Insurance Cost</a>
+          <a href="pet-travel-cost.html" role="menuitem">Pet Travel Cost</a>
+          <a href="pet-sitting-rate.html" role="menuitem" class="active">Pet Sitting Rate</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐠 Aquarium</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="aquarium-calculator.html" role="menuitem">Aquarium Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="calc-page">
+  <div class="container">
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span class="separator">›</span>
+      <span>Pet Sitting Rate Calculator</span>
+    </nav>
+
+    <div class="calc-layout">
+      <div class="calc-main">
+        <div class="calc-header">
+          <h1>Pet Sitting Rate Calculator</h1>
+          <p class="calc-desc">Compare pet sitting, boarding, house sitting, and dog walking costs. Get rate estimates by service type and duration to plan your pet care budget.</p>
+        </div>
+
+        <div class="calc-card" id="calc-card">
+          <h2>🏠 Service Details</h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="serviceType">Service Type</label>
+              <select id="serviceType" class="form-select" onchange="updateServiceUI()">
+                <option value="boarding">🏨 Boarding (kennel / pet hotel)</option>
+                <option value="house_sitting">🏠 House Sitting (sitter stays at your home)</option>
+                <option value="drop_in">🚶 Drop-In Visits (30 min each)</option>
+                <option value="dog_walking">🦮 Dog Walking (30 min walk)</option>
+                <option value="daycare">🐾 Doggy Daycare (per day)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="petTypeSit">Pet Type</label>
+              <select id="petTypeSit" class="form-select">
+                <option value="dog_small">Small Dog (under 20 lbs)</option>
+                <option value="dog_medium">Medium Dog (20-50 lbs)</option>
+                <option value="dog_large">Large Dog (50+ lbs)</option>
+                <option value="cat">Cat</option>
+                <option value="multiple">Multiple Pets (dog + cat)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="numDays">Number of Days</label>
+              <input type="number" id="numDays" class="form-input" placeholder="e.g. 7" min="1" max="90" step="1" value="5">
+            </div>
+            <div class="form-group" id="visitsGroup">
+              <label class="form-label" for="visitsPerDay">Visits / Walks Per Day</label>
+              <select id="visitsPerDay" class="form-select">
+                <option value="1">1 visit per day</option>
+                <option value="2" selected>2 visits per day</option>
+                <option value="3">3 visits per day</option>
+                <option value="4">4 visits per day</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="location">Your Location (for rate estimate)</label>
+              <select id="location" class="form-select">
+                <option value="national">US National Average</option>
+                <option value="urban">Major Metro (NYC, LA, SF, Chicago)</option>
+                <option value="suburban">Suburban Area</option>
+                <option value="rural">Rural / Small Town</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="addOns">Additional Services</label>
+              <select id="addOns" class="form-select" multiple size="3">
+                <option value="medication">Medication administration (+$5-10/visit)</option>
+                <option value="grooming">Basic grooming / brushing (+$10-15)</option>
+                <option value="training">Basic training session (+$15-25)</option>
+                <option value="overnight">Overnight stay upgrade (+$25-40/night)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" onclick="calculateSittingRate()" style="width:100%; margin-top:0.5rem;">
+            Calculate Sitting Cost →
+          </button>
+
+          <div id="sittingResult" style="display:none;"></div>
+        </div>
+
+        <div id="ai-suggestions"></div>
+
+        <div class="ad-slot" id="ad-in-content">
+          <div class="ad-slot-label">Advertisement</div>
+          <div class="ad-slot-inner">Ad space reserved</div>
+        </div>
+
+        <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <button class="faq-question">How much does pet boarding cost per night?</button>
+            <div class="faq-answer">
+              <p>Pet boarding costs average $25-$85 per night in the US, depending on location and amenities. Standard kennel boarding: $25-$45/night for dogs, $15-$25/night for cats. Pet hotels with premium amenities (private suites, webcams, playtime): $50-$85+/night. Major metro areas (NYC, SF, LA) are 30-50% higher than the national average. Additional fees often apply for medication administration ($5-10/day), extra playtime ($10-20/day), or holiday periods ($5-15/night surcharge). Always book early for holidays — facilities fill up 4-6 weeks in advance.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Is a pet sitter cheaper than boarding?</button>
+            <div class="faq-answer">
+              <p>It depends on the number of pets and service frequency. For one dog: boarding ($25-$45/day) is often comparable to 2 drop-in visits ($30-$50/day). For multiple pets: pet sitting usually wins — most sitters charge a modest additional fee per extra pet ($5-15/pet), while boarding charges full price per animal. House sitting ($50-$85/night) becomes cost-effective for 3+ pets or if you want someone staying overnight. Cats are almost always cheaper with drop-in visits ($15-25/visit) vs boarding ($15-25/night). Pet sitting also offers the advantage of keeping pets in their familiar environment, reducing stress.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What should I look for in a pet sitter?</button>
+            <div class="faq-answer">
+              <p>Key qualifications: (1) Bonded and insured — protects you against accidents or theft. (2) Pet first-aid/CPR certified. (3) References — ask for 3 recent client references and actually call them. (4) Written contract specifying services, dates, rates, and emergency procedures. (5) Meet-and-greet before booking — watch how they interact with your pet. (6) Clear communication plan — daily updates via text/photo are standard. (7) Backup plan — what happens if they get sick? Use platforms like Rover, Wag, or the National Association of Professional Pet Sitters (NAPPS) to find vetted sitters.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="calc-sidebar">
+        <div class="ad-sidebar" id="ad-sidebar">
+          <div class="ad-sidebar-label">Advertisement</div>
+          <div class="ad-sidebar-inner">Ad space reserved</div>
+        </div>
+
+        <div style="background:white; border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.75rem;">📊 2026 US Average Rates</h4>
+          <ul style="font-size:0.85rem; color:var(--text-secondary); padding-left:1.25rem; line-height:2;">
+            <li><strong>Boarding:</strong> $35-55/night (dog)</li>
+            <li><strong>House Sitting:</strong> $50-75/night</li>
+            <li><strong>Drop-In Visit:</strong> $18-28/visit</li>
+            <li><strong>Dog Walking:</strong> $20-30/walk</li>
+            <li><strong>Doggy Daycare:</strong> $25-45/day</li>
+            <li><strong>Cat Sitting:</strong> $15-25/visit</li>
+          </ul>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.5rem;">Source: Rover, Wag, NAPPS 2026 survey data</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+        <p>Free, science-backed pet calculators with AI-powered health insights.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="dog-age.html">Dog Age Calculator</a></li>
+          <li><a href="cat-age.html">Cat Age Calculator</a></li>
+          <li><a href="dog-calorie.html">Dog Calorie Calculator</a></li>
+          <li><a href="cat-calorie.html">Cat Calorie Calculator</a></li>
+          <li><a href="puppy-weight.html">Puppy Weight Predictor</a></li>
+          <li><a href="dog-pregnancy.html">Dog Pregnancy Calculator</a></li>
+          <li><a href="cat-pregnancy.html">Cat Pregnancy Calculator</a></li>
+          <li><a href="pet-bmi.html">Pet BMI & Ideal Weight</a></li>
+          <li><a href="food-cost.html">Food Cost Calculator</a></li>
+          <li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li>
+          <li><a href="dog-water.html">Dog Water Intake</a></li>
+          <li><a href="cat-water.html">Cat Water Intake</a></li>
+          <li><a href="dog-life.html">Life Expectancy</a></li>
+          <li><a href="pet-insurance.html">Pet Insurance Cost</a></li>
+          <li><a href="pet-travel-cost.html">Pet Travel Cost</a></li>
+          <li><a href="pet-sitting-rate.html">Pet Sitting Rate</a></li>
+          <li><a href="aquarium-calculator.html">Aquarium Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog/">Pet Care Blog</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../privacy.html#disclaimer">Medical Disclaimer</a></li>
+          <li><a href="../privacy.html#affiliate">Affiliate Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 PetCalcHub. All rights reserved.</span>
+      <span>Estimates only. Consult your veterinarian.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+function updateServiceUI() {
+  const service = document.getElementById('serviceType').value;
+  const visitsGroup = document.getElementById('visitsGroup');
+  if (service === 'drop_in' || service === 'dog_walking') {
+    visitsGroup.style.display = 'block';
+  } else {
+    visitsGroup.style.display = 'none';
+  }
+}
+
+function calculateSittingRate() {
+  const serviceType = document.getElementById('serviceType').value;
+  const petType = document.getElementById('petTypeSit').value;
+  const numDays = parseInt(document.getElementById('numDays').value) || 5;
+  const visitsPerDay = parseInt(document.getElementById('visitsPerDay').value) || 1;
+  const location = document.getElementById('location').value;
+  const addOnsSelect = document.getElementById('addOns');
+
+  // Base rates by service type and pet type (US national average 2026)
+  const baseRates = {
+    boarding: { dog_small: 35, dog_medium: 45, dog_large: 55, cat: 22, multiple: 65 },
+    house_sitting: { dog_small: 50, dog_medium: 55, dog_large: 65, cat: 40, multiple: 75 },
+    drop_in: { dog_small: 20, dog_medium: 20, dog_large: 22, cat: 18, multiple: 25 },
+    dog_walking: { dog_small: 22, dog_medium: 25, dog_large: 28, cat: 0, multiple: 30 },
+    daycare: { dog_small: 28, dog_medium: 35, dog_large: 42, cat: 0, multiple: 50 }
+  };
+
+  // Location multiplier
+  const locationMultiplier = { national: 1.0, urban: 1.45, suburban: 1.1, rural: 0.75 };
+
+  // Service labels
+  const serviceLabels = {
+    boarding: 'Boarding (Kennel / Pet Hotel)',
+    house_sitting: 'House Sitting (In Your Home)',
+    drop_in: 'Drop-In Visits',
+    dog_walking: 'Dog Walking',
+    daycare: 'Doggy Daycare'
+  };
+
+  const petLabels = {
+    dog_small: 'Small Dog (< 20 lbs)',
+    dog_medium: 'Medium Dog (20-50 lbs)',
+    dog_large: 'Large Dog (50+ lbs)',
+    cat: 'Cat',
+    multiple: 'Multiple Pets'
+  };
+
+  const locLabels = {
+    national: 'US National Average',
+    urban: 'Major Metro Area',
+    suburban: 'Suburban Area',
+    rural: 'Rural / Small Town'
+  };
+
+  let baseRate = baseRates[serviceType][petType] || 30;
+  const locFactor = locationMultiplier[location] || 1.0;
+  const adjustedDaily = Math.round(baseRate * locFactor);
+
+  let totalCost;
+  if (serviceType === 'drop_in' || serviceType === 'dog_walking') {
+    totalCost = adjustedDaily * visitsPerDay * numDays;
+  } else {
+    totalCost = adjustedDaily * numDays;
+  }
+
+  // Add-on services
+  let addOnCost = 0;
+  let addOnItems = [];
+  for (const opt of addOnsSelect.selectedOptions) {
+    if (opt.value === 'medication') { addOnCost += 8 * numDays; addOnItems.push(`Medication administration: $${8 * numDays}`); }
+    if (opt.value === 'grooming') { addOnCost += 12 * numDays; addOnItems.push(`Basic grooming: $${12 * numDays}`); }
+    if (opt.value === 'training') { addOnCost += 20 * numDays; addOnItems.push(`Basic training sessions: $${20 * numDays}`); }
+    if (opt.value === 'overnight') { addOnCost += 30 * numDays; addOnItems.push(`Overnight upgrade: $${30 * numDays}`); }
+  }
+
+  const grandTotal = totalCost + addOnCost;
+
+  const resultEl = document.getElementById('sittingResult');
+  resultEl.style.display = 'block';
+  resultEl.innerHTML = `
+    <div class="result-box primary">
+      <div class="result-value">$${grandTotal} <span style="font-size:1rem;">estimated total</span></div>
+      <div class="result-label">Estimated Pet Sitting Cost</div>
+      <div class="result-details">
+        <dl>
+          <dt>Service Type</dt><dd>${serviceLabels[serviceType]}</dd>
+          <dt>Pet Type</dt><dd>${petLabels[petType]}</dd>
+          <dt>Duration</dt><dd>${numDays} day${numDays > 1 ? 's' : ''}</dd>
+          ${serviceType === 'drop_in' || serviceType === 'dog_walking' ? `<dt>Visits Per Day</dt><dd>${visitsPerDay}</dd>` : ''}
+          <dt>Base Rate</dt><dd>$${adjustedDaily}/day (${locLabels[location]})</dd>
+          ${addOnItems.length > 0 ? '<dt>Add-On Services</dt><dd>' + addOnItems.join('<br>') + '</dd>' : ''}
+        </dl>
+      </div>
+      <div style="margin-top:1rem; padding-top:0.75rem; border-top:1px solid var(--border);">
+        <div style="display:flex; justify-content:space-between; font-weight:700;">
+          <span>Total Estimated Cost</span>
+          <span style="color:var(--primary); font-size:1.2rem;">$${grandTotal}</span>
+        </div>
+        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem;">
+          Per-day average: $${Math.round(grandTotal / numDays)} | Compare with other services using the selector above
+        </div>
+      </div>
+    </div>
+  `;
+
+  scrollToResults();
+
+  displayAISuggestions('petSitting', 'default', {
+    serviceType, petType, numDays, grandTotal, adjustedDaily, location
+  });
+}
+</script>
+</body>
+</html>
