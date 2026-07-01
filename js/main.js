@@ -484,6 +484,21 @@ const AIEngine = {
           items
         };
       }
+    },
+    foodCost: {
+      default: function(params) {
+        const costPerDay = params;
+        return {
+          title: 'Smart Pet Food Shopping Tips',
+          items: [
+            'Always compare cost per 1,000 kcal — not cost per bag. A larger bag may seem cheaper but could be less cost-effective if it has lower calorie density.',
+            'Buy in bulk during sales — pet food goes on sale seasonally. Stock up when you see 20-30% off, but check the expiration date first.',
+            'Consider warehouse clubs (Costco, Sam\'s Club) or auto-ship subscriptions for 5-15% recurring savings on premium brands.',
+            `At ${costPerDay ? '$' + costPerDay + ' per day' : 'your current rate'}, quality food is one of the best investments in your pet's long-term health — vet bills from poor nutrition cost far more.`,
+            'Rotate protein sources every 2-3 months within the same quality tier — this reduces food sensitivity risk and provides more complete amino acid profiles.'
+          ]
+        };
+      }
     }
   },
 

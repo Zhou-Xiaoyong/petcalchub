@@ -21,9 +21,13 @@
   <meta property="og:description" content="Calculate your cat's exact daily calorie needs using the veterinary-standard RER formula. Adjusts for weight, life stage, body condition, and activity level. Free, science-backed.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://petcalchub.com/calculators/cat-calorie.html">
+  <meta property="og:image" content="https://petcalchub.com/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cat Calorie Calculator — Daily Calorie Needs for Cats | PetCalcHub">
   <meta name="twitter:description" content="Calculate your cat's exact daily calorie needs using the veterinary-standard RER formula. Adjusts for weight, life stage, body condition, and activity level. Free, science-backed.">
+  <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -236,18 +240,20 @@ function calculateCatCalories() {
   let adjustedWeight = weight;
   let bcsNote = '';
   if (bcs === 'overweight') {
-    adjustedWeight = weight * 0.85; // Target: 85% of current weight
+    adjustedWeight = weight * 0.85;
     bcsNote = ' (adjusted for overweight: using 85% of current weight as target)';
   } else if (bcs === 'obese') {
-    adjustedWeight = weight * 0.75; // Target: 75% of current weight
+    adjustedWeight = weight * 0.75;
     bcsNote = ' (adjusted for obesity: using 75% of current weight as target)';
   } else if (bcs === 'underweight') {
-    adjustedWeight = weight * 1.1; // Target: 110% of current weight
+    adjustedWeight = weight * 1.1;
     bcsNote = ' (adjusted for underweight: using 110% of current weight as target)';
   }
 
   const rer = 70 * Math.pow(adjustedWeight, 0.75);
-  const multipliers = { kitten: 2.5, adult_neutered: 1.2, adult_intact: 1.4, senior: 1.1, weight_loss: 0.8, pregnant: 2.5 };
+  // For weight_loss, use target weight RER × 1.0 (safe deficit via target weight alone).
+  // Avoid double-deficit: BCS-adjusted weight already reduces RER.
+  const multipliers = { kitten: 2.5, adult_neutered: 1.2, adult_intact: 1.4, senior: 1.1, weight_loss: 1.0, pregnant: 2.5 };
   const labels = { kitten: 'Kitten', adult_neutered: 'Adult (Neutered)', adult_intact: 'Adult (Intact)', senior: 'Senior', weight_loss: 'Weight Loss', pregnant: 'Pregnant/Nursing' };
   const der = rer * (multipliers[lifeStage] || 1.2);
 

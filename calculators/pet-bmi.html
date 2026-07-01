@@ -21,9 +21,13 @@
   <meta property="og:description" content="Assess your pet's body condition score (BCS) and calculate their ideal weight. Works for both dogs and cats. Get AI-powered weight management tips. Free, vet-standard.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://petcalchub.com/calculators/pet-bmi.html">
+  <meta property="og:image" content="https://petcalchub.com/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pet BMI & Ideal Weight Calculator — Body Condition Score for Dogs & Cats | PetCalcHub">
   <meta name="twitter:description" content="Assess your pet's body condition score (BCS) and calculate their ideal weight. Works for both dogs and cats. Get AI-powered weight management tips. Free, vet-standard.">
+  <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -249,14 +253,11 @@ function calculatePetBMI(){
   if(WeightUnit.current==='lbs') weight=weight/2.20462;
 
   // Ideal weight calculation based on BCS
-  // BCS 4-5 is ideal; each point away = ~10% body weight difference
-  const idealMultiplier= bcs<=3 ? 1+(5-bcs)*0.1 : bcs>=6 ? 1-(bcs-5)*0.1 : 1;
-  let idealWeight=weight*idealMultiplier;
-
+  // BCS 4-5 ideal; each point away = ~10% body weight difference
+  let idealWeight;
   if(bcs<=3) idealWeight=weight*((5-bcs)*0.15+1);
   else if(bcs<=5) idealWeight=weight;
-  else if(bcs<=7) idealWeight=weight/(1+(bcs-5)*0.1);
-  else idealWeight=weight/(1+(bcs-5)*0.15);
+  else idealWeight=weight/(1+(bcs-5)*0.1);
 
   const weightDiff=(weight-idealWeight)*2.20462;
   const diffPct=((weight-idealWeight)/idealWeight*100);

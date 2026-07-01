@@ -21,9 +21,13 @@
   <meta property="og:description" content="Dog ate chocolate? Instantly assess the toxicity risk. Enter your dog's weight, chocolate type, and amount — get an emergency-level assessment with actionable next steps.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://petcalchub.com/calculators/chocolate-toxicity.html">
+  <meta property="og:image" content="https://petcalchub.com/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Chocolate Toxicity Calculator for Dogs — Is It an Emergency? | PetCalcHub">
   <meta name="twitter:description" content="Dog ate chocolate? Instantly assess the toxicity risk. Enter your dog's weight, chocolate type, and amount — get an emergency-level assessment with actionable next steps.">
+  <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -131,12 +135,13 @@
               <label class="form-label" for="chocType">Type of Chocolate</label>
               <select id="chocType" class="form-select" required>
                 <option value="">Select type...</option>
-                <option value="white">White Chocolate (negligible theobromine)</option>
+                <option value="white">White Chocolate (very low theobromine, ~8 mg/oz)</option>
                 <option value="milk">Milk Chocolate (1-2 mg/g)</option>
-                <option value="dark">Dark Chocolate (5-10 mg/g)</option>
+                <option value="semisweet">Semi-Sweet Chocolate Chips (5-7 mg/g)</option>
+                <option value="dark">Dark Chocolate (60-70%, 5-10 mg/g)</option>
+                <option value="dark85">Dark Chocolate (85%+, ~10 mg/g)</option>
                 <option value="baking">Baking Chocolate / Unsweetened (15-25 mg/g)</option>
                 <option value="cocoa">Cocoa Powder (20-30 mg/g)</option>
-                <option value="semisweet">Semi-Sweet Chocolate Chips (5-7 mg/g)</option>
               </select>
             </div>
             <div class="form-group">
@@ -165,7 +170,7 @@
             <div class="faq-list">
               <div class="faq-item">
                 <button class="faq-question">How much chocolate is toxic to dogs?</button>
-                <div class="faq-answer"><p>Toxicity depends on the type of chocolate and your dog's weight. The danger comes from theobromine, which varies by chocolate type: white chocolate has negligible amounts (~0.25 mg/oz), milk chocolate has ~44 mg/oz, dark chocolate has ~210 mg/oz, and baking chocolate has ~450 mg/oz. Mild signs typically appear at 20 mg/kg of theobromine, severe toxicity at 40 mg/kg, and life-threatening seizures at 60 mg/kg. A small amount of baking chocolate can be far more dangerous than a large milk chocolate bar.</p></div>
+                <div class="faq-answer"><p>Toxicity depends on the type of chocolate and your dog's weight. The danger comes from theobromine, which varies by chocolate type: white chocolate has very low amounts (~8 mg/oz), milk chocolate has ~44 mg/oz, dark chocolate (60-70%) has ~210 mg/oz, dark chocolate (85%+) has ~300 mg/oz, and baking chocolate has ~450 mg/oz. Mild signs typically appear at 20 mg/kg of theobromine, severe toxicity at 40 mg/kg, and life-threatening seizures at 60 mg/kg. A small amount of baking chocolate can be far more dangerous than a large milk chocolate bar.</p></div>
               </div>
               <div class="faq-item">
                 <button class="faq-question">What should I do if my dog ate chocolate?</button>
@@ -247,14 +252,15 @@ function calculateToxicity() {
   // Theobromine content per oz (mg/oz) - veterinary accurate values
   // Source: Merck Veterinary Manual, ASPCA Poison Control
   const theobrominePerOz = { 
-    white: 8,       // ~0.3 mg/g, very low but not zero
-    milk: 44,       // ~1.5 mg/g 
-    dark: 210,      // ~7.5 mg/g (60-70% cacao)
-    baking: 450,    // ~16 mg/g (unsweetened)
-    cocoa: 735,     // ~26 mg/g (dry powder)
-    semisweet: 175  // ~6 mg/g (chocolate chips)
+    white: 8,
+    milk: 44,
+    semisweet: 175,
+    dark: 210,
+    dark85: 300,
+    baking: 450,
+    cocoa: 735
   };
-  const chocNames = { white: 'White Chocolate', milk: 'Milk Chocolate', dark: 'Dark Chocolate', baking: 'Baking Chocolate', cocoa: 'Cocoa Powder', semisweet: 'Semi-Sweet Chocolate' };
+  const chocNames = { white: 'White Chocolate', milk: 'Milk Chocolate', semisweet: 'Semi-Sweet Chocolate', dark: 'Dark Chocolate (60-70%)', dark85: 'Dark Chocolate (85%+)', baking: 'Baking Chocolate', cocoa: 'Cocoa Powder' };
 
   const totalTheobromine = theobrominePerOz[chocType] * amountOz;
   const doseMgKg = totalTheobromine / weight;

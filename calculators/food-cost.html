@@ -21,9 +21,13 @@
   <meta property="og:description" content="Compare daily and monthly pet food costs across brands. Calculate cost per day, per calorie, and per year. Find the best value dog and cat food without compromising nutrition.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://petcalchub.com/calculators/food-cost.html">
+  <meta property="og:image" content="https://petcalchub.com/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pet Food Cost Calculator — Compare Dog & Cat Food Prices | PetCalcHub">
   <meta name="twitter:description" content="Compare daily and monthly pet food costs across brands. Calculate cost per day, per calorie, and per year. Find the best value dog and cat food without compromising nutrition.">
+  <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -273,11 +277,11 @@ function calculateFoodCost(){
         </dl>
       </div>
     </div>
-    <div class="info-box success" style="margin-top:1rem;">
-      <strong>💡 Compare:</strong> Enter details for a second food and compare the cost per 1,000 kcal — that tells you the true cost regardless of bag size or calorie density.
+    <div class="info-box info" style="margin-top:1rem;">
+      <strong>💡 Tip:</strong> Compare cost per 1,000 kcal across brands — that tells you the true cost regardless of bag size or calorie density.
     </div>`;
 
-  displayAISuggestions('calorie','maintenance',dailyCal);
+  displayAISuggestions('foodCost', 'default', costPerDay.toFixed(2));
   scrollToResults();
 }
 </script>

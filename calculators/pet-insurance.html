@@ -21,9 +21,13 @@
   <meta property="og:description" content="Estimate pet insurance premiums for dogs and cats. Compare typical costs by species, breed size, age, and coverage level.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://petcalchub.com/calculators/pet-insurance.html">
+  <meta property="og:image" content="https://petcalchub.com/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pet Insurance Cost Calculator — Estimate Monthly Premiums | PetCalcHub">
   <meta name="twitter:description" content="Estimate pet insurance premiums for dogs and cats. Compare typical costs by species, breed size, age, and coverage level.">
+  <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -273,6 +277,25 @@
 
 <script src="../js/main.js"></script>
 <script>
+// Update breed size options based on pet type
+document.getElementById('petType').addEventListener('change', function() {
+  const breedSizeSelect = document.getElementById('breedSize');
+  const petType = this.value;
+  if (petType === 'dog') {
+    breedSizeSelect.innerHTML = `
+      <option value="small">Small (under 22 lbs / 10 kg)</option>
+      <option value="medium" selected>Medium (22-55 lbs / 10-25 kg)</option>
+      <option value="large">Large (55-90 lbs / 25-40 kg)</option>
+      <option value="giant">Giant (over 90 lbs / 40 kg)</option>
+    `;
+  } else {
+    breedSizeSelect.innerHTML = `
+      <option value="standard" selected>Standard / Domestic (under 12 lbs / 5.5 kg)</option>
+      <option value="large">Large Breed (12+ lbs, e.g. Maine Coon, Ragdoll)</option>
+    `;
+  }
+});
+
 function calculateInsurance() {
   const petType = document.getElementById('petType').value;
   const breedSize = document.getElementById('breedSize').value;
@@ -289,10 +312,10 @@ function calculateInsurance() {
   // Base monthly premiums (US market averages)
   const baseRates = {
     'dog': { 'small': 35, 'medium': 45, 'large': 55, 'giant': 70 },
-    'cat': { 'small': 18, 'medium': 22, 'large': 28, 'giant': 35 }
+    'cat': { 'standard': 20, 'large': 28 }
   };
 
-  const basePremium = baseRates[petType][breedSize];
+  const basePremium = baseRates[petType][breedSize] || baseRates[petType][Object.keys(baseRates[petType])[0]];
 
   // Age multiplier
   let ageMultiplier = 1.0;
@@ -338,7 +361,9 @@ function calculateInsurance() {
   const highEstimate = Math.round(monthlyPremium * 1.25);
 
   const petTypeLabel = petType === 'dog' ? 'Dog' : 'Cat';
-  const sizeLabels = { 'small': 'Small', 'medium': 'Medium', 'large': 'Large', 'giant': 'Giant' };
+  const sizeLabelsDog = { 'small': 'Small', 'medium': 'Medium', 'large': 'Large', 'giant': 'Giant' };
+  const sizeLabelsCat = { 'standard': 'Standard (under 12 lbs)', 'large': 'Large Breed (12+ lbs, e.g. Maine Coon)' };
+  const sizeLabels = petType === 'dog' ? sizeLabelsDog : sizeLabelsCat;
   const coverageLabels = {
     'accident': 'Accident-Only',
     'basic': 'Accident & Illness (Basic)',

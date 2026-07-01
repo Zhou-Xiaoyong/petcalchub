@@ -21,9 +21,13 @@
   <meta property="og:description" content="Find out how old your cat is in human years using veterinary guidelines. Free, instant results.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://petcalchub.com/calculators/cat-age.html">
+  <meta property="og:image" content="https://petcalchub.com/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cat Age Calculator — Convert Cat Years to Human Years | PetCalcHub">
   <meta name="twitter:description" content="Find out how old your cat is in human years using veterinary guidelines. Free, instant results.">
+  <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -269,8 +273,10 @@ function calculateCatAge() {
   if (totalYears <= 0) { alert('Please enter a valid age.'); return; }
 
   let humanAge;
-  if (totalYears <= 1) {
-    humanAge = totalYears * 15;
+  if (totalYears <= 0.5) {
+    humanAge = totalYears * 20;
+  } else if (totalYears <= 1) {
+    humanAge = 10 + (totalYears - 0.5) * 10;
   } else if (totalYears <= 2) {
     humanAge = 15 + (totalYears - 1) * 9;
   } else {
@@ -300,8 +306,8 @@ function calculateCatAge() {
         <dl>
           <dt>Life Stage</dt>
           <dd>${lifeStage} — ${getStageDescription(lifeStage)}</dd>
-          <dt>AAHA/AVMA Formula</dt>
-          <dd>15 human years for year 1, +9 for year 2, +4 per year after</dd>
+          <dt>AAHA Formula</dt>
+          <dd>6 mo = 10, 1 yr = 15, 2 yr = 24, +4/yr after</dd>
         </dl>
       </div>
     </div>`;

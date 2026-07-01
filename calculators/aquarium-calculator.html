@@ -20,9 +20,13 @@
   <meta property="og:description" content="Calculate your aquarium volume, safe fish stocking levels, heater wattage, and filter flow rate. Complete aquarium planning tool.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://petcalchub.com/calculators/aquarium-calculator.html">
+  <meta property="og:image" content="https://petcalchub.com/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Aquarium Calculator — Tank Volume, Stocking, Heater & Filter Guide | PetCalcHub">
   <meta name="twitter:description" content="Calculate your aquarium volume, safe fish stocking levels, heater wattage, and filter flow rate. Complete aquarium planning tool.">
+  <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -282,14 +286,15 @@
 <script>
 let aquariumUnit = 'in';
 
-WeightUnit.init('unitToggle');
-WeightUnit.onChange = function() {
-  aquariumUnit = this.current;
+// Length unit toggle (inches / cm) — independent of weight unit
+document.getElementById('unitToggle').addEventListener('click', function() {
+  aquariumUnit = aquariumUnit === 'in' ? 'cm' : 'in';
+  this.textContent = aquariumUnit === 'in' ? 'Switch to cm' : 'Switch to inches';
   document.getElementById('lenUnit').textContent = aquariumUnit === 'in' ? '(inches)' : '(cm)';
   document.getElementById('widUnit').textContent = aquariumUnit === 'in' ? '(inches)' : '(cm)';
   document.getElementById('hgtUnit').textContent = aquariumUnit === 'in' ? '(inches)' : '(cm)';
   document.getElementById('subUnit').textContent = aquariumUnit === 'in' ? '(inches)' : '(cm)';
-};
+});
 
 function calculateAquarium() {
   let length = parseFloat(document.getElementById('tankLength').value);
@@ -363,15 +368,20 @@ function calculateAquarium() {
   // --- Heater Wattage ---
   const targetTemp = tankType === 'coldwater' ? 68 : (tankType.includes('saltwater') ? 78 : 78);
   const tempDiff = targetTemp - roomTemp;
-  const baseWatts = actualGal * 4;
-  const adjustedWatts = Math.round(baseWatts * (tempDiff / 10));
-  const heaterWatts = Math.max(25, Math.round(adjustedWatts / 25) * 25); // Round to nearest 25W
-  
-  let heaterRec;
-  if (actualGal >= 55 && heaterWatts > 200) {
-    heaterRec = `Use TWO ${Math.round(heaterWatts / 2)}W heaters (one on each side) for even heating and redundancy.`;
+  let heaterWatts, heaterRec;
+
+  if (tempDiff <= 0) {
+    heaterWatts = 0;
+    heaterRec = 'No heater needed — room temperature is at or above the target temperature. Consider a cooling fan or chiller if the room gets too warm.';
   } else {
-    heaterRec = `Use a single ${heaterWatts}W heater.`;
+    const baseWatts = actualGal * 4;
+    const adjustedWatts = Math.round(baseWatts * (tempDiff / 10));
+    heaterWatts = Math.max(25, Math.round(adjustedWatts / 25) * 25);
+    if (actualGal >= 55 && heaterWatts > 200) {
+      heaterRec = `Use TWO ${Math.round(heaterWatts / 2)}W heaters (one on each side) for even heating and redundancy.`;
+    } else {
+      heaterRec = `Use a single ${heaterWatts}W heater.`;
+    }
   }
 
   // --- Filter Flow Rate ---
@@ -443,11 +453,11 @@ function calculateAquarium() {
     </div>
 
     <div class="result-box" style="margin-top:1rem; border-left-color: var(--accent);">
-      <div class="result-value" style="color:var(--accent);">${heaterWatts}W <span style="font-size:1rem;">heater</span></div>
+      <div class="result-value" style="color:var(--accent);">${heaterWatts > 0 ? heaterWatts + 'W' : 'None needed'} <span style="font-size:1rem;">heater</span></div>
       <div class="result-label">Heater Recommendation</div>
       <div class="result-details">
         <dl>
-          <dt>Target Temp</dt><dd>${targetTemp}°F (room is ${roomTemp}°F → ${tempDiff}°F difference)</dd>
+          <dt>Target Temp</dt><dd>${targetTemp}°F (room is ${roomTemp}°F → ${tempDiff > 0 ? '+' : ''}${tempDiff}°F difference)</dd>
           <dt>Recommendation</dt><dd>${heaterRec}</dd>
         </dl>
       </div>

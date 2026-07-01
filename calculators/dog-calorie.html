@@ -17,8 +17,17 @@
   <meta name="keywords" content="dog calorie calculator, how many calories does my dog need, dog food calculator, dog feeding calculator, RER dog">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://petcalchub.com/calculators/dog-calorie.html">
-  <meta property="og:title" content="Dog Calorie Calculator — Daily Calorie Needs for Dogs">
-  <meta property="og:description" content="Find your dog's exact daily calorie needs with our vet-standard calculator. Get personalized feeding recommendations.">
+  <meta property="og:title" content="Dog Calorie Calculator — Daily Calorie Needs for Dogs (Vet Formula) | PetCalcHub">
+  <meta property="og:description" content="Calculate your dog's exact daily calorie needs using the NRC/AAFCO RER×DER formula. Adjusts for weight, age, activity level, and body condition. Free veterinary-standard calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petcalchub.com/calculators/dog-calorie.html">
+  <meta property="og:image" content="https://petcalchub.com/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dog Calorie Calculator — Daily Calorie Needs for Dogs (Vet Formula) | PetCalcHub">
+  <meta name="twitter:description" content="Calculate your dog's exact daily calorie needs using the NRC/AAFCO RER×DER formula. Adjusts for weight, age, activity level, and body condition. Free veterinary-standard calculator.">
+  <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -267,8 +276,13 @@ function calculateDogCalories() {
   };
 
   // Activity level adjustment factors
+  // Only apply to adult/senior/weight_loss stages — active/working/nursing/pregnant/puppy
+  // stages already include activity/metabolic demand in their base multipliers.
   const activityAdjustments = { low: 0.8, moderate: 1.0, high: 1.2 };
-  const activityFactor = activityAdjustments[activityLevel] || 1.0;
+  const activityAffectedStages = ['adult_neutered', 'adult_intact', 'senior', 'weight_loss'];
+  const activityFactor = activityAffectedStages.includes(lifeStage)
+    ? (activityAdjustments[activityLevel] || 1.0)
+    : 1.0;
 
   const baseMultiplier = lifeStageMultipliers[lifeStage] || 1.6;
   const multiplier = baseMultiplier * activityFactor;
