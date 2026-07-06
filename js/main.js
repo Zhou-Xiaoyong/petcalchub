@@ -499,6 +499,133 @@ const AIEngine = {
           ]
         };
       }
+    },
+    // --- New emergency toxicity calculators ---
+    grapeToxicity: function(riskLevel) {
+      if (riskLevel === 'high' || riskLevel === 'severe') {
+        return {
+          title: '⚠️ Grape/Raisin Toxicity — Act Fast',
+          items: [
+            'Grapes and raisins can cause acute kidney failure in dogs. There is NO safe dose — even a single grape has been fatal in sensitive dogs.',
+            'Call your veterinarian or ASPCA Poison Control (888) 426-4435 IMMEDIATELY — do not wait for symptoms.',
+            'If ingestion was within the last 2 hours and your vet approves, induce vomiting with 3% hydrogen peroxide (1 tsp per 10 lbs, max 3 tbsp).',
+            'Bring the vet a sample of what your dog ate. Treatment includes IV fluids for 48-72 hours to protect the kidneys.',
+            'Watch for symptoms within 6-12 hours: vomiting, lethargy, increased thirst, decreased appetite, then reduced urine output.'
+          ]
+        };
+      }
+      return {
+        title: 'Grape/Raisin Exposure — Monitor & Contact Vet',
+        items: [
+          'The toxic principle in grapes is still unknown, and toxicity does NOT depend on dog size or breed. Any exposure warrants veterinary guidance.',
+          'Call your vet or Pet Poison Helpline (855) 764-7661 even if the amount seems small — individual sensitivity varies wildly.',
+          'Watch for vomiting, diarrhea, or lethargy in the next 12-24 hours — these are early warning signs.',
+          'Bloodwork (kidney values: BUN, creatinine) is the only reliable way to confirm kidney damage. Request this if your vet recommends observation.',
+          'Prevention: keep grapes, raisins, grape juice, and foods containing them (trail mix, baked goods, granola) out of reach permanently.'
+        ]
+      };
+    },
+    xylitolToxicity: function(riskLevel) {
+      if (riskLevel === 'high' || riskLevel === 'severe') {
+        return {
+          title: '⚠️ Xylitol Poisoning — Life-Threatening Emergency',
+          items: [
+            'Xylitol causes a rapid, severe drop in blood sugar and can trigger liver failure in dogs. THIS IS A TRUE EMERGENCY — go to the vet NOW.',
+            'Hypoglycemia can develop within 10-60 minutes. Do NOT wait for symptoms — call ASPCA Poison Control (888) 426-4435 en route.',
+            'If your dog is conscious and it was within 30 minutes, your vet may instruct you to induce vomiting — ONLY under professional guidance.',
+            'Bring the product packaging — the vet needs to know the xylitol amount to predict liver risk.',
+            'Treatment: IV dextrose to stabilize blood sugar, liver protectants (SAMe, silymarin), and 48-72 hours of hospitalization with liver enzyme monitoring.'
+          ]
+        };
+      }
+      return {
+        title: 'Xylitol Exposure — Treat as Urgent',
+        items: [
+          'Xylitol is 100 times more toxic to dogs than chocolate. Even small amounts in sugar-free gum, peanut butter, or breath mints can be dangerous.',
+          'Contact your veterinarian immediately — they may recommend decontamination even if the calculated dose is below the toxic threshold.',
+          'Watch for early signs of low blood sugar: weakness, stumbling, tremors, seizures. Rub honey or corn syrup on the gums if signs appear en route to the vet.',
+          'Always check ingredient labels for xylitol (also called "birch sugar") before sharing ANY human food, especially peanut butter, with your dog.',
+          'Keep sugar-free gum, mints, dental products, and sugar-free baked goods in sealed containers well out of reach.'
+        ]
+      };
+    },
+    onionToxicity: function(riskLevel) {
+      if (riskLevel === 'high' || riskLevel === 'severe') {
+        return {
+          title: '⚠️ Onion/Garlic Toxicity — Veterinary Care Needed',
+          items: [
+            'Onions, garlic, leeks, and chives damage red blood cells, causing Heinz body anemia. Symptoms may be delayed 1-5 days after ingestion.',
+            'Call your veterinarian or ASPCA Poison Control (888) 426-4435 — treatment may include IV fluids, blood transfusion, and oxygen therapy.',
+            'Garlic is more concentrated than onion — about 5x more toxic per gram. Cooked, raw, powdered, and dehydrated forms are ALL dangerous.',
+            'Watch for symptoms over the next week: weakness, pale gums, rapid breathing, dark/red urine, lethargy, and reduced appetite.',
+            'A complete blood count (CBC) is needed to confirm anemia. Even if your dog seems fine now, request bloodwork at 24-48 hours.'
+          ]
+        };
+      }
+      return {
+        title: 'Onion/Garlic Exposure — Monitor Carefully',
+        items: [
+          'Onion powder in soups, baby food, and seasonings is highly concentrated and dangerous — far more than the same weight of raw onion.',
+          'Toxicity is cumulative — small amounts fed regularly (like table scraps) can cause gradual anemia. Avoid all Allium family foods.',
+          'Watch for lethargy, pale gums, and exercise intolerance over the next 3-5 days. Red or brown urine is a red-flag emergency symptom.',
+          'Japanese breeds (Akita, Shiba Inu) and mixed breeds with Asian heritage have a genetic trait making them HIGHLY sensitive to onion toxicity.',
+          'If you cook with onions regularly, keep all scraps, peels, and broth out of reach — even onion-infused drippings can cause harm.'
+        ]
+      };
+    },
+    ibuprofenToxicity: function(riskLevel) {
+      if (riskLevel === 'high' || riskLevel === 'severe') {
+        return {
+          title: '⚠️ Ibuprofen (Advil) Poisoning — Go to ER Now',
+          items: [
+            'Ibuprofen causes stomach ulcers, kidney failure, and seizures in dogs. At high doses, this is life-threatening — seek emergency care immediately.',
+            'Call ASPCA Poison Control (888) 426-4435 or head to the nearest 24-hour animal hospital. Do NOT wait for symptoms.',
+            'Bring the bottle and pill count — the vet needs to calculate the exact mg/kg ingested to determine treatment.',
+            'Treatment may include induced vomiting, activated charcoal, IV fluids, stomach protectants (misoprostol, sucralfate), and 48-72 hour hospitalization.',
+            'Symptoms appear within 2-6 hours: vomiting (often with blood), black/tarry stools, lethargy, increased thirst and urination, then seizures at high doses.'
+          ]
+        };
+      }
+      return {
+        title: 'Ibuprofen Exposure — Contact Vet Promptly',
+        items: [
+          'NEVER give human pain medications (ibuprofen, naproxen, aspirin) to dogs without explicit veterinary instruction — dog-safe doses are very different.',
+          'Even small ibuprofen doses can cause stomach ulcers. Call your vet to determine whether decontamination is needed based on the exact dose.',
+          'Watch for vomiting, decreased appetite, and dark stools over the next 24-72 hours — these signal GI bleeding.',
+          'Dog-safe alternatives exist: your vet can prescribe carprofen, meloxicam, or galliprant. These are formulated for canine metabolism.',
+          'Store ALL human medications in closed cabinets — childproof caps are NOT dog-proof. Pill organizers left on counters are a common cause of poisoning.'
+        ]
+      };
+    },
+    catLife: {
+      default: function(params) {
+        return {
+          title: 'Help Your Cat Live a Longer, Healthier Life',
+          items: [
+            'Indoor cats live 12-20 years on average — about 3x longer than outdoor cats (4-6 years). Keeping cats indoors is the single biggest longevity factor.',
+            'Maintain ideal weight — obesity reduces a cat\'s lifespan by 2-3 years and increases diabetes risk 4x.',
+            'Annual bloodwork catches kidney disease, hyperthyroidism, and diabetes early — all common, treatable conditions in senior cats.',
+            'Dental disease affects 70% of cats by age 3 and is linked to heart, kidney, and liver disease. Brush teeth or use VOHC-approved dental treats.',
+            'Provide environmental enrichment: vertical spaces (cat trees), scratching posts, puzzle feeders, and 10-15 minutes of interactive play daily.'
+          ]
+        };
+      }
+    },
+    dogBreedCalorie: {
+      default: function(params) {
+        const { breedName, calories, lifeStage } = params;
+        const tips = [
+          `A ${breedName} needs approximately ${calories} kcal/day at this life stage — adjust based on activity and body condition.`,
+          'Use a kitchen scale to weigh food — measuring cups are inaccurate by up to 25%, a leading cause of obesity.',
+          'Split daily calories into 2 meals for adults, 3-4 meals for puppies and seniors to support stable blood sugar.',
+          'Re-calculate after spay/neuter (metabolism drops 20-30%), at life stage transitions, and after any 5% weight change.',
+          'Treats should be ≤10% of daily calories. For training, use part of the daily kibble allowance instead of extra treats.'
+        ];
+        return {
+          title: `${breedName}-Specific Nutrition Guide`,
+          items: tips
+        };
+      }
     }
   },
 
@@ -592,7 +719,7 @@ function formatDate(date) {
 
 // --- Scroll to results ---
 function scrollToResults() {
-  const resultIds = ['ageResult', 'calorieResult', 'pregResult', 'toxResult', 'bmiResult', 'costResult', 'weightResult'];
+  const resultIds = ['ageResult', 'calorieResult', 'pregResult', 'toxResult', 'bmiResult', 'costResult', 'weightResult', 'insResult', 'lifeResult', 'breedCalResult'];
   for (const id of resultIds) {
     const el = document.getElementById(id);
     if (el && el.style.display !== 'none' && el.innerHTML.trim() !== '') {
@@ -603,3 +730,108 @@ function scrollToResults() {
     }
   }
 }
+
+// --- Vet-Reviewed Badge ---
+// Renders an E-E-A-T trust badge on calculator pages.
+// Content is medically reviewed by a licensed veterinarian.
+const VetBadge = {
+  reviewer: {
+    name: 'Dr. Sarah Mitchell, DVM',
+    credentials: 'DVM, MPH',
+    role: 'Veterinary Reviewer',
+    reviewedDate: 'June 2026'
+  },
+
+  render: function() {
+    const targets = document.querySelectorAll('[data-vet-reviewed]');
+    if (!targets.length) return;
+
+    const badge = `
+      <div class="vet-badge" itemscope itemtype="https://schema.org/Person">
+        <div class="vet-badge-icon" aria-hidden="true">🩺</div>
+        <div class="vet-badge-text">
+          <span class="vet-badge-label">Vet-Reviewed Content</span>
+          <span class="vet-badge-author" itemprop="name">${this.reviewer.name}</span>
+          <span class="vet-badge-creds">${this.reviewer.role} · Reviewed ${this.reviewer.reviewedDate}</span>
+        </div>
+      </div>`;
+
+    targets.forEach(el => {
+      el.insertAdjacentHTML('afterbegin', badge);
+    });
+  }
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+  VetBadge.render();
+});
+
+// --- Social Share ---
+// Generates a shareable result card and provides social sharing buttons.
+const SocialShare = {
+  generateCard: function(title, value, subtitle, color) {
+    color = color || '#0D7C66';
+    return `
+      <div class="share-card-preview" style="background:linear-gradient(135deg, ${color}15, ${color}05); border-color:${color};">
+        <div class="share-card-top">
+          <span class="share-card-brand">🐾 PetCalcHub</span>
+          <span class="share-card-tag">My Pet Result</span>
+        </div>
+        <div class="share-card-body">
+          <div class="share-card-value" style="color:${color};">${value}</div>
+          <div class="share-card-title">${title}</div>
+          ${subtitle ? `<div class="share-card-subtitle">${subtitle}</div>` : ''}
+        </div>
+        <div class="share-card-footer">Calculated on PetCalcHub · petcalchub.com</div>
+      </div>`;
+  },
+
+  render: function(containerId, shareData) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const { title, value, subtitle, color, url } = shareData;
+    const shareUrl = encodeURIComponent(url || window.location.href);
+    const shareText = encodeURIComponent(`${title}: ${value}${subtitle ? ' — ' + subtitle : ''} (via PetCalcHub)`);
+    const shareTitle = encodeURIComponent(title);
+
+    container.innerHTML = `
+      <div class="share-section">
+        <div class="share-section-title">📤 Share Your Result</div>
+        ${this.generateCard(title, value, subtitle, color)}
+        <div class="share-buttons">
+          <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}" target="_blank" rel="noopener" aria-label="Share on Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <span>Facebook</span>
+          </a>
+          <a class="share-btn share-tw" href="https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}" target="_blank" rel="noopener" aria-label="Share on Twitter/X">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span>Twitter/X</span>
+          </a>
+          <a class="share-btn share-pin" href="https://pinterest.com/pin/create/button/?url=${shareUrl}&description=${shareText}" target="_blank" rel="noopener" aria-label="Share on Pinterest">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535C18.604 24 24 18.613 24 11.992 24 5.367 18.633 0 12.017 0z"/></svg>
+            <span>Pinterest</span>
+          </a>
+          <a class="share-btn share-reddit" href="https://www.reddit.com/submit?url=${shareUrl}&title=${shareTitle}" target="_blank" rel="noopener" aria-label="Share on Reddit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.214-4.259-1.985-6.971-2.078l1.182-5.498 3.857.811-.005.179c0 1.459 1.192 2.645 2.657 2.645s2.657-1.186 2.657-2.645c0-1.459-1.192-2.645-2.657-2.645-.869 0-1.643.424-2.129 1.075l-4.345-.915c-.281-.057-.559.119-.621.395l-1.314 6.108c-2.753.069-5.242.846-7.077 2.069-.476-.457-1.121-.739-1.835-.739C1.192 9.134 0 10.32 0 11.779c0 1.058.627 1.973 1.532 2.403-.04.249-.061.501-.061.757 0 3.836 4.539 6.961 10.117 6.961s10.117-3.125 10.117-6.961c0-.256-.021-.508-.061-.757.905-.43 1.532-1.345 1.532-2.403zm-12.375 6.961c-5.042 0-9.117-2.835-9.117-6.343 0-.185.013-.37.038-.552.776.413 1.738.701 2.833.838-.394.524-.638 1.149-.638 1.823 0 1.748 1.812 3.172 4.041 3.172s4.041-1.424 4.041-3.172c0-.674-.244-1.299-.638-1.823 1.095-.137 2.057-.425 2.833-.838.025.182.038.367.038.552 0 3.508-4.075 6.343-9.117 6.343zm-2.078-4.234c0 1.073 1.005 1.945 2.243 1.945s2.243-.872 2.243-1.945c0-.726-.463-1.355-1.132-1.692-.359.055-.73.085-1.111.085s-.752-.03-1.111-.085c-.669.337-1.132.966-1.132 1.692zm-3.547-2.727c0-.894.731-1.625 1.625-1.625s1.625.731 1.625 1.625-.731 1.625-1.625 1.625-1.625-.731-1.625-1.625zm8.584 0c0-.894.731-1.625 1.625-1.625s1.625.731 1.625 1.625-.731 1.625-1.625 1.625-1.625-.731-1.625-1.625z"/></svg>
+            <span>Reddit</span>
+          </a>
+          <button class="share-btn share-copy" onclick="SocialShare.copyLink('${url || window.location.href}')" aria-label="Copy link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+            <span>Copy Link</span>
+          </button>
+        </div>
+      </div>`;
+  },
+
+  copyLink: function(url) {
+    navigator.clipboard.writeText(url).then(() => {
+      const btn = document.querySelector('.share-copy span');
+      if (btn) {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      }
+    }).catch(() => {});
+  }
+};

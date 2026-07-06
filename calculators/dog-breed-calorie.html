@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKCZHTY5WH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WKCZHTY5WH');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Breed Calorie Calculator — Breed-Specific Daily Needs | PetCalcHub</title>
+  <meta name="description" content="Calculate daily calorie needs for 40+ dog breeds. Labrador vs Chihuahua, Golden Retriever vs French Bulldog — get breed-specific RER and MER with feeding guidance.">
+  <meta name="keywords" content="dog calorie calculator by breed, breed specific calorie calculator, labrador calorie needs, chihuahua calorie needs, dog breed nutrition, how many calories does my dog need">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/calculators/dog-breed-calorie.html">
+  <meta property="og:title" content="Dog Breed Calorie Calculator — Breed-Specific Daily Needs | PetCalcHub">
+  <meta property="og:description" content="Calculate daily calorie needs for 40+ dog breeds. Labrador vs Chihuahua, Golden Retriever vs French Bulldog — get breed-specific RER and MER with feeding guidance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://petcalchub.com/calculators/dog-breed-calorie.html">
+  <meta property="og:image" content="https://petcalchub.com/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dog Breed Calorie Calculator — Breed-Specific Daily Needs | PetCalcHub">
+  <meta name="twitter:description" content="Calculate daily calorie needs for 40+ dog breeds. Labrador vs Chihuahua, Golden Retriever vs French Bulldog — get breed-specific RER and MER with feeding guidance.">
+  <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Dog Breed Calorie Calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "description": "Calculate breed-specific daily calorie needs for 40+ dog breeds using NRC RER and AAHA MER formulas.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Why does my dog's breed affect calorie needs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Breed size, metabolism, and energy levels vary dramatically. A 65 lb Labrador (active, sporting breed) needs ~1300-1600 kcal/day, while a 65 lb Bulldog (low energy) may need only ~1000-1200 kcal/day. Breed-typical activity drives the MER multiplier."
+      }
+    }]
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🚨 Emergency</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity</a>
+          <a href="grape-toxicity.html" role="menuitem">Grape & Raisin Toxicity</a>
+          <a href="xylitol-toxicity.html" role="menuitem">Xylitol Toxicity</a>
+          <a href="onion-toxicity.html" role="menuitem">Onion & Garlic Toxicity</a>
+          <a href="ibuprofen-toxicity.html" role="menuitem">Ibuprofen (Advil) Toxicity</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="dog-age.html" role="menuitem">Dog Age Calculator</a>
+          <a href="dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="dog-breed-calorie.html" role="menuitem" class="active">Breed Calorie Calculator</a>
+          <a href="puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
+          <a href="dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
+          <a href="dog-water.html" role="menuitem">Dog Water Intake</a>
+          <a href="dog-life.html" role="menuitem">Life Expectancy</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="cat-age.html" role="menuitem">Cat Age Calculator</a>
+          <a href="cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="cat-life.html" role="menuitem">Cat Life Expectancy</a>
+          <a href="cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
+          <a href="cat-water.html" role="menuitem">Cat Water Intake</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
+          <a href="pet-insurance.html" role="menuitem">Pet Insurance Cost</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">💲 Costs & Services</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="pet-travel-cost.html" role="menuitem">Pet Travel Cost</a>
+          <a href="pet-sitting-rate.html" role="menuitem">Pet Sitting Rate</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐠 Aquarium</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="aquarium-calculator.html" role="menuitem">Aquarium Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main class="calc-page">
+  <div class="container">
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span class="separator">›</span>
+      <span>Dog Breed Calorie Calculator</span>
+    </nav>
+
+    <div data-vet-reviewed></div>
+
+    <div class="calc-layout">
+      <div class="calc-main">
+        <div class="calc-header">
+          <h1>Dog Breed Calorie Calculator</h1>
+          <p class="calc-desc">Different dog breeds have very different metabolisms and energy needs. A Labrador needs far more calories than a Chihuahua, even at the same life stage. Get breed-specific daily calorie targets based on RER (Resting Energy Requirement) and MER (Maintenance Energy Requirement) formulas.</p>
+        </div>
+
+        <div class="calc-card" id="calc-card">
+          <h2>🐕 Select Your Dog's Breed</h2>
+
+          <div class="form-group">
+            <label class="form-label" for="dogBreed">Dog Breed</label>
+            <select id="dogBreed" class="form-select" required onchange="updateBreedWeightHint()">
+              <option value="">Select a breed...</option>
+              <optgroup label="Small Breeds">
+                <option value="Chihuahua" data-weight="5">Chihuahua</option>
+                <option value="Yorkshire Terrier" data-weight="7">Yorkshire Terrier</option>
+                <option value="Dachshund" data-weight="16">Dachshund</option>
+                <option value="Pomeranian" data-weight="7">Pomeranian</option>
+                <option value="Maltese" data-weight="7">Maltese</option>
+                <option value="Toy Poodle" data-weight="10">Toy Poodle</option>
+                <option value="Shih Tzu" data-weight="12">Shih Tzu</option>
+                <option value="Pug" data-weight="18">Pug</option>
+                <option value="French Bulldog" data-weight="22">French Bulldog</option>
+                <option value="Boston Terrier" data-weight="20">Boston Terrier</option>
+              </optgroup>
+              <optgroup label="Medium Breeds">
+                <option value="Beagle" data-weight="25">Beagle</option>
+                <option value="Cocker Spaniel" data-weight="27">Cocker Spaniel</option>
+                <option value="English Bulldog" data-weight="50">English Bulldog</option>
+                <option value="Australian Shepherd" data-weight="50">Australian Shepherd</option>
+                <option value="Border Collie" data-weight="40">Border Collie</option>
+                <option value="Basset Hound" data-weight="50">Basset Hound</option>
+                <option value="Whippet" data-weight="35">Whippet</option>
+                <option value="Brittany Spaniel" data-weight="35">Brittany Spaniel</option>
+              </optgroup>
+              <optgroup label="Large Breeds">
+                <option value="Labrador Retriever" data-weight="65">Labrador Retriever</option>
+                <option value="Golden Retriever" data-weight="70">Golden Retriever</option>
+                <option value="German Shepherd" data-weight="75">German Shepherd</option>
+                <option value="Boxer" data-weight="65">Boxer</option>
+                <option value="Doberman Pinscher" data-weight="80">Doberman Pinscher</option>
+                <option value="Rottweiler" data-weight="110">Rottweiler</option>
+                <option value="Siberian Husky" data-weight="50">Siberian Husky</option>
+                <option value="Standard Poodle" data-weight="55">Standard Poodle</option>
+                <option value="Dalmatian" data-weight="55">Dalmatian</option>
+                <option value="Pointer" data-weight="60">Pointer</option>
+              </optgroup>
+              <optgroup label="Giant Breeds">
+                <option value="Great Dane" data-weight="140">Great Dane</option>
+                <option value="Mastiff" data-weight="160">Mastiff</option>
+                <option value="Saint Bernard" data-weight="150">Saint Bernard</option>
+                <option value="Bernese Mountain Dog" data-weight="95">Bernese Mountain Dog</option>
+                <option value="Newfoundland" data-weight="130">Newfoundland</option>
+                <option value="Irish Wolfhound" data-weight="140">Irish Wolfhound</option>
+                <option value="Great Pyrenees" data-weight="100">Great Pyrenees</option>
+                <option value="Leonberger" data-weight="120">Leonberger</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div id="unitToggle" class="unit-toggle">
+            <button class="active" data-unit="lbs">Pounds (lbs)</button>
+            <button data-unit="kg">Kilograms (kg)</button>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="customWeight">Custom Weight <span style="font-weight:normal; color:var(--text-muted);">(optional — overrides breed default)</span></label>
+            <div class="input-group">
+              <input type="number" id="customWeight" class="form-input" placeholder="Leave blank to use breed typical weight" min="1" max="250" step="0.1">
+              <span class="input-group-append" id="weightUnit">lbs</span>
+            </div>
+            <div class="form-hint" id="breedWeightHint"></div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="dogAge">Age (years)</label>
+              <input type="number" id="dogAge" class="form-input" placeholder="e.g. 3" min="0" max="20" step="0.5">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="activityLevel">Activity Level / Life Stage</label>
+              <select id="activityLevel" class="form-select" required>
+                <option value="">Select activity level...</option>
+                <option value="neutered_adult">Neutered/Spayed Adult</option>
+                <option value="intact_adult">Intact Adult</option>
+                <option value="weight_loss">Weight Loss</option>
+                <option value="weight_gain">Weight Gain</option>
+                <option value="puppy_4mo">Puppy &lt; 4 months</option>
+                <option value="puppy_4mo_plus">Puppy 4+ months</option>
+                <option value="working">Working/Performance</option>
+                <option value="senior">Senior</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" onclick="calculateBreedCalories()" style="width:100%; margin-top:0.5rem;">
+            Calculate Breed Calories →
+          </button>
+
+          <div id="breedCalResult" style="display:none;"></div>
+        </div>
+
+        <div id="ai-suggestions"></div>
+        <div id="share-container"></div>
+
+        <div class="ad-slot" id="ad-in-content"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-inner">Ad space reserved</div></div>
+
+        <div style="margin-top:3rem;">
+          <h2>Breed Calorie Comparison (Adult, Neutered)</h2>
+          <div style="overflow-x:auto; margin-top:1rem;">
+            <table class="data-table">
+              <thead><tr><th>Breed</th><th>Typical Weight</th><th>Daily Calories</th></tr></thead>
+              <tbody>
+                <tr><td>Chihuahua</td><td>5 lbs</td><td>~250 kcal</td></tr>
+                <tr><td>French Bulldog</td><td>22 lbs</td><td>~700 kcal</td></tr>
+                <tr><td>Beagle</td><td>25 lbs</td><td>~750 kcal</td></tr>
+                <tr><td>Border Collie</td><td>40 lbs</td><td>~1100 kcal</td></tr>
+                <tr><td>Labrador Retriever</td><td>65 lbs</td><td>~1450 kcal</td></tr>
+                <tr><td>German Shepherd</td><td>75 lbs</td><td>~1600 kcal</td></tr>
+                <tr><td>Great Dane</td><td>140 lbs</td><td>~2500 kcal</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="info-box info" style="margin-top:1rem;">
+            <strong>Formula:</strong> RER = 70 × (weight in kg)<sup>0.75</sup>. MER = RER × activity multiplier. Based on NRC 2006 nutrient requirements and AAHA guidelines.
+          </div>
+        </div>
+
+        <section class="faq-section">
+          <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">Why does my dog's breed affect calorie needs?</button>
+                <div class="faq-answer"><p>Breed size, metabolism, and energy levels vary dramatically. A 65 lb Labrador (active, sporting breed) needs ~1300-1600 kcal/day, while a 65 lb Bulldog (low energy) may need only ~1000-1200 kcal/day. Breed-typical activity drives the MER multiplier.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">How many cups of food should I feed my dog?</button>
+                <div class="faq-answer"><p>Most dry dog foods contain ~350-400 kcal per cup. Divide daily calories by the kcal/cup printed on your food bag. Always use a kitchen scale — measuring cups are inaccurate by up to 25%.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">How do I know if I'm feeding the right amount?</button>
+                <div class="faq-answer"><p>Use the Body Condition Score (BCS): you should feel ribs with light pressure but not see them. Re-weigh monthly and adjust portions if weight changes by more than 5%.</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="calc-sidebar">
+        <div class="ad-sidebar" id="ad-sidebar"><div class="ad-sidebar-label">Advertisement</div><div class="ad-sidebar-inner">Ad space reserved</div></div>
+        <div style="background:white; border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.75rem;">🍖 Breed Nutrition Tips</h4>
+          <ul style="font-size:0.9rem; color:var(--text-secondary); padding-left:1.25rem; line-height:1.8;">
+            <li>Small breeds have faster metabolisms per pound</li>
+            <li>Giant breeds need controlled energy to protect joints</li>
+            <li>Working dogs may need 2-5× RER</li>
+            <li>Re-calculate after spay/neuter (-20-30%)</li>
+            <li>Use a kitchen scale, not a measuring cup</li>
+          </ul>
+        </div>
+        <div style="background:var(--warning-bg); border:1px solid #FDE68A; border-radius:var(--radius); padding:1.25rem; margin-top:1rem;">
+          <h4 style="margin-bottom:0.5rem;">⚠️ Important</h4>
+          <p style="font-size:0.85rem; color:#92400E;">Treats should not exceed <strong>10%</strong> of daily calories. These are breed-typical estimates — always adjust based on your dog's actual body condition and activity.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../index.html" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a><p>Free, science-backed pet calculators with AI-powered health insights.</p></div>
+      <div class="footer-col"><h4>Calculators</h4><ul><li><a href="dog-age.html">Dog Age Calculator</a></li><li><a href="cat-age.html">Cat Age Calculator</a></li><li><a href="dog-calorie.html">Dog Calorie Calculator</a></li><li><a href="cat-calorie.html">Cat Calorie Calculator</a></li><li><a href="puppy-weight.html">Puppy Weight Predictor</a></li><li><a href="dog-pregnancy.html">Dog Pregnancy Calculator</a></li><li><a href="cat-pregnancy.html">Cat Pregnancy Calculator</a></li><li><a href="pet-bmi.html">Pet BMI & Ideal Weight</a></li><li><a href="food-cost.html">Food Cost Calculator</a></li><li><a href="chocolate-toxicity.html">Chocolate Toxicity</a></li><li><a href="dog-water.html">Dog Water Intake</a></li><li><a href="cat-water.html">Cat Water Intake</a></li><li><a href="dog-life.html">Life Expectancy</a></li><li><a href="pet-insurance.html">Pet Insurance Cost</a></li><li><a href="pet-travel-cost.html">Pet Travel Cost</a></li><li><a href="pet-sitting-rate.html">Pet Sitting Rate</a></li><li><a href="aquarium-calculator.html">Aquarium Calculator</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="../blog/">Pet Care Blog</a></li><li><a href="../about.html">About Us</a></li><li><a href="../privacy.html">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../privacy.html#disclaimer">Medical Disclaimer</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 PetCalcHub.</span><span>Not a substitute for veterinary care. Call a vet in emergencies.</span></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+WeightUnit.init('unitToggle');
+WeightUnit.onChange = function() {
+  document.getElementById('weightUnit').textContent = this.current;
+  updateBreedWeightHint();
+};
+
+function updateBreedWeightHint() {
+  const breedSelect = document.getElementById('dogBreed');
+  const selected = breedSelect.options[breedSelect.selectedIndex];
+  const hint = document.getElementById('breedWeightHint');
+  if (!selected || !selected.value || !selected.dataset.weight) {
+    hint.textContent = '';
+    return;
+  }
+  const lbs = parseFloat(selected.dataset.weight);
+  const kg = lbs / 2.20462;
+  hint.textContent = WeightUnit.current === 'lbs'
+    ? 'Breed typical weight: ' + lbs + ' lbs (' + kg.toFixed(1) + ' kg)'
+    : 'Breed typical weight: ' + kg.toFixed(1) + ' kg (' + lbs + ' lbs)';
+}
+
+function calculateBreedCalories() {
+  const breedSelect = document.getElementById('dogBreed');
+  const breedName = breedSelect.value;
+  if (!breedName) { alert('Please select a dog breed.'); return; }
+
+  const activity = document.getElementById('activityLevel').value;
+  if (!activity) { alert('Please select an activity level / life stage.'); return; }
+
+  const selectedOption = breedSelect.options[breedSelect.selectedIndex];
+  const breedWeightLbs = parseFloat(selectedOption.dataset.weight);
+
+  const customWeight = parseFloat(document.getElementById('customWeight').value);
+  let weightLbs, usingCustom = false;
+  if (!isNaN(customWeight) && customWeight > 0) {
+    usingCustom = true;
+    weightLbs = WeightUnit.current === 'lbs' ? customWeight : customWeight * 2.20462;
+  } else {
+    weightLbs = breedWeightLbs;
+  }
+
+  const weightKg = weightLbs / 2.20462;
+  const rer = 70 * Math.pow(weightKg, 0.75);
+
+  const multipliers = {
+    neutered_adult: 1.6,
+    intact_adult: 1.8,
+    weight_loss: 1.0,
+    weight_gain: 1.7,
+    puppy_4mo: 3.0,
+    puppy_4mo_plus: 2.0,
+    working: 3.0,
+    senior: 1.4
+  };
+  const labels = {
+    neutered_adult: 'Neutered/Spayed Adult',
+    intact_adult: 'Intact Adult',
+    weight_loss: 'Weight Loss',
+    weight_gain: 'Weight Gain',
+    puppy_4mo: 'Puppy < 4 months',
+    puppy_4mo_plus: 'Puppy 4+ months',
+    working: 'Working/Performance',
+    senior: 'Senior'
+  };
+
+  const multiplier = multipliers[activity];
+  const dailyCalories = Math.round((rer * multiplier) / 10) * 10;
+  const cups = dailyCalories / 350;
+
+  const merDisplay = activity === 'working'
+    ? multiplier.toFixed(1) + '× (range: 2.0–5.0×)'
+    : multiplier.toFixed(1) + '×';
+
+  const typicalWeightDisplay = usingCustom
+    ? weightLbs.toFixed(1) + ' lbs (' + weightKg.toFixed(1) + ' kg) — custom'
+    : breedWeightLbs + ' lbs (' + (breedWeightLbs / 2.20462).toFixed(1) + ' kg)';
+
+  const resultEl = document.getElementById('breedCalResult');
+  resultEl.style.display = 'block';
+  resultEl.innerHTML = `
+    <div class="result-box primary">
+      <div class="result-value">${dailyCalories} <span style="font-size:1rem;">kcal/day</span></div>
+      <div class="result-label">Daily Calorie Target for ${breedName}</div>
+      <div class="result-details">
+        <dl>
+          <dt>Typical Adult Weight</dt><dd>${typicalWeightDisplay}</dd>
+          <dt>RER (Resting)</dt><dd>${Math.round(rer)} kcal/day</dd>
+          <dt>MER Multiplier</dt><dd>${merDisplay}</dd>
+          <dt>Life Stage</dt><dd>${labels[activity]}</dd>
+          <dt>Recommended Cups of Dry Food</dt><dd>~${cups.toFixed(1)} cups/day (at ~350 kcal/cup)</dd>
+        </dl>
+      </div>
+      <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.75rem;">
+        Adjust portions based on your dog's body condition — you should feel ribs with light pressure but not see them. Re-weigh monthly and adjust if weight changes by more than 5%.
+      </div>
+    </div>`;
+
+  displayAISuggestions('dogBreedCalorie', 'default', {
+    breedName: breedName,
+    calories: dailyCalories,
+    lifeStage: labels[activity]
+  });
+
+  SocialShare.render('share-container', {
+    title: 'My ' + breedName + ' needs',
+    value: dailyCalories + ' kcal/day',
+    subtitle: 'Breed-specific calorie target',
+    color: '#0D7C66'
+  });
+
+  scrollToResults();
+}
+</script>
+</body>
+</html>

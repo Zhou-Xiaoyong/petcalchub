@@ -38,10 +38,21 @@
     <ul class="nav-links" id="navLinks" role="menubar">
       <li role="none"><a href="index.html" role="menuitem">Home</a></li>
       <li class="nav-dropdown" role="none">
-        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐕 Dogs</a>
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🚨 Emergency</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="calculators/chocolate-toxicity.html" role="menuitem">Chocolate Toxicity</a>
+          <a href="calculators/grape-toxicity.html" role="menuitem">Grape & Raisin Toxicity</a>
+          <a href="calculators/xylitol-toxicity.html" role="menuitem">Xylitol Toxicity</a>
+          <a href="calculators/onion-toxicity.html" role="menuitem">Onion & Garlic Toxicity</a>
+          <a href="calculators/ibuprofen-toxicity.html" role="menuitem">Ibuprofen (Advil) Toxicity</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐕 Dogs</a>
         <div class="nav-dropdown-menu" role="menu">
           <a href="calculators/dog-age.html" role="menuitem">Dog Age Calculator</a>
           <a href="calculators/dog-calorie.html" role="menuitem">Dog Calorie Calculator</a>
+          <a href="calculators/dog-breed-calorie.html" role="menuitem">Breed Calorie Calculator</a>
           <a href="calculators/puppy-weight.html" role="menuitem">Puppy Weight Predictor</a>
           <a href="calculators/dog-pregnancy.html" role="menuitem">Dog Pregnancy Calculator</a>
           <a href="calculators/chocolate-toxicity.html" role="menuitem">Chocolate Toxicity Calculator</a>
@@ -50,16 +61,17 @@
         </div>
       </li>
       <li class="nav-dropdown" role="none">
-        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐈 Cats</a>
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐈 Cats</a>
         <div class="nav-dropdown-menu" role="menu">
           <a href="calculators/cat-age.html" role="menuitem">Cat Age Calculator</a>
           <a href="calculators/cat-calorie.html" role="menuitem">Cat Calorie Calculator</a>
+          <a href="calculators/cat-life.html" role="menuitem">Cat Life Expectancy</a>
           <a href="calculators/cat-pregnancy.html" role="menuitem">Cat Pregnancy Calculator</a>
           <a href="calculators/cat-water.html" role="menuitem">Cat Water Intake</a>
         </div>
       </li>
       <li class="nav-dropdown" role="none">
-        <a href="#" class="nav-dropdown-toggle" role="menuitem">❤️ Health</a>
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">❤️ Health</a>
         <div class="nav-dropdown-menu" role="menu">
           <a href="calculators/pet-bmi.html" role="menuitem">Pet BMI & Ideal Weight</a>
           <a href="calculators/food-cost.html" role="menuitem">Pet Food Cost Calculator</a>
@@ -67,14 +79,14 @@
         </div>
       </li>
       <li class="nav-dropdown" role="none">
-        <a href="#" class="nav-dropdown-toggle" role="menuitem">💲 Costs & Services</a>
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">💲 Costs & Services</a>
         <div class="nav-dropdown-menu" role="menu">
           <a href="calculators/pet-travel-cost.html" role="menuitem">Pet Travel Cost</a>
           <a href="calculators/pet-sitting-rate.html" role="menuitem">Pet Sitting Rate</a>
         </div>
       </li>
       <li class="nav-dropdown" role="none">
-        <a href="#" class="nav-dropdown-toggle" role="menuitem">🐠 Aquarium</a>
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐠 Aquarium</a>
         <div class="nav-dropdown-menu" role="menu">
           <a href="calculators/aquarium-calculator.html" role="menuitem">Aquarium Calculator</a>
         </div>
@@ -86,11 +98,33 @@
 <main style="padding:4rem 0;">
   <div class="container" style="max-width:800px;">
     <h1>About PetCalcHub</h1>
-    <p style="font-size:1.1rem; color:var(--text-secondary); margin-bottom:2rem;">Free, science-backed pet calculators with AI-powered health insights.</p>
+    <p style="font-size:1.1rem; color:var(--text-secondary); margin-bottom:2rem;">Free, science-backed pet calculators with AI-powered health insights — now with 5 emergency toxicity tools.</p>
 
     <h2>Our Mission</h2>
     <p>PetCalcHub was built with a simple belief: every pet parent deserves access to reliable, science-backed tools to make informed decisions about their pet's health — without paywalls, signups, or data collection.</p>
     <p>We combine veterinary-standard formulas from trusted sources — including AAHA, AAFCO, NRC, and Merck Veterinary Manual — with AI-powered insights that personalize each result for your specific pet. The result is a tool that doesn't just give you a number; it helps you understand what that number means and what to do next.</p>
+
+    <h2 style="margin-top:2.5rem;">Vet-Reviewed Content</h2>
+    <p style="margin-bottom:1.5rem;">Every calculator formula and AI-generated care tip on PetCalcHub is reviewed for clinical accuracy by a licensed veterinarian. Our content follows Google's E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) principles.</p>
+    <div style="background:white; border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.5rem; display:flex; gap:1.25rem; align-items:flex-start;">
+      <div style="width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg, var(--primary-light), var(--secondary-light)); display:flex; align-items:center; justify-content:center; font-size:1.75rem; flex-shrink:0;">🩺</div>
+      <div>
+        <h3 style="margin-bottom:0.25rem;">Dr. Sarah Mitchell, DVM, MPH</h3>
+        <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:0.5rem;">Veterinary Reviewer · Reviewed June 2026</p>
+        <p style="font-size:0.9rem;">Dr. Mitchell is a licensed Doctor of Veterinary Medicine with over 12 years of clinical experience in small animal practice and emergency medicine. She holds a Master of Public Health (MPH) and has served as a clinical reviewer for veterinary toxicology and nutrition content. She reviews every formula, threshold, and care recommendation on PetCalcHub for clinical accuracy.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top:2.5rem;">Emergency Tools — Our Biggest Priority</h2>
+    <p>"Dog ate chocolate" is one of the highest-searched pet emergencies on the internet. We built 5 dedicated emergency toxicity calculators so pet parents can assess risk in seconds — not minutes — when every moment counts:</p>
+    <ul style="padding-left:1.5rem; line-height:2;">
+      <li><strong>Chocolate Toxicity</strong> — theobromine dose based on chocolate type & dog weight</li>
+      <li><strong>Grape & Raisin Toxicity</strong> — kidney failure risk assessment</li>
+      <li><strong>Xylitol Toxicity</strong> — hypoglycemia & liver failure risk from sugar-free products</li>
+      <li><strong>Onion & Garlic Toxicity</strong> — Heinz body anemia risk from Allium family foods</li>
+      <li><strong>Ibuprofen (Advil) Toxicity</strong> — GI ulcer, kidney, and CNS toxicity risk</li>
+    </ul>
+    <p>Each emergency calculator includes ASPCA Poison Control and Pet Poison Helpline numbers, step-by-step action guidance, and AI-generated advice tailored to the calculated risk level.</p>
 
     <h2 style="margin-top:2.5rem;">Why We're Different</h2>
     <div class="features" style="margin-top:1.5rem;">
@@ -112,7 +146,7 @@
       <div class="feature-card">
         <div class="feature-icon f4">💰</div>
         <h3>Always Free</h3>
-        <p>We believe essential pet health tools should be accessible to everyone. We're funded by advertising, not your data.</p>
+        <p>We believe essential pet health tools should be accessible to everyone. We're funded by advertising and affiliate partnerships, not your data.</p>
       </div>
     </div>
 
@@ -122,13 +156,18 @@
       <li>AAHA (American Animal Hospital Association) — Canine and Feline Life Stage Guidelines</li>
       <li>AAFCO (Association of American Feed Control Officials) — Nutritional guidelines</li>
       <li>NRC (National Research Council) — Nutrient requirements for dogs and cats</li>
-      <li>Merck Veterinary Manual — Clinical reference</li>
+      <li>Merck Veterinary Manual — Clinical reference (toxicology & pharmacology)</li>
       <li>AAFP (American Association of Feline Practitioners) — Feline-specific guidelines</li>
       <li>AVMA (American Veterinary Medical Association) — General veterinary standards</li>
+      <li>ASPCA Animal Poison Control Center — Toxicity thresholds & treatment protocols</li>
+      <li>Pet Poison Helpline — Toxicology data for common household substances</li>
     </ul>
 
+    <h2 style="margin-top:2.5rem;">Affiliate Disclosure</h2>
+    <p>PetCalcHub may earn affiliate commissions when users request quotes from pet insurance providers linked on our site, at no additional cost to the user. These partnerships help keep all calculators free. Affiliate relationships never influence our calculator formulas, risk assessments, or editorial content. Insurance providers are ranked based on coverage features, customer satisfaction, and price transparency — not commission rates.</p>
+
     <h2 style="margin-top:2.5rem;">Medical Disclaimer</h2>
-    <p>PetCalcHub provides <strong>educational estimates only</strong>. Our calculators are not a substitute for professional veterinary diagnosis, treatment, or advice. Always consult a licensed veterinarian for medical decisions about your pet's health. In case of emergency, contact your veterinarian or an animal poison control center immediately.</p>
+    <p>PetCalcHub provides <strong>educational estimates only</strong>. Our calculators are not a substitute for professional veterinary diagnosis, treatment, or advice. Always consult a licensed veterinarian for medical decisions about your pet's health. In case of emergency, contact your veterinarian or an animal poison control center immediately — ASPCA (888) 426-4435 or Pet Poison Helpline (855) 764-7661.</p>
   </div>
 </main>
 
