@@ -167,6 +167,8 @@
 
         <div id="ai-suggestions"></div>
 
+        <div id="amazon-products"></div>
+
         <div class="ad-slot" id="ad-in-content">
           <div class="ad-slot-label">Advertisement</div>
           <div class="ad-slot-inner">Ad space reserved</div>
@@ -362,6 +364,20 @@ function calculateWater() {
     unit: 'kg'
   });
 }
+</script>
+<script>
+AmazonProducts.render('amazon-products', {
+  title: "Cat Hydration Essentials",
+  intro: "Cats have a low thirst drive — these fountains and bowls encourage healthy drinking habits.",
+  products: [
+    {icon:"⛲", name:"Cat Water Fountain", description:"Cats prefer running water — a fountain dramatically increases intake.", searchQuery:"cat water fountain stainless"},
+    {icon:"🥣", name:"Ceramic Cat Bowl", description:"Wide, shallow ceramic bowl prevents whisker fatigue.", searchQuery:"ceramic cat water bowl wide shallow"},
+    {icon:"🧊", name:"Fountain Filter Replacement", description:"Keep your fountain's charcoal filters fresh monthly.", searchQuery:"cat water fountain replacement filters"},
+    {icon:"🐟", name:"Wet Cat Food", description:"Adds dietary moisture — critical for cats on dry-only diets.", searchQuery:"wet cat food high moisture"},
+    {icon:"🧴", name:"Fountain Cleaning Kit", description:"Small brushes reach inside fountain pumps and tubes.", searchQuery:"pet fountain cleaning brush kit"},
+    {icon:"🪨", name:"Elevated Bowl Stand", description:"Raises water to a comfortable height for older or arthritic cats.", searchQuery:"elevated cat bowl stand"}
+  ]
+});
 </script>
 </body>
 </html>

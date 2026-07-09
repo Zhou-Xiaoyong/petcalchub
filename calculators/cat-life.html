@@ -197,6 +197,8 @@
         <div id="ai-suggestions"></div>
         <div id="share-container"></div>
 
+        <div id="amazon-products"></div>
+
         <div class="ad-slot" id="ad-in-content"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-inner">Ad space reserved</div></div>
 
         <div style="margin-top:3rem;">
@@ -373,6 +375,20 @@ function calculateCatLife() {
 
   scrollToResults();
 }
+</script>
+<script>
+AmazonProducts.render('amazon-products', {
+  title: "Cat Longevity & Enrichment",
+  intro: "Products that help indoor cats live longer, healthier lives — from supplements to environmental enrichment.",
+  products: [
+    {icon:"💊", name:"Cat Multivitamin Supplement", description:"Supports overall health in senior cats — vet-formulated.", searchQuery:"cat multivitamin senior supplement"},
+    {icon:"🦷", name:"Dental Treats", description:"VOHC-approved treats reduce plaque and tartar buildup.", searchQuery:"dental treats for cats vohc"},
+    {icon:"🐈", name:"Cat Tree / Tower", description:"Vertical space encourages exercise and reduces stress.", searchQuery:"cat tree tower tall"},
+    {icon:"🪶", name:"Interactive Wand Toy", description:"Daily 10-15 min play sessions mimic hunting and keep cats fit.", searchQuery:"interactive cat wand toy"},
+    {icon:"🛏️", name:"Heated Cat Bed", description:"Warmth soothes arthritic joints in senior cats.", searchQuery:"heated cat bed self warming"},
+    {icon:"🚰", name:"Cat Water Fountain", description:"Increased water intake protects kidneys — a top longevity factor.", searchQuery:"cat water fountain stainless steel"}
+  ]
+});
 </script>
 </body>
 </html>

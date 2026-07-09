@@ -171,6 +171,7 @@
         </div>
 
         <div id="ai-suggestions"></div>
+        <div id="amazon-products"></div>
         <div class="ad-slot" id="ad-in-content"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-inner">Ad space reserved</div></div>
 
         <div style="margin-top:3rem;">
@@ -292,6 +293,20 @@ function calculateCatCalories() {
   displayAISuggestions('calorie', aiType, Math.round(der));
   scrollToResults();
 }
+</script>
+<script>
+AmazonProducts.render('amazon-products', {
+  title: "Recommended Cat Food & Feeding Tools",
+  intro: "Veterinarian-selected product categories to help your cat reach its ideal weight. Compare options on Amazon.",
+  products: [
+    {icon:"🐟", name:"Adult Cat Food", description:"Balanced adult maintenance formulas — dry and wet options.", searchQuery:"adult cat food"},
+    {icon:"🥫", name:"Wet Cat Food", description:"Higher moisture content supports urinary and kidney health.", searchQuery:"wet cat food variety pack"},
+    {icon:"🐈", name:"Indoor Cat Formula", description:"Lower calories and hairball control for less-active indoor cats.", searchQuery:"indoor cat food"},
+    {icon:"🐈‍⬛", name:"Weight Management Cat Food", description:"High protein, reduced calorie formulas for safe weight loss.", searchQuery:"weight management cat food"},
+    {icon:"🍖", name:"Automatic Cat Feeder", description:"Portion-controlled scheduled meals prevent overfeeding.", searchQuery:"automatic cat feeder portion control"},
+    {icon:"⚖️", name:"Digital Pet Scale", description:"Track weekly weight — critical for monitoring overweight cats.", searchQuery:"digital pet scale for cats"}
+  ]
+});
 </script>
 </body>
 </html>

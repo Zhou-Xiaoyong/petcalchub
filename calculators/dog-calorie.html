@@ -186,6 +186,7 @@
         </div>
 
         <div id="ai-suggestions"></div>
+        <div id="amazon-products"></div>
         <div class="ad-slot" id="ad-in-content"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-inner">Ad space reserved</div></div>
 
         <div style="margin-top:3rem;">
@@ -335,6 +336,20 @@ function calculateDogCalories() {
 WeightUnit.onChange = function() {
   document.getElementById('weightUnit').textContent = this.current;
 };
+</script>
+<script>
+AmazonProducts.render('amazon-products', {
+  title: "Recommended Dog Food & Feeding Tools",
+  intro: "Veterinarian-selected product categories to help you hit your dog's daily calorie target. Compare options on Amazon.",
+  products: [
+    {icon:"🦴", name:"Adult Dog Food", description:"Complete & balanced formulas for adult maintenance — choose by breed size.", searchQuery:"adult dog food dry"},
+    {icon:"🐕", name:"Large Breed Dog Food", description:"Controlled calcium & phosphorus for joint health in large breeds.", searchQuery:"large breed adult dog food"},
+    {icon:"🐕‍🦺", name:"Small Breed Dog Food", description:"Smaller kibble size and higher calorie density for small dogs.", searchQuery:"small breed dog food"},
+    {icon:"🥣", name:"Slow Feeder Bowl", description:"Prevents gulping, reduces bloat risk, and slows fast eaters.", searchQuery:"slow feeder dog bowl"},
+    {icon:"⚖️", name:"Digital Kitchen Scale", description:"Weigh food portions accurately — measuring cups overfeed by up to 25%.", searchQuery:"digital kitchen scale grams"},
+    {icon:"🍬", name:"Low-Calorie Training Treats", description:"Keep training on track without blowing the daily calorie budget.", searchQuery:"low calorie dog training treats"}
+  ]
+});
 </script>
 </body>
 </html>

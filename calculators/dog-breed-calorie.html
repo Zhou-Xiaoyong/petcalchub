@@ -236,6 +236,7 @@
 
         <div id="ai-suggestions"></div>
         <div id="share-container"></div>
+        <div id="amazon-products"></div>
 
         <div class="ad-slot" id="ad-in-content"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-inner">Ad space reserved</div></div>
 
@@ -428,6 +429,20 @@ function calculateBreedCalories() {
 
   scrollToResults();
 }
+</script>
+<script>
+AmazonProducts.render('amazon-products', {
+  title: "Breed-Size Nutrition & Feeding Tools",
+  intro: "Different breed sizes need different food and feeding tools. Here are vet-recommended product categories by breed size.",
+  products: [
+    {icon:"🐕‍🦺", name:"Small Breed Dog Food", description:"Tiny kibble, calorie-dense — for Chihuahuas, Yorkies, and Toy breeds.", searchQuery:"small breed adult dog food"},
+    {icon:"🦮", name:"Large Breed Dog Food", description:"Joint support and controlled calcium for Labs, Shepherds, Retrievers.", searchQuery:"large breed adult dog food"},
+    {icon:"🦴", name:"Giant Breed Dog Food", description:"Formulated for Great Danes, Mastiffs — joint and heart support.", searchQuery:"giant breed dog food"},
+    {icon:"🥣", name:"Slow Feeder Bowl", description:"Essential for deep-chested breeds to prevent bloat (GDV).", searchQuery:"slow feeder dog bowl large breed"},
+    {icon:"⚖️", name:"Digital Kitchen Scale", description:"Precision matters for small breeds — weigh portions in grams.", searchQuery:"digital kitchen scale 0.1g"},
+    {icon:"📏", name:"Elevated Food Stand", description:"Comfortable feeding height for large and giant breeds.", searchQuery:"elevated dog bowl stand large breed"}
+  ]
+});
 </script>
 </body>
 </html>

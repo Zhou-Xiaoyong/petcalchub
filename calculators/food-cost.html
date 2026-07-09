@@ -179,6 +179,7 @@
         </div>
 
         <div id="ai-suggestions"></div>
+        <div id="amazon-products"></div>
 
         <!-- FAQ Section -->
         <section class="faq-section">
@@ -300,6 +301,20 @@ function calculateFoodCost(){
   displayAISuggestions('foodCost', 'default', costPerDay.toFixed(2));
   scrollToResults();
 }
+</script>
+<script>
+AmazonProducts.render('amazon-products', {
+  title: "Save on Pet Food — Recommended Options",
+  intro: "Compare value and premium food options, plus storage solutions to keep food fresh longer and reduce waste.",
+  products: [
+    {icon:"🦴", name:"Budget-Friendly Dog Food", description:"Affordable formulas that meet AAFCO standards — buy in bulk.", searchQuery:"budget dog food bulk"},
+    {icon:"🐟", name:"Budget Cat Food", description:"Value multi-packs of complete and balanced cat food.", searchQuery:"cheap cat food bulk"},
+    {icon:"⭐", name:"Premium Dog Food", description:"Higher-quality ingredients and protein — compare cost per 1,000 kcal.", searchQuery:"premium dog food high protein"},
+    {icon:"🥡", name:"Airtight Food Container", description:"Keep bulk food fresh and pest-free — extends shelf life.", searchQuery:"airtight pet food storage container"},
+    {icon:"🥄", name:"Measuring Scoops", description:"Standardized scoops for consistent portioning across feedings.", searchQuery:"dog food measuring scoop"},
+    {icon:"📊", name:"Food Diary App / Notebook", description:"Track daily intake and costs to spot where you can save.", searchQuery:"pet food journal notebook"}
+  ]
+});
 </script>
 </body>
 </html>

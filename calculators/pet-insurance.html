@@ -189,6 +189,8 @@
 
         <div id="share-container"></div>
 
+        <div id="amazon-products"></div>
+
         <div class="ad-slot" id="ad-in-content">
           <div class="ad-slot-label">Advertisement</div>
           <div class="ad-slot-inner">Ad space reserved</div>
@@ -515,6 +517,20 @@ function calculateInsurance() {
     color: '#0D7C66'
   });
 }
+</script>
+<script>
+AmazonProducts.render('amazon-products', {
+  title: "Pet Health Preparedness",
+  intro: "Beyond insurance, these tools help you manage your pet's health and respond to emergencies.",
+  products: [
+    {icon:"🩹", name:"Pet First Aid Kit", description:"Essential supplies for minor injuries and emergency stabilization.", searchQuery:"pet first aid kit"},
+    {icon:"📓", name:"Pet Health Record Book", description:"Track vaccines, vet visits, and medications in one place.", searchQuery:"pet health record book organizer"},
+    {icon:"💊", name:"Pill Organizer / Dispenser", description:"Manage daily medications and supplements without missing doses.", searchQuery:"pet pill organizer dispenser"},
+    {icon:"🌡️", name:"Pet Thermometer", description:"Detect illness early — normal dog temp is 101-102.5°F.", searchQuery:"pet thermometer digital"},
+    {icon:"🦷", name:"Dental Care Kit", description:"Preventive dental care reduces long-term vet costs significantly.", searchQuery:"dog dental care kit"},
+    {icon:"🚗", name:"Travel Pet Carrier", description:"Safe transport for vet visits and emergencies.", searchQuery:"pet carrier travel approved"}
+  ]
+});
 </script>
 </body>
 </html>

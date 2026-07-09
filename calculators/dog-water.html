@@ -167,6 +167,8 @@
 
         <div id="ai-suggestions"></div>
 
+        <div id="amazon-products"></div>
+
         <div class="ad-slot" id="ad-in-content">
           <div class="ad-slot-label">Advertisement</div>
           <div class="ad-slot-inner">Ad space reserved</div>
@@ -366,6 +368,20 @@ function calculateWater() {
     activityLevel: activityLevel
   });
 }
+</script>
+<script>
+AmazonProducts.render('amazon-products', {
+  title: "Dog Hydration Essentials",
+  intro: "Keep your dog properly hydrated with these vet-recommended water bowl and fountain options.",
+  products: [
+    {icon:"🥣", name:"Stainless Steel Bowl", description:"Easy to clean, hygienic, and prevents biofilm buildup.", searchQuery:"stainless steel dog water bowl"},
+    {icon:"⛲", name:"Dog Water Fountain", description:"Filtered, flowing water encourages dogs to drink more.", searchQuery:"dog water fountain filtered"},
+    {icon:"🚗", name:"Travel Water Bottle", description:"Collapsible bowls and bottles for walks and road trips.", searchQuery:"dog travel water bottle bowl"},
+    {icon:"🧊", name:"Cooling Water Bowl", description:"Keeps water cool in summer — encourages drinking in heat.", searchQuery:"dog cooling water bowl"},
+    {icon:"🧴", name:"Bowl Cleaning Brush", description:"Designed for bowls and fountains — clean daily for hygiene.", searchQuery:"pet bowl cleaning brush set"},
+    {icon:"💧", name:"Water Bowl Spill Mat", description:"Catches drips and splashes — keeps floors dry.", searchQuery:"dog water bowl spill mat"}
+  ]
+});
 </script>
 </body>
 </html>
