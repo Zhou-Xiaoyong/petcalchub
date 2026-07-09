@@ -299,25 +299,31 @@ function calculatePetBMI(){
           <dt>Status</dt><dd>${diffPct>0?(diffPct.toFixed(0)+'% above ideal weight'):diffPct<0?(Math.abs(diffPct).toFixed(0)+'% below ideal weight'):'Perfect — maintain current weight!'}</dd>
         </dl>
       </div>
-    </div>`;
+    </div>
+    <div id="amazon-results"></div>`;
 
   displayAISuggestions('bmi',bcs<=3?'underweight':bcs<=5?'ideal':bcs<=7?'overweight':'obese',(idealWeight*2.20462).toFixed(1)+' lbs');
+  AmazonProducts.renderMini('amazon-results', { title: "Recommended Products", products: amzProducts });
   scrollToResults();
 }
 </script>
 <script>
+const amzProducts = [
+  {icon:"🐕", name:"Weight Loss Dog Food", description:"High protein, high fiber, reduced calorie formulas for dogs.", searchQuery:"weight loss dog food prescription"},
+  {icon:"🐈", name:"Weight Loss Cat Food", description:"Metabolic and high-protein formulas for safe feline weight loss.", searchQuery:"weight management cat food"},
+  {icon:"🥕", name:"Low-Calorie Treats", description:"Baby carrots, green beans, or low-cal training treats for dogs.", searchQuery:"low calorie dog treats"},
+  {icon:"⚖️", name:"Pet Weight Scale", description:"Track weekly weigh-ins — aim for 1-2% loss per week.", searchQuery:"pet weight scale digital"},
+  {icon:"🦮", name:"Long Leash / Walk Gear", description:"Increase daily walks safely with a comfortable harness.", searchQuery:"dog walking harness no pull"},
+  {icon:"🧸", name:"Interactive Food Toys", description:"Make your pet work for food — burns calories and reduces begging.", searchQuery:"interactive dog food puzzle toy"}
+];
+
 AmazonProducts.render('amazon-products', {
   title: "Weight Management Tools & Food",
   intro: "Help your pet reach a healthy body condition score with these vet-recommended product categories.",
-  products: [
-    {icon:"🐕", name:"Weight Loss Dog Food", description:"High protein, high fiber, reduced calorie formulas for dogs.", searchQuery:"weight loss dog food prescription"},
-    {icon:"🐈", name:"Weight Loss Cat Food", description:"Metabolic and high-protein formulas for safe feline weight loss.", searchQuery:"weight management cat food"},
-    {icon:"🥕", name:"Low-Calorie Treats", description:"Baby carrots, green beans, or low-cal training treats for dogs.", searchQuery:"low calorie dog treats"},
-    {icon:"⚖️", name:"Pet Weight Scale", description:"Track weekly weigh-ins — aim for 1-2% loss per week.", searchQuery:"pet weight scale digital"},
-    {icon:"🦮", name:"Long Leash / Walk Gear", description:"Increase daily walks safely with a comfortable harness.", searchQuery:"dog walking harness no pull"},
-    {icon:"🧸", name:"Interactive Food Toys", description:"Make your pet work for food — burns calories and reduces begging.", searchQuery:"interactive dog food puzzle toy"}
-  ]
+  products: amzProducts
 });
+
+AmazonProducts.renderFloating({ products: amzProducts });
 </script>
 </body>
 </html>

@@ -287,26 +287,32 @@ function calculateCatCalories() {
           <dt>Treat Budget (10%)</dt><dd>Max ${Math.round(der * 0.1)} kcal/day from treats</dd>
         </dl>
       </div>
+      <div id="amazon-results"></div>
     </div>`;
 
   const aiType = lifeStage === 'weight_loss' ? 'weightLoss' : 'maintenance';
   displayAISuggestions('calorie', aiType, Math.round(der));
+  AmazonProducts.renderMini('amazon-results', { title: "Recommended Products", products: amzProducts });
   scrollToResults();
 }
 </script>
 <script>
+const amzProducts = [
+  {icon:"🐟", name:"Adult Cat Food", description:"Balanced adult maintenance formulas — dry and wet options.", searchQuery:"adult cat food"},
+  {icon:"🥫", name:"Wet Cat Food", description:"Higher moisture content supports urinary and kidney health.", searchQuery:"wet cat food variety pack"},
+  {icon:"🐈", name:"Indoor Cat Formula", description:"Lower calories and hairball control for less-active indoor cats.", searchQuery:"indoor cat food"},
+  {icon:"🐈‍⬛", name:"Weight Management Cat Food", description:"Metabolic and high-protein formulas for safe feline weight loss.", searchQuery:"weight management cat food"},
+  {icon:"🍖", name:"Automatic Cat Feeder", description:"Portion-controlled scheduled meals prevent overfeeding.", searchQuery:"automatic cat feeder portion control"},
+  {icon:"⚖️", name:"Digital Pet Scale", description:"Track weekly weight — critical for monitoring overweight cats.", searchQuery:"digital pet scale for cats"}
+];
+
 AmazonProducts.render('amazon-products', {
   title: "Recommended Cat Food & Feeding Tools",
   intro: "Veterinarian-selected product categories to help your cat reach its ideal weight. Compare options on Amazon.",
-  products: [
-    {icon:"🐟", name:"Adult Cat Food", description:"Balanced adult maintenance formulas — dry and wet options.", searchQuery:"adult cat food"},
-    {icon:"🥫", name:"Wet Cat Food", description:"Higher moisture content supports urinary and kidney health.", searchQuery:"wet cat food variety pack"},
-    {icon:"🐈", name:"Indoor Cat Formula", description:"Lower calories and hairball control for less-active indoor cats.", searchQuery:"indoor cat food"},
-    {icon:"🐈‍⬛", name:"Weight Management Cat Food", description:"High protein, reduced calorie formulas for safe weight loss.", searchQuery:"weight management cat food"},
-    {icon:"🍖", name:"Automatic Cat Feeder", description:"Portion-controlled scheduled meals prevent overfeeding.", searchQuery:"automatic cat feeder portion control"},
-    {icon:"⚖️", name:"Digital Pet Scale", description:"Track weekly weight — critical for monitoring overweight cats.", searchQuery:"digital pet scale for cats"}
-  ]
+  products: amzProducts
 });
+
+AmazonProducts.renderFloating({ products: amzProducts });
 </script>
 </body>
 </html>

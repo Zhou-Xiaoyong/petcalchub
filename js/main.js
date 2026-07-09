@@ -845,36 +845,42 @@ const SocialShare = {
 const AmazonProducts = {
   affiliateId: 'calchive-20',
 
-  // Build a compliant Amazon search link with the affiliate tag.
-  // Using /s?k= (search) ensures links never break and prices stay current.
   buildLink: function(keyword) {
     return 'https://www.amazon.com/s?k=' + encodeURIComponent(keyword) + '&tag=' + this.affiliateId;
   },
 
-  // Render a product recommendation section into a container element.
-  // config = { title, intro, products: [{icon, name, description, searchQuery}] }
+  renderCard: function(p) {
+    const query = p.searchQuery || p.name;
+    return `
+      <div class="amz-card">
+        <div class="amz-card-icon" aria-hidden="true">${p.icon}</div>
+        <div class="amz-card-body">
+          <h4 class="amz-card-title">${p.name}</h4>
+          <p class="amz-card-desc">${p.description}</p>
+          <a class="amz-card-btn"
+             href="${this.buildLink(query)}"
+             target="_blank"
+             rel="nofollow sponsored noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18l-2 13H5L3 6zm0-2v-.5C3 2.67 4.67 1 6.5 1c.76 0 1.5.27 2.07.77L7.27 3.2c-.23-.13-.5-.2-.77-.2-.83 0-1.5.67-1.5 1.5V4H3z"/></svg>
+            Check Price on Amazon
+          </a>
+        </div>
+      </div>`;
+  },
+
+  disclosure: function() {
+    return `<p class="amz-disclosure">
+      <strong>Affiliate Disclosure:</strong> As an Amazon Associate, PetCalcHub earns from qualifying purchases.
+      Links go to Amazon search results — actual prices shown on Amazon at time of viewing and may change.
+    </p>`;
+  },
+
+  // Full section render (page-level)
   render: function(containerId, config) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    const products = (config.products || []).map(p => {
-      const query = p.searchQuery || p.name;
-      return `
-        <div class="amz-card">
-          <div class="amz-card-icon" aria-hidden="true">${p.icon}</div>
-          <div class="amz-card-body">
-            <h4 class="amz-card-title">${p.name}</h4>
-            <p class="amz-card-desc">${p.description}</p>
-            <a class="amz-card-btn"
-               href="${this.buildLink(query)}"
-               target="_blank"
-               rel="nofollow sponsored noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18l-2 13H5L3 6zm0-2v-.5C3 2.67 4.67 1 6.5 1c.76 0 1.5.27 2.07.77L7.27 3.2c-.23-.13-.5-.2-.77-.2-.83 0-1.5.67-1.5 1.5V4H3z"/></svg>
-              Check Price on Amazon
-            </a>
-          </div>
-        </div>`;
-    }).join('');
+    const products = (config.products || []).map(p => this.renderCard(p)).join('');
 
     container.innerHTML = `
       <section class="amz-section">
@@ -886,11 +892,67 @@ const AmazonProducts = {
         <div class="amz-grid">
           ${products}
         </div>
-        <p class="amz-disclosure">
-          <strong>Affiliate Disclosure:</strong> As an Amazon Associate, PetCalcHub earns from qualifying purchases.
-          Links above take you to Amazon search results — actual prices and availability are shown on Amazon at the time of viewing and may change.
-          We do not set or cache prices. PetCalcHub independently selects recommended product categories based on veterinary guidelines; rankings are not influenced by commission.
-        </p>
+        ${this.disclosure()}
       </section>`;
+  },
+
+  // Mini widget — 2-3 products shown right after calculator results
+  // High-conversion placement because user just computed results.
+  renderMini: function(containerId, config) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const products = (config.products || []).slice(0, 3).map(p => this.renderCard(p)).join('');
+
+    container.innerHTML = `
+      <div class="amz-mini">
+        <div class="amz-mini-header">
+          <span class="amz-badge amz-badge-sm">🛒 Related Products on Amazon</span>
+          <h3 class="amz-mini-title">${config.title || 'Featured Products'}</h3>
+        </div>
+        <div class="amz-mini-grid">
+          ${products}
+        </div>
+        ${this.disclosure()}
+      </div>`;
+  },
+
+  // Floating sidebar widget — always visible while scrolling
+  renderFloating: function(config) {
+    const existing = document.getElementById('amz-floating');
+    if (existing) return;
+
+    const products = (config.products || []).slice(0, 2);
+    const productLinks = products.map(p => {
+      const query = p.searchQuery || p.name;
+      return `<a class="amz-float-item" href="${this.buildLink(query)}" target="_blank" rel="nofollow sponsored noopener">
+        <span class="amz-float-icon">${p.icon}</span>
+        <span class="amz-float-name">${p.name}</span>
+        <span class="amz-float-arrow">→</span>
+      </a>`;
+    }).join('');
+
+    const el = document.createElement('div');
+    el.id = 'amz-floating';
+    el.className = 'amz-floating';
+    el.innerHTML = `
+      <button class="amz-float-toggle" aria-label="Toggle Amazon recommendations" onclick="AmazonProducts.toggleFloating()">
+        <span>🛒 Shop</span>
+      </button>
+      <div class="amz-float-panel">
+        <div class="amz-float-header">
+          <span class="amz-badge amz-badge-sm">Amazon Picks</span>
+        </div>
+        <div class="amz-float-items">
+          ${productLinks}
+        </div>
+        ${this.disclosure()}
+      </div>`;
+    document.body.appendChild(el);
+  },
+
+  toggleFloating: function() {
+    const el = document.getElementById('amz-floating');
+    if (el) el.classList.toggle('amz-float-open');
   }
 };

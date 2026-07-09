@@ -330,10 +330,12 @@ function calculateToxicity() {
       <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--text-muted); margin-top:0.25rem;">
         <span>Safe</span><span>Mild</span><span>Moderate</span><span>Severe</span>
       </div>
-    </div>`;
+    </div>
+    <div id="amazon-results"></div>`;
 
   const aiRisk = doseMgKg >= 40 ? 'high' : doseMgKg >= 20 ? 'moderate' : 'low';
   displayAISuggestions('chocolate', doseMgKg >= 40 ? 'high' : doseMgKg >= 20 ? 'moderate' : 'low', doseMgKg);
+  AmazonProducts.renderMini('amazon-results', { title: "Recommended Products", products: amzProducts });
   scrollToResults();
 
   SocialShare.render('share-container', {
@@ -345,18 +347,22 @@ function calculateToxicity() {
 }
 </script>
 <script>
+const amzProducts = [
+  {icon:"🩹", name:"Pet First Aid Kit", description:"Comprehensive kit with bandages, antiseptic, and a pet thermometer.", searchQuery:"pet first aid kit comprehensive"},
+  {icon:"🌡️", name:"Pet Digital Thermometer", description:"Know your dog's temp — fever or hypothermia signals emergencies.", searchQuery:"pet digital thermometer rectal"},
+  {icon:"🧴", name:"3% Hydrogen Peroxide", description:"For vet-directed vomiting induction — keep on hand, use ONLY as directed.", searchQuery:"3 percent hydrogen peroxide"},
+  {icon:"📖", name:"Pet Emergency Handbook", description:"Quick reference for poisoning symptoms and first aid steps.", searchQuery:"pet emergency first aid book"},
+  {icon:"🪪", name:"Pet ID Tag & Microchip", description:"Ensure your dog is identifiable if it escapes during an emergency.", searchQuery:"dog id tag engraved"},
+  {icon:"🚗", name:"Pet Carrier for Emergencies", description:"Sturdy carrier for safe transport to the emergency vet.", searchQuery:"sturdy pet carrier for vet"}
+];
+
 AmazonProducts.render('amazon-products', {
   title: "Pet Emergency Preparedness",
   intro: "Be ready for the next emergency — keep these on hand so you can act in seconds, not minutes.",
-  products: [
-    {icon:"🩹", name:"Pet First Aid Kit", description:"Comprehensive kit with bandages, antiseptic, and a pet thermometer.", searchQuery:"pet first aid kit comprehensive"},
-    {icon:"🌡️", name:"Pet Digital Thermometer", description:"Know your dog's temp — fever or hypothermia signals emergencies.", searchQuery:"pet digital thermometer rectal"},
-    {icon:"🧴", name:"3% Hydrogen Peroxide", description:"For vet-directed vomiting induction — keep on hand, use ONLY as directed.", searchQuery:"3 percent hydrogen peroxide"},
-    {icon:"📖", name:"Pet Emergency Handbook", description:"Quick reference for poisoning symptoms and first aid steps.", searchQuery:"pet emergency first aid book"},
-    {icon:"🪪", name:"Pet ID Tag & Microchip", description:"Ensure your dog is identifiable if it escapes during an emergency.", searchQuery:"dog id tag engraved"},
-    {icon:"🚗", name:"Pet Carrier for Emergencies", description:"Sturdy carrier for safe transport to the emergency vet.", searchQuery:"sturdy pet carrier for vet"}
-  ]
+  products: amzProducts
 });
+
+AmazonProducts.renderFloating({ products: amzProducts });
 </script>
 </body>
 </html>

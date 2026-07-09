@@ -296,25 +296,31 @@ function calculateFoodCost(){
     </div>
     <div class="info-box info" style="margin-top:1rem;">
       <strong>💡 Tip:</strong> Compare cost per 1,000 kcal across brands — that tells you the true cost regardless of bag size or calorie density.
-    </div>`;
+    </div>
+    <div id="amazon-results"></div>`;
 
   displayAISuggestions('foodCost', 'default', costPerDay.toFixed(2));
+  AmazonProducts.renderMini('amazon-results', { title: "Recommended Products", products: amzProducts });
   scrollToResults();
 }
 </script>
 <script>
+const amzProducts = [
+  {icon:"🦴", name:"Budget-Friendly Dog Food", description:"Affordable formulas that meet AAFCO standards — buy in bulk.", searchQuery:"budget dog food bulk"},
+  {icon:"🐟", name:"Budget Cat Food", description:"Value multi-packs of complete and balanced cat food.", searchQuery:"cheap cat food bulk"},
+  {icon:"⭐", name:"Premium Dog Food", description:"Higher-quality ingredients and protein — compare cost per 1,000 kcal.", searchQuery:"premium dog food high protein"},
+  {icon:"🥡", name:"Airtight Food Container", description:"Keep bulk food fresh and pest-free — extends shelf life.", searchQuery:"airtight pet food storage container"},
+  {icon:"🥄", name:"Measuring Scoops", description:"Standardized scoops for consistent portioning across feedings.", searchQuery:"dog food measuring scoop"},
+  {icon:"📊", name:"Food Diary App / Notebook", description:"Track daily intake and costs to spot where you can save.", searchQuery:"pet food journal notebook"}
+];
+
 AmazonProducts.render('amazon-products', {
   title: "Save on Pet Food — Recommended Options",
   intro: "Compare value and premium food options, plus storage solutions to keep food fresh longer and reduce waste.",
-  products: [
-    {icon:"🦴", name:"Budget-Friendly Dog Food", description:"Affordable formulas that meet AAFCO standards — buy in bulk.", searchQuery:"budget dog food bulk"},
-    {icon:"🐟", name:"Budget Cat Food", description:"Value multi-packs of complete and balanced cat food.", searchQuery:"cheap cat food bulk"},
-    {icon:"⭐", name:"Premium Dog Food", description:"Higher-quality ingredients and protein — compare cost per 1,000 kcal.", searchQuery:"premium dog food high protein"},
-    {icon:"🥡", name:"Airtight Food Container", description:"Keep bulk food fresh and pest-free — extends shelf life.", searchQuery:"airtight pet food storage container"},
-    {icon:"🥄", name:"Measuring Scoops", description:"Standardized scoops for consistent portioning across feedings.", searchQuery:"dog food measuring scoop"},
-    {icon:"📊", name:"Food Diary App / Notebook", description:"Track daily intake and costs to spot where you can save.", searchQuery:"pet food journal notebook"}
-  ]
+  products: amzProducts
 });
+
+AmazonProducts.renderFloating({ products: amzProducts });
 </script>
 </body>
 </html>

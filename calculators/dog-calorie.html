@@ -326,10 +326,12 @@ function calculateDogCalories() {
       <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.75rem;">
         † Based on average dry kibble at 380 kcal/cup. Check your food's label for exact values.
       </div>
+      <div id="amazon-results"></div>
     </div>`;
 
   const aiType = lifeStage === 'weight_loss' ? 'weightLoss' : 'maintenance';
   displayAISuggestions('calorie', aiType, Math.round(der));
+  AmazonProducts.renderMini('amazon-results', { title: "Recommended Products", products: amzProducts });
   scrollToResults();
 }
 
@@ -338,18 +340,22 @@ WeightUnit.onChange = function() {
 };
 </script>
 <script>
+const amzProducts = [
+  {icon:"🦴", name:"Adult Dog Food", description:"Complete & balanced formulas for adult maintenance — choose by breed size.", searchQuery:"adult dog food dry"},
+  {icon:"🐕", name:"Large Breed Dog Food", description:"Controlled calcium & phosphorus for joint health in large breeds.", searchQuery:"large breed adult dog food"},
+  {icon:"🐕‍🦺", name:"Small Breed Dog Food", description:"Smaller kibble size and higher calorie density for small dogs.", searchQuery:"small breed dog food"},
+  {icon:"🥣", name:"Slow Feeder Bowl", description:"Prevents gulping, reduces bloat risk, and slows fast eaters.", searchQuery:"slow feeder dog bowl"},
+  {icon:"⚖️", name:"Digital Kitchen Scale", description:"Weigh food portions accurately — measuring cups overfeed by up to 25%.", searchQuery:"digital kitchen scale grams"},
+  {icon:"🍬", name:"Low-Calorie Training Treats", description:"Keep training on track without blowing the daily calorie budget.", searchQuery:"low calorie dog training treats"}
+];
+
 AmazonProducts.render('amazon-products', {
   title: "Recommended Dog Food & Feeding Tools",
   intro: "Veterinarian-selected product categories to help you hit your dog's daily calorie target. Compare options on Amazon.",
-  products: [
-    {icon:"🦴", name:"Adult Dog Food", description:"Complete & balanced formulas for adult maintenance — choose by breed size.", searchQuery:"adult dog food dry"},
-    {icon:"🐕", name:"Large Breed Dog Food", description:"Controlled calcium & phosphorus for joint health in large breeds.", searchQuery:"large breed adult dog food"},
-    {icon:"🐕‍🦺", name:"Small Breed Dog Food", description:"Smaller kibble size and higher calorie density for small dogs.", searchQuery:"small breed dog food"},
-    {icon:"🥣", name:"Slow Feeder Bowl", description:"Prevents gulping, reduces bloat risk, and slows fast eaters.", searchQuery:"slow feeder dog bowl"},
-    {icon:"⚖️", name:"Digital Kitchen Scale", description:"Weigh food portions accurately — measuring cups overfeed by up to 25%.", searchQuery:"digital kitchen scale grams"},
-    {icon:"🍬", name:"Low-Calorie Training Treats", description:"Keep training on track without blowing the daily calorie budget.", searchQuery:"low calorie dog training treats"}
-  ]
+  products: amzProducts
 });
+
+AmazonProducts.renderFloating({ products: amzProducts });
 </script>
 </body>
 </html>

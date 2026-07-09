@@ -378,6 +378,7 @@ function calculateLifeExpectancy() {
       </ul>
       <p class="result-note" style="margin-top:1rem;font-size:.85rem;">Based on a <strong>${data.label}</strong> with an average life expectancy of ${data.avg} years. Individual results vary based on genetics, diet, exercise, veterinary care, and environment. These are population averages — your dog may live significantly longer or shorter.</p>
     </div>
+    <div id="amazon-results"></div>
   `;
 
   scrollToResults();
@@ -386,21 +387,27 @@ function calculateLifeExpectancy() {
   displayAISuggestions('dogLife', 'default', {
     breedSize, currentAge, modifiedAvg
   });
+
+  AmazonProducts.renderMini('amazon-results', { title: "Recommended Products", products: amzProducts });
 }
 </script>
 <script>
+const amzProducts = [
+  {icon:"💊", name:"Joint Supplement (Glucosamine)", description:"Supports hip and joint health in aging and large breed dogs.", searchQuery:"dog joint supplement glucosamine chondroitin"},
+  {icon:"🐟", name:"Omega-3 Fish Oil", description:"Reduces inflammation and supports coat, heart, and brain health.", searchQuery:"omega 3 fish oil for dogs"},
+  {icon:"🦷", name:"Dental Care Kit", description:"Toothbrush, enzymatic toothpaste — dental disease shortens lifespan.", searchQuery:"dog dental care kit toothbrush"},
+  {icon:"🛏️", name:"Orthopedic Dog Bed", description:"Memory foam support for arthritic and senior dogs.", searchQuery:"orthopedic memory foam dog bed"},
+  {icon:"🦴", name:"Senior Dog Food", description:"Adjusted protein and calories for aging metabolism.", searchQuery:"senior dog food 7 plus"},
+  {icon:"🧠", name:"Interactive Puzzle Toy", description:"Mental enrichment slows cognitive decline in senior dogs.", searchQuery:"dog puzzle toy senior"}
+];
+
 AmazonProducts.render('amazon-products', {
   title: "Senior Dog Health & Longevity",
   intro: "Tools and supplements that help extend your dog's healthy years — based on veterinary longevity research.",
-  products: [
-    {icon:"💊", name:"Joint Supplement (Glucosamine)", description:"Supports hip and joint health in aging and large breed dogs.", searchQuery:"dog joint supplement glucosamine chondroitin"},
-    {icon:"🐟", name:"Omega-3 Fish Oil", description:"Reduces inflammation and supports coat, heart, and brain health.", searchQuery:"omega 3 fish oil for dogs"},
-    {icon:"🦷", name:"Dental Care Kit", description:"Toothbrush, enzymatic toothpaste — dental disease shortens lifespan.", searchQuery:"dog dental care kit toothbrush"},
-    {icon:"🛏️", name:"Orthopedic Dog Bed", description:"Memory foam support for arthritic and senior dogs.", searchQuery:"orthopedic memory foam dog bed"},
-    {icon:"🦴", name:"Senior Dog Food", description:"Adjusted protein and calories for aging metabolism.", searchQuery:"senior dog food 7 plus"},
-    {icon:"🧠", name:"Interactive Puzzle Toy", description:"Mental enrichment slows cognitive decline in senior dogs.", searchQuery:"dog puzzle toy senior"}
-  ]
+  products: amzProducts
 });
+
+AmazonProducts.renderFloating({ products: amzProducts });
 </script>
 </body>
 </html>

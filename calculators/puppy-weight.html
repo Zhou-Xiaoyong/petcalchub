@@ -269,25 +269,31 @@ function predictPuppyWeight() {
           <dt>Estimated Adult Age Reached</dt><dd>${breedSize === 'small' ? '9-12' : breedSize === 'medium' ? '12-15' : breedSize === 'large' ? '15-18' : '18-24'} months</dd>
         </dl>
       </div>
-    </div>`;
+    </div>
+    <div id="amazon-results"></div>`;
 
   displayAISuggestions('puppyWeight', breedSize === 'small' ? 'small' : breedSize === 'medium' ? 'medium' : 'large', predictedLbs.toFixed(1) + ' lbs');
+  AmazonProducts.renderMini('amazon-results', { title: "Recommended Products", products: amzProducts });
   scrollToResults();
 }
 </script>
 <script>
+const amzProducts = [
+  {icon:"🐶", name:"Small Breed Puppy Food", description:"Tiny kibble and calorie-dense — for puppies under 20 lbs adult.", searchQuery:"small breed puppy food"},
+  {icon:"🦴", name:"Large Breed Puppy Food", description:"Controlled calcium for healthy joints in large-breed puppies.", searchQuery:"large breed puppy food"},
+  {icon:"🍼", name:"Puppy Milk Replacer", description:"For orphaned or supplementing puppies under 4 weeks.", searchQuery:"puppy milk replacer formula"},
+  {icon:"⚖️", name:"Puppy Weight Scale", description:"Track growth weekly — catch unhealthy weight gain early.", searchQuery:"puppy scale digital grams"},
+  {icon:"🥣", name:"Puppy Slow Feeder", description:"Slows fast eaters and prevents digestive upset in puppies.", searchQuery:"puppy slow feeder bowl"},
+  {icon:"🍬", name:"Puppy Training Treats", description:"Tiny, low-calorie treats for early training and socialization.", searchQuery:"puppy training treats small"}
+];
+
 AmazonProducts.render('amazon-products', {
   title: "Puppy Nutrition & Growth Tools",
   intro: "Set your puppy up for healthy growth with the right food and tracking tools by breed size.",
-  products: [
-    {icon:"🐶", name:"Small Breed Puppy Food", description:"Tiny kibble and calorie-dense — for puppies under 20 lbs adult.", searchQuery:"small breed puppy food"},
-    {icon:"🦴", name:"Large Breed Puppy Food", description:"Controlled calcium for healthy joints in large-breed puppies.", searchQuery:"large breed puppy food"},
-    {icon:"🍼", name:"Puppy Milk Replacer", description:"For orphaned or supplementing puppies under 4 weeks.", searchQuery:"puppy milk replacer formula"},
-    {icon:"⚖️", name:"Puppy Weight Scale", description:"Track growth weekly — catch unhealthy weight gain early.", searchQuery:"puppy scale digital grams"},
-    {icon:"🥣", name:"Puppy Slow Feeder", description:"Slows fast eaters and prevents digestive upset in puppies.", searchQuery:"puppy slow feeder bowl"},
-    {icon:"🍬", name:"Puppy Training Treats", description:"Tiny, low-calorie treats for early training and socialization.", searchQuery:"puppy training treats small"}
-  ]
+  products: amzProducts
 });
+
+AmazonProducts.renderFloating({ products: amzProducts });
 </script>
 </body>
 </html>

@@ -463,6 +463,13 @@
   </div>
 </section>
 
+<!-- Amazon Recommended Products -->
+<section class="section" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div id="amazon-products"></div>
+  </div>
+</section>
+
 <!-- FAQ Section -->
 <section class="section" style="background: white;">
   <div class="container">
@@ -589,5 +596,21 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+const amzProductsHome = [
+  {icon:"🦴", name:"Dog Food", description:"Complete & balanced formulas for all life stages and breed sizes.", searchQuery:"best dog food 2025"},
+  {icon:"🐟", name:"Cat Food", description:"High-protein, vet-recommended formulas for adult cats and kittens.", searchQuery:"best cat food 2025"},
+  {icon:"⛲", name:"Pet Water Fountain", description:"Encourages pets to drink more water — critical for kidney health.", searchQuery:"pet water fountain stainless steel"},
+  {icon:"🩹", name:"Pet First Aid Kit", description:"Essential supplies for minor injuries and emergency stabilization.", searchQuery:"pet first aid kit comprehensive"},
+  {icon:"💊", name:"Joint Supplements", description:"Glucosamine, chondroitin, and omega-3 for hip and joint health.", searchQuery:"glucosamine for dogs joint supplement"},
+  {icon:"🧸", name:"Interactive Toys", description:"Mental enrichment and slow feeding puzzles for dogs and cats.", searchQuery:"interactive dog puzzle toy"}
+];
+AmazonProducts.render('amazon-products', {
+  title: "Vet-Recommended Pet Products",
+  intro: "Our editorial team independently selects product categories based on veterinary guidelines. Compare options and current prices on Amazon.",
+  products: amzProductsHome
+});
+AmazonProducts.renderFloating({ products: amzProductsHome });
+</script>
 </body>
 </html>

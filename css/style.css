@@ -1922,9 +1922,214 @@ p { margin-bottom: 1rem; }
   color: var(--text-secondary);
 }
 
+/* Mini widget — inline after calculator results */
+.amz-mini {
+  margin-top: 1.25rem;
+  padding: 1rem 1.1rem;
+  background: linear-gradient(135deg, #FFF8F0, #FFFBF5);
+  border: 1px solid #FED7AA;
+  border-radius: var(--radius);
+  animation: amzFadeIn 0.5s ease-out;
+}
+
+@keyframes amzFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.amz-mini-header {
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.amz-badge-sm {
+  font-size: 0.65rem;
+  padding: 0.22rem 0.65rem;
+}
+
+.amz-mini-title {
+  font-size: 1.05rem;
+  margin: 0.4rem 0 0;
+  color: var(--heading);
+}
+
+.amz-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.amz-mini-grid .amz-card {
+  padding: 0.7rem;
+}
+
+.amz-mini-grid .amz-card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.amz-mini-grid .amz-card-title {
+  font-size: 0.82rem;
+  margin-bottom: 0.2rem;
+}
+
+.amz-mini-grid .amz-card-desc {
+  font-size: 0.72rem;
+  line-height: 1.4;
+  margin-bottom: 0.55rem;
+  display: none;
+}
+
+.amz-mini-grid .amz-card:hover .amz-card-desc {
+  display: block;
+}
+
+.amz-mini-grid .amz-card-btn {
+  font-size: 0.72rem;
+  padding: 0.4rem 0.6rem;
+}
+
+.amz-mini .amz-disclosure {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+/* Floating sidebar widget */
+.amz-floating {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  z-index: 90;
+}
+
+.amz-float-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
+  transition: all var(--transition);
+}
+
+.amz-float-toggle:hover {
+  background: var(--secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
+}
+
+.amz-float-panel {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  width: 280px;
+  background: white;
+  border: 1px solid #FED7AA;
+  border-radius: var(--radius-lg);
+  padding: 0.9rem;
+  margin-bottom: 0.6rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.amz-float-open .amz-float-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.amz-float-header {
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.amz-float-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.amz-float-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: background var(--transition);
+}
+
+.amz-float-item:hover {
+  background: #FFF8F0;
+  color: var(--secondary);
+}
+
+.amz-float-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.amz-float-name {
+  flex-grow: 1;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.amz-float-arrow {
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.amz-float-panel .amz-disclosure {
+  margin-top: 0.6rem;
+  padding-top: 0.5rem;
+  font-size: 0.6rem;
+  border-top: 1px dashed #FED7AA;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Enhanced section prominence */
+.amz-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.amz-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
 @media (max-width: 640px) {
   .amz-section { padding: 1.25rem; }
   .amz-grid { grid-template-columns: 1fr 1fr; }
   .amz-card { padding: 0.85rem; }
   .amz-card-icon { font-size: 1.6rem; }
+  .amz-mini-grid { grid-template-columns: repeat(3, 1fr); }
+  .amz-mini-grid .amz-card-title { font-size: 0.75rem; }
+  .amz-mini-grid .amz-card-btn { font-size: 0.65rem; padding: 0.35rem 0.45rem; }
+  .amz-floating { right: 12px; bottom: 70px; }
+  .amz-float-panel { width: 240px; }
 }

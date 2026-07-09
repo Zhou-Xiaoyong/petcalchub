@@ -354,6 +354,7 @@ function calculateWater() {
       </div>
       ${hydrationTip ? '<div style="margin-top:0.75rem;padding:0.75rem;background:var(--primary-50);border-radius:var(--radius-sm);font-size:0.9rem;">💡 ' + hydrationTip + '</div>' : ''}
     </div>
+    <div id="amazon-results"></div>
   `;
 
   scrollToResults();
@@ -367,21 +368,27 @@ function calculateWater() {
     dietType: dietType,
     activityLevel: activityLevel
   });
+
+  AmazonProducts.renderMini('amazon-results', { title: "Recommended Products", products: amzProducts });
 }
 </script>
 <script>
+const amzProducts = [
+  {icon:"🥣", name:"Stainless Steel Bowl", description:"Easy to clean, hygienic, and prevents biofilm buildup.", searchQuery:"stainless steel dog water bowl"},
+  {icon:"⛲", name:"Dog Water Fountain", description:"Filtered, flowing water encourages dogs to drink more.", searchQuery:"dog water fountain filtered"},
+  {icon:"🚗", name:"Travel Water Bottle", description:"Collapsible bowls and bottles for walks and road trips.", searchQuery:"dog travel water bottle bowl"},
+  {icon:"🧊", name:"Cooling Water Bowl", description:"Keeps water cool in summer — encourages drinking in heat.", searchQuery:"dog cooling water bowl"},
+  {icon:"🧴", name:"Bowl Cleaning Brush", description:"Designed for bowls and fountains — clean daily for hygiene.", searchQuery:"pet bowl cleaning brush set"},
+  {icon:"💧", name:"Water Bowl Spill Mat", description:"Catches drips and splashes — keeps floors dry.", searchQuery:"dog water bowl spill mat"}
+];
+
 AmazonProducts.render('amazon-products', {
   title: "Dog Hydration Essentials",
   intro: "Keep your dog properly hydrated with these vet-recommended water bowl and fountain options.",
-  products: [
-    {icon:"🥣", name:"Stainless Steel Bowl", description:"Easy to clean, hygienic, and prevents biofilm buildup.", searchQuery:"stainless steel dog water bowl"},
-    {icon:"⛲", name:"Dog Water Fountain", description:"Filtered, flowing water encourages dogs to drink more.", searchQuery:"dog water fountain filtered"},
-    {icon:"🚗", name:"Travel Water Bottle", description:"Collapsible bowls and bottles for walks and road trips.", searchQuery:"dog travel water bottle bowl"},
-    {icon:"🧊", name:"Cooling Water Bowl", description:"Keeps water cool in summer — encourages drinking in heat.", searchQuery:"dog cooling water bowl"},
-    {icon:"🧴", name:"Bowl Cleaning Brush", description:"Designed for bowls and fountains — clean daily for hygiene.", searchQuery:"pet bowl cleaning brush set"},
-    {icon:"💧", name:"Water Bowl Spill Mat", description:"Catches drips and splashes — keeps floors dry.", searchQuery:"dog water bowl spill mat"}
-  ]
+  products: amzProducts
 });
+
+AmazonProducts.renderFloating({ products: amzProducts });
 </script>
 </body>
 </html>

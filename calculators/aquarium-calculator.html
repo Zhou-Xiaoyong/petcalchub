@@ -496,6 +496,7 @@ function calculateAquarium() {
         <p style="font-size:0.85rem; margin-top:0.5rem;">LED equivalent wattage shown. For traditional fluorescent, multiply by ~1.5×.</p>
       </div>
     </div>
+    <div id="amazon-results"></div>
   `;
 
   scrollToResults();
@@ -503,21 +504,27 @@ function calculateAquarium() {
   displayAISuggestions('aquarium', 'default', {
     actualGal, actualLiters, tankType, maxFishInches, heaterWatts, filterGPH, lightWatts
   });
+
+  AmazonProducts.renderMini('amazon-results', { title: "Recommended Products", products: amzProducts });
 }
 </script>
 <script>
+const amzProducts = [
+  {icon:"🐠", name:"Aquarium Starter Kit", description:"All-in-one tanks with filter, heater, and LED light included.", searchQuery:"aquarium starter kit 20 gallon"},
+  {icon:"🌀", name:"Aquarium Filter", description:"Hang-on-back or canister filters sized to your tank volume.", searchQuery:"aquarium filter hang on back"},
+  {icon:"🌡️", name:"Aquarium Heater", description:"Submersible heaters with thermostat for stable temperatures.", searchQuery:"aquarium heater submersible thermostat"},
+  {icon:"🧪", name:"Water Test Kit", description:"Test ammonia, nitrite, nitrate, and pH weekly during cycling.", searchQuery:"aquarium water test kit freshwater"},
+  {icon:"🌿", name:"Live Aquarium Plants", description:"Easy plants like Anubias and Java Fern absorb nitrates naturally.", searchQuery:"live aquarium plants low light"},
+  {icon:"🐟", name:"Fish Food Variety", description:"Flake, pellet, and frozen options for community tanks.", searchQuery:"tropical fish food variety"}
+];
+
 AmazonProducts.render('amazon-products', {
   title: "Aquarium Setup Essentials",
   intro: "Everything you need to set up and maintain a healthy aquarium based on your tank size.",
-  products: [
-    {icon:"🐠", name:"Aquarium Starter Kit", description:"All-in-one tanks with filter, heater, and LED light included.", searchQuery:"aquarium starter kit 20 gallon"},
-    {icon:"🌀", name:"Aquarium Filter", description:"Hang-on-back or canister filters sized to your tank volume.", searchQuery:"aquarium filter hang on back"},
-    {icon:"🌡️", name:"Aquarium Heater", description:"Submersible heaters with thermostat for stable temperatures.", searchQuery:"aquarium heater submersible thermostat"},
-    {icon:"🧪", name:"Water Test Kit", description:"Test ammonia, nitrite, nitrate, and pH weekly during cycling.", searchQuery:"aquarium water test kit freshwater"},
-    {icon:"🌿", name:"Live Aquarium Plants", description:"Easy plants like Anubias and Java Fern absorb nitrates naturally.", searchQuery:"live aquarium plants low light"},
-    {icon:"🐟", name:"Fish Food Variety", description:"Flake, pellet, and frozen options for community tanks.", searchQuery:"tropical fish food variety"}
-  ]
+  products: amzProducts
 });
+
+AmazonProducts.renderFloating({ products: amzProducts });
 </script>
 </body>
 </html>

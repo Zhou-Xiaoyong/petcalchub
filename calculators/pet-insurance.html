@@ -497,6 +497,7 @@ function calculateInsurance() {
     <div style="margin-top:1rem;padding:1rem;background:var(--info-bg);border:1px solid #BFDBFE;border-radius:var(--radius);font-size:0.9rem;">
       <strong>💡 Note:</strong> Prices are estimates based on US market averages. Actual premiums vary by location, insurer, and pet health history. Compare quotes from multiple insurers for the best rate.
     </div>
+    <div id="amazon-results"></div>
   `;
 
   scrollToResults();
@@ -516,21 +517,27 @@ function calculateInsurance() {
     subtitle: `Typical range $${lowEstimate}–$${highEstimate}/month`,
     color: '#0D7C66'
   });
+
+  AmazonProducts.renderMini('amazon-results', { title: "Recommended Products", products: amzProducts });
 }
 </script>
 <script>
+const amzProducts = [
+  {icon:"🩹", name:"Pet First Aid Kit", description:"Essential supplies for minor injuries and emergency stabilization.", searchQuery:"pet first aid kit"},
+  {icon:"📓", name:"Pet Health Record Book", description:"Track vaccines, vet visits, and medications in one place.", searchQuery:"pet health record book organizer"},
+  {icon:"💊", name:"Pill Organizer / Dispenser", description:"Manage daily medications and supplements without missing doses.", searchQuery:"pet pill organizer dispenser"},
+  {icon:"🌡️", name:"Pet Thermometer", description:"Detect illness early — normal dog temp is 101-102.5°F.", searchQuery:"pet thermometer digital"},
+  {icon:"🦷", name:"Dental Care Kit", description:"Preventive dental care reduces long-term vet costs significantly.", searchQuery:"dog dental care kit"},
+  {icon:"🚗", name:"Travel Pet Carrier", description:"Safe transport for vet visits and emergencies.", searchQuery:"pet carrier travel approved"}
+];
+
 AmazonProducts.render('amazon-products', {
   title: "Pet Health Preparedness",
   intro: "Beyond insurance, these tools help you manage your pet's health and respond to emergencies.",
-  products: [
-    {icon:"🩹", name:"Pet First Aid Kit", description:"Essential supplies for minor injuries and emergency stabilization.", searchQuery:"pet first aid kit"},
-    {icon:"📓", name:"Pet Health Record Book", description:"Track vaccines, vet visits, and medications in one place.", searchQuery:"pet health record book organizer"},
-    {icon:"💊", name:"Pill Organizer / Dispenser", description:"Manage daily medications and supplements without missing doses.", searchQuery:"pet pill organizer dispenser"},
-    {icon:"🌡️", name:"Pet Thermometer", description:"Detect illness early — normal dog temp is 101-102.5°F.", searchQuery:"pet thermometer digital"},
-    {icon:"🦷", name:"Dental Care Kit", description:"Preventive dental care reduces long-term vet costs significantly.", searchQuery:"dog dental care kit"},
-    {icon:"🚗", name:"Travel Pet Carrier", description:"Safe transport for vet visits and emergencies.", searchQuery:"pet carrier travel approved"}
-  ]
+  products: amzProducts
 });
+
+AmazonProducts.renderFloating({ products: amzProducts });
 </script>
 </body>
 </html>

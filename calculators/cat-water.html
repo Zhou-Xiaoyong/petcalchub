@@ -354,6 +354,7 @@ function calculateWater() {
       </div>
       ${hydrationTip ? '<div style="margin-top:0.75rem;padding:0.75rem;background:var(--primary-50);border-radius:var(--radius-sm);font-size:0.9rem;">💡 ' + hydrationTip + '</div>' : ''}
     </div>
+    <div id="amazon-results"></div>
   `;
 
   scrollToResults();
@@ -363,21 +364,27 @@ function calculateWater() {
     weight: weightKg,
     unit: 'kg'
   });
+
+  AmazonProducts.renderMini('amazon-results', { title: "Recommended Products", products: amzProducts });
 }
 </script>
 <script>
+const amzProducts = [
+  {icon:"⛲", name:"Cat Water Fountain", description:"Cats prefer running water — a fountain dramatically increases intake.", searchQuery:"cat water fountain stainless"},
+  {icon:"🥣", name:"Ceramic Cat Bowl", description:"Wide, shallow ceramic bowl prevents whisker fatigue.", searchQuery:"ceramic cat water bowl wide shallow"},
+  {icon:"🧊", name:"Fountain Filter Replacement", description:"Keep your fountain's charcoal filters fresh monthly.", searchQuery:"cat water fountain replacement filters"},
+  {icon:"🐟", name:"Wet Cat Food", description:"Adds dietary moisture — critical for cats on dry-only diets.", searchQuery:"wet cat food high moisture"},
+  {icon:"🧴", name:"Fountain Cleaning Kit", description:"Small brushes reach inside fountain pumps and tubes.", searchQuery:"pet fountain cleaning brush kit"},
+  {icon:"🪨", name:"Elevated Bowl Stand", description:"Raises water to a comfortable height for older or arthritic cats.", searchQuery:"elevated cat bowl stand"}
+];
+
 AmazonProducts.render('amazon-products', {
   title: "Cat Hydration Essentials",
   intro: "Cats have a low thirst drive — these fountains and bowls encourage healthy drinking habits.",
-  products: [
-    {icon:"⛲", name:"Cat Water Fountain", description:"Cats prefer running water — a fountain dramatically increases intake.", searchQuery:"cat water fountain stainless"},
-    {icon:"🥣", name:"Ceramic Cat Bowl", description:"Wide, shallow ceramic bowl prevents whisker fatigue.", searchQuery:"ceramic cat water bowl wide shallow"},
-    {icon:"🧊", name:"Fountain Filter Replacement", description:"Keep your fountain's charcoal filters fresh monthly.", searchQuery:"cat water fountain replacement filters"},
-    {icon:"🐟", name:"Wet Cat Food", description:"Adds dietary moisture — critical for cats on dry-only diets.", searchQuery:"wet cat food high moisture"},
-    {icon:"🧴", name:"Fountain Cleaning Kit", description:"Small brushes reach inside fountain pumps and tubes.", searchQuery:"pet fountain cleaning brush kit"},
-    {icon:"🪨", name:"Elevated Bowl Stand", description:"Raises water to a comfortable height for older or arthritic cats.", searchQuery:"elevated cat bowl stand"}
-  ]
+  products: amzProducts
 });
+
+AmazonProducts.renderFloating({ products: amzProducts });
 </script>
 </body>
 </html>
