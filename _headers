@@ -20,13 +20,17 @@
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
 
-# HTML pages - shorter cache
+# HTML pages - short cache during development/testing
+# After site is stable, change to: max-age=3600, s-maxage=86400 (1hr browser, 1day edge)
 /*.html
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=60, s-maxage=60, must-revalidate
+
+/
+  Cache-Control: public, max-age=60, s-maxage=60, must-revalidate
 
 # Sitemap & robots
 /sitemap.xml
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=3600
 
 /robots.txt
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=3600
