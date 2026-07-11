@@ -41,6 +41,111 @@
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "What to Do If Your Dog Ate Chocolate",
+    "description": "Step-by-step action plan for handling chocolate ingestion in dogs — from assessing the dose to getting veterinary help.",
+    "totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      { "@type": "HowToSupply", "name": "Dog's weight" },
+      { "@type": "HowToSupply", "name": "Chocolate wrapper or packaging" },
+      { "@type": "HowToSupply", "name": "Phone for calling vet or poison control" }
+    ],
+    "tool": [
+      { "@type": "HowToTool", "name": "Chocolate toxicity calculator" },
+      { "@type": "HowToTool", "name": "Kitchen scale (optional, for more accurate weight)" }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Assess the Situation",
+        "text": "Stay calm. Determine what type of chocolate your dog ate, approximately how much, and when it happened. Find the wrapper if possible — knowing the exact type and weight helps the vet enormously.",
+        "image": "https://petcalchub.com/og-image.svg"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Calculate the Toxicity Risk",
+        "text": "Enter your dog's weight, chocolate type, and amount into the calculator. The result will show the theobromine dose in mg/kg and whether it's a low, moderate, high, or severe risk.",
+        "image": "https://petcalchub.com/og-image.svg"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Call Your Vet or Poison Control",
+        "text": "If the result shows moderate or higher risk, call your veterinarian immediately or ASPCA Animal Poison Control at (888) 426-4435. Be ready to provide your dog's weight, the chocolate type, the amount eaten, and the time of ingestion.",
+        "image": "https://petcalchub.com/og-image.svg"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Follow Veterinary Instructions",
+        "text": "Do NOT induce vomiting unless specifically told to do so by a professional. Follow all treatment recommendations and monitor your dog for symptoms (vomiting, restlessness, rapid heart rate, tremors, seizures) for the next 24-72 hours.",
+        "image": "https://petcalchub.com/og-image.svg"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much chocolate is toxic to dogs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Toxicity depends on chocolate type and dog weight. Mild theobromine poisoning signs begin at ~20 mg/kg, severe toxicity at 40 mg/kg, and life-threatening seizures at 60 mg/kg. Because dark and baking chocolate have far more theobromine than milk or white chocolate, a small amount of baking chocolate is far more dangerous than a large milk chocolate bar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I do if my dog ate chocolate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "First, stay calm and figure out what type and how much chocolate was eaten. Use our calculator to assess the risk level. If moderate or higher, call your vet or ASPCA Poison Control at (888) 426-4435 immediately. Do not induce vomiting at home unless specifically instructed by a veterinarian. Bring the chocolate wrapper to the vet if you have it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the symptoms of chocolate poisoning in dogs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Symptoms usually appear within 6-12 hours and may include vomiting, diarrhea, increased thirst, restlessness, excessive urination, rapid heart rate, panting, muscle tremors, seizures, and elevated body temperature. Severe poisoning can lead to coma or death without prompt veterinary treatment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does chocolate toxicity last in dogs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Theobromine has a half-life of about 17.5 hours in dogs, meaning symptoms can last 24-72 hours depending on the dose. Most dogs recover within 2-3 days with appropriate veterinary care (IV fluids, activated charcoal, anti-seizure medication). Without treatment, severe toxicity can be fatal within 12-24 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I induce vomiting in my dog at home for chocolate poisoning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only under explicit veterinary guidance. 3% hydrogen peroxide (1 teaspoon per 10 lbs of body weight, max 3 tablespoons) can be used, but it must be administered correctly and within 2 hours of ingestion. Inducing vomiting is not safe for all dogs — never do it if your dog is seizing, unconscious, or having trouble breathing. Always call a professional first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which type of chocolate is most dangerous for dogs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cocoa powder is the most concentrated form (~735 mg theobromine per ounce), followed by baking/unsweetened chocolate (~450 mg/oz), dark chocolate 85%+ (~300 mg/oz), dark chocolate 60-70% (~210 mg/oz), semi-sweet chocolate chips (~175 mg/oz), milk chocolate (~44 mg/oz), and white chocolate (~8 mg/oz). The darker and more bitter the chocolate, the more dangerous it is."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -181,27 +286,6 @@
 
         <div id="amazon-products"></div>
 
-        <!-- FAQ Section -->
-        <section class="faq-section">
-          <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-list">
-              <div class="faq-item">
-                <button class="faq-question">How much chocolate is toxic to dogs?</button>
-                <div class="faq-answer"><p>Toxicity depends on the type of chocolate and your dog's weight. The danger comes from theobromine, which varies by chocolate type: white chocolate has very low amounts (~8 mg/oz), milk chocolate has ~44 mg/oz, dark chocolate (60-70%) has ~210 mg/oz, dark chocolate (85%+) has ~300 mg/oz, and baking chocolate has ~450 mg/oz. Mild signs typically appear at 20 mg/kg of theobromine, severe toxicity at 40 mg/kg, and life-threatening seizures at 60 mg/kg. A small amount of baking chocolate can be far more dangerous than a large milk chocolate bar.</p></div>
-              </div>
-              <div class="faq-item">
-                <button class="faq-question">What should I do if my dog ate chocolate?</button>
-                <div class="faq-answer"><p>Contact your veterinarian or an animal poison control hotline immediately — ASPCA: (888) 426-4435 or Pet Poison Helpline: (855) 764-7661. Be ready to provide your dog's weight, the type of chocolate, the amount consumed, and when it happened. Do not induce vomiting unless specifically instructed by a professional, as this can cause additional complications depending on the situation and timing.</p></div>
-              </div>
-              <div class="faq-item">
-                <button class="faq-question">What are the symptoms of chocolate poisoning in dogs?</button>
-                <div class="faq-answer"><p>Symptoms of chocolate poisoning usually appear within 6 to 12 hours of ingestion and may include vomiting, diarrhea, increased thirst, restlessness, excessive urination, and a racing heart rate. In more severe cases, dogs may experience muscle tremors, seizures, elevated body temperature, and cardiac arrhythmias. Without prompt veterinary treatment, severe poisoning can lead to coma or death. Early intervention significantly improves outcomes.</p></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <div class="ad-slot" id="ad-in-content"><div class="ad-slot-label">Advertisement</div><div class="ad-slot-inner">Ad space reserved</div></div>
 
         <div style="margin-top:3rem;">
@@ -224,6 +308,79 @@
             <strong>Toxicity Thresholds:</strong> Mild signs at 20 mg/kg · Severe at 40 mg/kg · Seizures at 60 mg/kg. The darker and more concentrated the chocolate, the more dangerous it is — a small amount of baking chocolate can be far more toxic than a large milk chocolate bar.
           </div>
         </div>
+
+        <!-- Comprehensive Guide Section -->
+        <div style="margin-top:3rem;">
+          <h2>Understanding Chocolate Toxicity in Dogs: A Complete Guide</h2>
+
+          <h3 style="margin-top:2rem;">Why Is Chocolate Poisonous to Dogs?</h3>
+          <p>Chocolate contains two stimulant compounds — theobromine and caffeine — that are toxic to dogs because dogs metabolize them much more slowly than humans. Theobromine is the primary toxin, making up roughly 90% of the methylxanthine content in chocolate, while caffeine accounts for about 10%. Both compounds act on the central nervous system, heart, and kidneys, producing a wide range of effects from mild restlessness to life-threatening seizures and cardiac failure.</p>
+          <p>Because humans break down these compounds quickly (theobromine half-life of about 7 hours), we can eat chocolate with minimal physiological effect. In dogs, the half-life stretches to roughly 17.5 hours, meaning the stimulant stays in the bloodstream far longer and reaches much higher peak concentrations. This is why what seems like a "small" amount of chocolate to a person can be a serious emergency for a dog.</p>
+
+          <h3 style="margin-top:2rem;">How This Calculator Works</h3>
+          <p>Our chocolate toxicity calculator uses published theobromine concentrations by chocolate type (compiled from the Merck Veterinary Manual and ASPCA Animal Poison Control Center data) and applies them to your dog's body weight in kilograms. The result is expressed as milligrams of theobromine per kilogram of body weight (mg/kg), which is the standard toxicological measure used by veterinarians and poison control centers worldwide.</p>
+          <p>The risk levels are calibrated against three well-established thresholds: mild clinical signs typically appear at approximately 20 mg/kg, severe toxicity and cardiac effects at 40 mg/kg, and seizures or life-threatening CNS effects at 60 mg/kg and above. We use conservative (i.e., higher) theobromine values for each chocolate type so that the calculator errs on the side of caution — never assume that a "low risk" result means your dog is completely safe, especially if you are unsure about the exact type or amount of chocolate consumed.</p>
+
+          <h3 style="margin-top:2rem;">Symptoms of Chocolate Poisoning in Dogs</h3>
+          <p>Chocolate poisoning symptoms develop over a predictable timeline. Vomiting and diarrhea are often the first signs, appearing 2-6 hours after ingestion as the stomach and intestines are exposed to the irritating effects of theobromine. As the compound is absorbed into the bloodstream, you may notice increased thirst, frequent urination, restlessness, panting, and a rapid heart rate — these are the classic stimulant effects of methylxanthines.</p>
+          <p>At moderate to high doses (40+ mg/kg), symptoms progress to include muscle tremors, elevated body temperature, cardiac arrhythmias (irregular heart rhythm), and high blood pressure. At 60 mg/kg and above, seizures, coma, and death can occur. The cardiac and neurological effects are the most dangerous — theobromine can cause fatal cardiac arrhythmias even in otherwise healthy dogs.</p>
+          <p>Importantly, the severity of symptoms does not always correlate perfectly with the calculated dose. Individual variation in metabolism, pre-existing health conditions (especially heart or kidney disease), and whether the dog ate chocolate on an empty stomach can all affect how quickly and severely toxicity develops. When in doubt, always assume the worst and seek veterinary attention.</p>
+
+          <h3 style="margin-top:2rem;">Step-by-Step: What to Do If Your Dog Ate Chocolate</h3>
+          <p><strong>Step 1 — Stay calm and assess the situation.</strong> Panicking helps no one. Take a deep breath, then figure out as precisely as you can: what type of chocolate was eaten, how much, when it happened, and whether your dog is showing any symptoms. Find the wrapper or packaging if possible — the nutrition label or ingredient list can help the vet determine the exact theobromine content.</p>
+          <p><strong>Step 2 — Calculate the risk.</strong> Enter your dog's weight and the chocolate details into our calculator. Note the risk level and the theobromine dose in mg/kg. This information will be valuable when you talk to the vet or poison control. Save the result on your phone or write it down.</p>
+          <p><strong>Step 3 — Call a professional immediately for moderate or higher risk.</strong> If the calculator shows 20 mg/kg or above (mild to moderate risk and up), call your veterinarian's office, an emergency animal hospital, ASPCA Animal Poison Control at (888) 426-4435, or Pet Poison Helpline at (855) 764-7661. Even if the result shows low risk but your dog is showing symptoms, call right away. Be ready to provide: your dog's weight, breed, age, any pre-existing conditions, the chocolate type and amount, and the time of ingestion.</p>
+          <p><strong>Step 4 — Do NOT induce vomiting unless told to.</strong> Many pet owners' first instinct is to make their dog vomit, but this is not always safe or effective. If instructed by a professional, use 3% hydrogen peroxide at a dose of 1 teaspoon per 10 pounds of body weight (maximum 3 tablespoons). Never use other emetics like salt, mustard, or ipecac — they can cause additional harm. If your dog is seizing, unconscious, or having difficulty breathing, do NOT attempt to induce vomiting.</p>
+          <p><strong>Step 5 — Monitor closely for 24-72 hours.</strong> Even after veterinary treatment or if the vet decides your dog is safe at home, watch carefully for symptoms over the next several days. Theobromine has a long half-life in dogs, so symptoms can appear or worsen up to 12-24 hours after ingestion. Keep your dog calm and quiet — exercise and excitement increase heart rate and can worsen cardiac effects.</p>
+
+          <h3 style="margin-top:2rem;">Veterinary Treatment for Chocolate Toxicity</h3>
+          <p>If you arrive at the vet soon after ingestion (within 1-2 hours), the first line of treatment is usually decontamination: induced vomiting and/or administration of activated charcoal to bind any remaining theobromine in the digestive tract and prevent further absorption. For dogs that arrived later or have already developed symptoms, treatment focuses on managing symptoms and supporting organ function.</p>
+          <p>IV fluid therapy is standard for moderate to severe cases — it helps flush theobromine through the kidneys faster and maintains hydration if the dog has been vomiting or has diarrhea. Anti-vomiting medications (anti-emetics) may be given to control nausea and prevent aspiration. For cardiac symptoms, beta-blockers or other anti-arrhythmic drugs may be used to stabilize heart rate and rhythm. Seizures are treated with diazepam or other anti-convulsant medications.</p>
+          <p>In most cases where treatment is sought promptly, dogs recover fully within 24-72 hours. The prognosis is excellent for low to moderate doses caught early, and good for severe doses treated aggressively. The biggest risk factors for poor outcome are delayed treatment, very high doses, and pre-existing heart or kidney conditions.</p>
+
+          <h3 style="margin-top:2rem;">Preventing Chocolate Toxicity: Practical Tips</h3>
+          <p>The best treatment is always prevention. Here are the most effective ways to keep your dog safe from chocolate poisoning. First, store all chocolate products in sealed containers above counter height or in cabinets that your dog cannot open. Dogs are surprisingly good at getting into things — they can knock items off counters, open lower cabinets with their paws or noses, and chew through packaging. Don't underestimate a determined dog.</p>
+          <p>Second, be especially careful during holidays and celebrations. Easter, Halloween, Valentine's Day, and Christmas all involve large amounts of chocolate in homes — often in decorative baskets, bowls, or wrapped gifts that dogs find irresistible. Inform guests and children that chocolate must never be given to dogs, and make sure all candy is put away after events.</p>
+          <p>Third, read labels carefully. Many products you might not expect contain chocolate or cocoa — certain breakfast cereals, granola bars, trail mix, chocolate-flavored protein powders, chocolate liqueurs, and even some medications use cocoa or chocolate as a flavoring. If you're not sure whether something is safe, don't take the risk.</p>
+          <p>Fourth, keep the ASPCA Poison Control number saved in your phone: (888) 426-4435. In an emergency, you don't want to be wasting time looking up contact information. It's also a good idea to know the location and hours of your nearest 24-hour emergency veterinary hospital.</p>
+
+          <h3 style="margin-top:2rem;">Recovery and Long-Term Outlook</h3>
+          <p>Most dogs that receive prompt veterinary care for chocolate toxicity make a complete recovery with no long-term health effects. Theobromine is eventually metabolized and eliminated by the liver and kidneys, and as long as the dog survives the acute phase, there are usually no permanent consequences. In very severe cases with prolonged seizures or cardiac arrest, there is a risk of brain damage or organ damage, but this is uncommon when treatment is started quickly.</p>
+          <p>If your dog has had a chocolate poisoning episode, use it as a learning experience to strengthen prevention measures at home. Many dogs that get into chocolate once will do it again — they learn that counters and cabinets contain tasty things. Stay vigilant, and remember that even a single incident can be a wake-up call to improve your chocolate storage habits.</p>
+        </div>
+
+        <!-- Expanded FAQ Section -->
+        <section class="faq-section" style="margin-top:3rem;">
+          <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">How much chocolate is toxic to dogs?</button>
+                <div class="faq-answer"><p>Toxicity depends on the type of chocolate and your dog's weight. The danger comes from theobromine, which varies by chocolate type: white chocolate has very low amounts (~8 mg/oz), milk chocolate has ~44 mg/oz, dark chocolate (60-70%) has ~210 mg/oz, dark chocolate (85%+) has ~300 mg/oz, and baking chocolate has ~450 mg/oz. Mild signs typically appear at 20 mg/kg of theobromine, severe toxicity at 40 mg/kg, and life-threatening seizures at 60 mg/kg. A small amount of baking chocolate can be far more dangerous than a large milk chocolate bar.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">What should I do if my dog ate chocolate?</button>
+                <div class="faq-answer"><p>First, stay calm and figure out what type and how much chocolate was eaten. Use our calculator to assess the risk level. If moderate or higher, call your veterinarian or ASPCA Poison Control at (888) 426-4435 immediately. Be ready to provide your dog's weight, the chocolate type, the amount consumed, and when it happened. Do not induce vomiting at home unless specifically instructed by a professional — this can cause additional complications depending on timing and your dog's condition.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">What are the symptoms of chocolate poisoning in dogs?</button>
+                <div class="faq-answer"><p>Symptoms of chocolate poisoning usually appear within 6 to 12 hours of ingestion and may include vomiting, diarrhea, increased thirst, restlessness, excessive urination, and a racing heart rate. In more severe cases, dogs may experience muscle tremors, seizures, elevated body temperature, and cardiac arrhythmias. Without prompt veterinary treatment, severe poisoning can lead to coma or death. Early intervention significantly improves outcomes — don't wait for symptoms to appear before seeking help.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">How long does chocolate toxicity last in dogs?</button>
+                <div class="faq-answer"><p>Theobromine has a half-life of approximately 17.5 hours in dogs, which means it takes about that long for half of the ingested theobromine to be eliminated from the body. Clinical effects can last 24-72 hours depending on the dose. Most dogs recover within 2-3 days with appropriate veterinary care including IV fluids, activated charcoal, and symptom management. Without treatment, severe toxicity can be fatal within 12-24 hours due to cardiac arrhythmia or respiratory failure.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Can I induce vomiting in my dog at home for chocolate poisoning?</button>
+                <div class="faq-answer"><p>Only under explicit veterinary guidance. 3% hydrogen peroxide at a dose of 1 teaspoon per 10 pounds of body weight (maximum 3 tablespoons) is the recommended method, but it must be administered correctly and ideally within 2 hours of ingestion. Inducing vomiting is not safe for all dogs — never attempt it if your dog is seizing, unconscious, having trouble breathing, or showing neurological symptoms. Always call a professional first to determine whether vomiting induction is appropriate for your specific situation.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Which type of chocolate is most dangerous for dogs?</button>
+                <div class="faq-answer"><p>Cocoa powder is the most concentrated form (~735 mg theobromine per ounce), followed by baking/unsweetened chocolate (~450 mg/oz), dark chocolate 85%+ (~300 mg/oz), dark chocolate 60-70% (~210 mg/oz), semi-sweet chocolate chips (~175 mg/oz), milk chocolate (~44 mg/oz), and white chocolate (~8 mg/oz). The darker and more bitter the chocolate, the more theobromine it contains and the more dangerous it is. A single square of baking chocolate can be life-threatening for a small dog, while white chocolate rarely causes more than mild GI upset.</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
       <aside class="calc-sidebar">
