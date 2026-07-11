@@ -731,28 +731,26 @@ function scrollToResults() {
   }
 }
 
-// --- Vet-Reviewed Badge ---
+// --- Evidence-Based Badge ---
 // Renders an E-E-A-T trust badge on calculator pages.
-// Content is medically reviewed by a licensed veterinarian.
+// We do NOT claim veterinary authorship. Instead we are transparent that
+// formulas are compiled from published veterinary sources and reviewed by
+// our editorial team. This is honest, Google-safe, and still signals authority.
 const VetBadge = {
-  reviewer: {
-    name: 'Dr. Sarah Mitchell, DVM',
-    credentials: 'DVM, MPH',
-    role: 'Veterinary Reviewer',
-    reviewedDate: 'June 2026'
-  },
+  sources: 'AAHA · AAFCO · NRC · Merck Veterinary Manual',
+  updatedDate: 'June 2026',
 
   render: function() {
     const targets = document.querySelectorAll('[data-vet-reviewed]');
     if (!targets.length) return;
 
     const badge = `
-      <div class="vet-badge" itemscope itemtype="https://schema.org/Person">
-        <div class="vet-badge-icon" aria-hidden="true">🩺</div>
+      <div class="vet-badge" itemscope itemtype="https://schema.org/Thing">
+        <div class="vet-badge-icon" aria-hidden="true">📚</div>
         <div class="vet-badge-text">
-          <span class="vet-badge-label">Vet-Reviewed Content</span>
-          <span class="vet-badge-author" itemprop="name">${this.reviewer.name}</span>
-          <span class="vet-badge-creds">${this.reviewer.role} · Reviewed ${this.reviewer.reviewedDate}</span>
+          <span class="vet-badge-label">Evidence-Based Formulas</span>
+          <span class="vet-badge-author" itemprop="name">Compiled from Veterinary Sources</span>
+          <span class="vet-badge-creds">Sourced: ${this.sources} · Updated ${this.updatedDate}</span>
         </div>
       </div>`;
 

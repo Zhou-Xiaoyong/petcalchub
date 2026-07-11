@@ -1431,7 +1431,7 @@ p { margin-bottom: 1rem; }
   .nav, .footer, .ad-slot, .ad-sidebar, .ai-disclaimer, .share-section { display: none !important; }
 }
 
-/* --- Vet-Reviewed Badge --- */
+/* --- Evidence-Based Badge (reuses .vet-badge class name for backward compat) --- */
 .vet-badge {
   display: flex;
   align-items: center;
