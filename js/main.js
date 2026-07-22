@@ -626,6 +626,250 @@ const AIEngine = {
           items: tips
         };
       }
+    },
+    chocolate: {
+      high: function(doseMgKg) {
+        return {
+          title: '🚨 Severe Chocolate Toxicity Risk — Seek Emergency Vet Care',
+          items: [
+            `At ${Math.round(doseMgKg)} mg/kg theobromine, your dog is at high risk for seizures, dangerous heart arrhythmias, and potentially death. This is a medical emergency.`,
+            'Call your veterinarian or an animal poison control hotline (ASPCA: 888-426-4435) IMMEDIATELY — do not wait for symptoms to appear.',
+            'If ingestion was within the last 1-2 hours, the vet may induce vomiting and give activated charcoal to limit absorption.',
+            'Hospitalization with IV fluids, heart monitoring, and anti-seizure medication is often required for 24-48 hours.',
+            'Dark, baker\'s, and semi-sweet chocolate are the most dangerous — keep all cocoa products locked away.'
+          ]
+        };
+      },
+      moderate: function(doseMgKg) {
+        return {
+          title: '⚠️ Moderate Chocolate Toxicity — Vet Care Recommended',
+          items: [
+            `At ${Math.round(doseMgKg)} mg/kg theobromine, expect restlessness, elevated heart rate, vomiting, or diarrhea within 6-12 hours.`,
+            'Contact your vet for guidance — they may recommend bringing your dog in for monitoring and supportive care.',
+            'Watch closely for worsening signs: tremors, racing heart, or inability to settle.',
+            'Withhold further treats and keep your dog calm and hydrated while you seek advice.',
+            'Note the type and amount of chocolate eaten — this helps your vet calculate the exact theobromine dose.'
+          ]
+        };
+      },
+      low: function(doseMgKg) {
+        return {
+          title: '✅ Low Chocolate Exposure — Monitor at Home',
+          items: [
+            `At ${Math.round(doseMgKg)} mg/kg theobromine, serious toxicity is unlikely, but mild stomach upset is possible.`,
+            'Monitor for vomiting, diarrhea, restlessness, or increased thirst over the next 12-24 hours.',
+            'Ensure fresh water is available and withhold rich treats for the day.',
+            'If any concerning symptoms develop, call your vet — better safe than sorry.',
+            'White chocolate is low-risk (minimal theobromine); milk chocolate is less dangerous than dark/baker\'s chocolate per ounce.'
+          ]
+        };
+      }
+    },
+    bmi: {
+      underweight: function(idealLbs) {
+        return {
+          title: 'Your Pet is Underweight — Time to Build Healthy Weight',
+          items: [
+            `Target ideal weight is around ${idealLbs} lbs. A BCS under 4 suggests your pet needs more calories or a health check.`,
+            'Rule out medical causes first — parasites, dental disease, hyperthyroidism (cats), or GI issues can cause weight loss.',
+            'Increase portion sizes gradually (10-15%) and consider a calorie-dense, high-quality diet.',
+            'Feed smaller, more frequent meals if appetite is poor.',
+            'Re-weigh in 2 weeks — steady, gradual gain is healthier than rapid weight changes.'
+          ]
+        };
+      },
+      ideal: function(idealLbs) {
+        return {
+          title: 'Great — Your Pet is at a Healthy Weight!',
+          items: [
+            `Maintaining ${idealLbs} lbs is excellent. Pets at ideal BCS live longer with fewer joint, diabetes, and heart problems.`,
+            'Keep portions consistent and measure food with a scale — "eyeballing" leads to gradual weight creep.',
+            'Treats should stay under 10% of daily calories.',
+            'Maintain a regular exercise routine appropriate to age and breed.',
+            'Re-check body condition monthly and adjust food as activity or metabolism changes.'
+          ]
+        };
+      },
+      overweight: function(idealLbs) {
+        return {
+          title: 'Your Pet is Overweight — A Weight Plan Helps',
+          items: [
+            `Ideal weight is closer to ${idealLbs} lbs. Even a few extra pounds raises diabetes, arthritis, and heart risks.`,
+            'Cut daily calories by 10-20% and switch to a measured, lower-fat diet — never crash diet.',
+            'Increase exercise gradually: longer walks, more play sessions.',
+            'Replace high-cal treats with veggies (green beans, carrots) or portioned kibble from the daily allowance.',
+            'Aim for 1-2% body weight loss per week; re-weigh monthly and celebrate small wins.'
+          ]
+        };
+      },
+      obese: function(idealLbs) {
+        return {
+          title: '⚠️ Obesity — Veterinary-Guided Weight Loss Recommended',
+          items: [
+            `Target ${idealLbs} lbs means significant loss is needed. Obesity shortens lifespan and stresses joints and organs.`,
+            'Book a vet visit to rule out hypothyroidism and create a safe, structured weight-loss plan.',
+            'Use a prescription or veterinary weight-management diet formulated to keep your pet full on fewer calories.',
+            'Strictly measure every meal and eliminate table scraps and free-feeding.',
+            'Low-impact exercise (short frequent walks, swimming) protects joints while burning fat.'
+          ]
+        };
+      }
+    },
+    pregnancy: {
+      pregnancy: function(daysRemaining) {
+        return {
+          title: 'Supporting a Healthy Pregnancy & Whelping',
+          items: [
+            `About ${Math.round(daysRemaining)} days remain. Switch the mom-to-be to a high-quality puppy/kitten formula in the last 3 weeks — she needs the extra calories and calcium.`,
+            'Weigh her weekly; a steady gain is normal, but sudden changes warrant a vet check.',
+            'Prepare a quiet, warm, low-traffic "whelping box" about a week before the due date.',
+            'Learn the warning signs of dystocia (difficulty birthing): strong straining >30 min without a puppy, or >2-4 hours between babies.',
+            'Have your vet\'s emergency number and a puppy/kitten resuscitation kit ready before labor begins.'
+          ]
+        };
+      }
+    },
+    grapeToxicity: {
+      high: function() {
+        return {
+          title: '🚨 Grape/Raisin Exposure — Emergency Risk of Kidney Failure',
+          items: [
+            'Grapes, raisins, currants, and sultanas can cause acute, potentially fatal kidney failure in dogs — and NO safe dose has been established.',
+            'Call your vet or Pet Poison Helpline NOW. Even a single grape can be dangerous for a small dog.',
+            'If recent (within 1-2 hours), the vet may induce vomiting and give activated charcoal.',
+            'Expect 48-72 hours of IV fluid therapy to flush and protect the kidneys, plus bloodwork monitoring.',
+            'Check labels carefully — grapes hide in trail mix, baked goods, and some medications (e.g., zante currants).'
+          ]
+        };
+      },
+      low: function() {
+        return {
+          title: '⚠️ Grape/Raisin Exposure — Monitor Closely',
+          items: [
+            'Any grape or raisin ingestion is treated cautiously because toxicity is unpredictable and dose-independent.',
+            'Contact your vet with the exact amount and your pet\'s weight — they will advise whether to induce vomiting.',
+            'Watch for vomiting, lethargy, decreased appetite, and reduced urination over the next 24-72 hours.',
+            'Increase water access to support kidney flushing if advised by your vet.',
+            'Keep all grape products, including wine and raisin bread, completely out of reach.'
+          ]
+        };
+      }
+    },
+    ibuprofenToxicity: {
+      high: function() {
+        return {
+          title: '🚨 Ibuprofen (Advil) Overdose — Life-Threatening Emergency',
+          items: [
+            'Ibuprofen is extremely toxic to dogs and cats — even one or two tablets can cause severe stomach ulcers, internal bleeding, and kidney failure.',
+            'Rush to an emergency vet immediately. Do NOT give anything by mouth or induce vomiting without direction.',
+            'Treatment includes aggressive IV fluids, gastroprotectants (e.g., omeprazole), and possibly hospitalization for kidney support.',
+            'Cats are uniquely sensitive — never give any human NSAID to a cat.',
+            'Store all medications in closed cabinets; pets can chew through pill bottles.'
+          ]
+        };
+      },
+      low: function() {
+        return {
+          title: '⚠️ Ibuprofen Exposure — Vet Assessment Needed',
+          items: [
+            'Even low doses of ibuprofen damage the pet stomach lining and kidneys over time — there is no safe OTC dose for pets.',
+            'Call your vet with the strength (mg) and number of tablets ingested versus your pet\'s weight.',
+            'Watch for vomiting (possibly bloody), black tarry stool, lethargy, and reduced drinking/urination.',
+            'Your vet may recommend examination, bloodwork, and protective medication even if symptoms aren\'t yet visible.',
+            'Use only vet-prescribed NSAIDs (e.g., carprofen) specifically dosed for your pet.'
+          ]
+        };
+      }
+    },
+    onionToxicity: {
+      high: function() {
+        return {
+          title: '🚨 Onion/Garlic Toxicity — Risk of Anemia',
+          items: [
+            'Alliums (onion, garlic, leek, chive, shallot) damage red blood cells, causing Heinz-body anemia — cats are especially sensitive.',
+            'Seek veterinary care promptly; severe cases need oxygen, IV fluids, and possibly a blood transfusion.',
+            'Symptoms (lethargy, weakness, pale gums, reddish urine) may appear 1-3 days after ingestion.',
+            'Both cooked and powdered forms are toxic — onion/garlic powder in baby food and seasonings is a common hidden source.',
+            'Keep table scraps, especially soups, sauces, and seasoned meats, away from pets.'
+          ]
+        };
+      },
+      low: function() {
+        return {
+          title: '⚠️ Onion/Garlic Exposure — Monitor for Anemia',
+          items: [
+            'Allium toxicity is cumulative — repeated small amounts can be as dangerous as a single large dose.',
+            'Contact your vet with the type, amount, and your pet\'s weight for a risk assessment.',
+            'Watch for weakness, pale gums, rapid breathing, and dark/red urine over the next 2-3 days.',
+            'A vet can run a blood test to check red-cell health even before symptoms show.',
+            'Avoid feeding any human foods containing onion or garlic powder.'
+          ]
+        };
+      }
+    },
+    xylitolToxicity: {
+      high: function() {
+        return {
+          title: '🚨 Xylitol Poisoning — Critical Emergency',
+          items: [
+            'Xylitol causes a massive insulin release leading to sudden, severe hypoglycemia, and can cause acute liver failure — often fatal within hours.',
+            'Get to an emergency vet IMMEDIATELY. Even tiny amounts of sugar-free gum, mints, or peanut butter can kill a dog.',
+            'Treatment requires rapid IV dextrose, close blood-glucose monitoring, and liver-value testing for 24-72 hours.',
+            'Symptoms (wobbliness, collapse, seizures) can appear within 15-30 minutes of ingestion.',
+            'Check ALL labels — xylitol (and "birch sugar") is in gum, candy, toothpaste, and many "sugar-free" foods.'
+          ]
+        };
+      },
+      low: function() {
+        return {
+          title: '⚠️ Xylitol Exposure — Emergency Evaluation Urged',
+          items: [
+            'There is no safe threshold for xylitol in dogs — effects are dose-dependent but can be severe even at low amounts.',
+            'Call your vet or poison control right away with the product and exact xylitol amount.',
+            'Do not wait for symptoms; early IV dextrose dramatically improves survival.',
+            'Bring the packaging so the vet can calculate the precise dose ingested.',
+            'Never use xylitol-containing peanut butter or toothpaste products around pets.'
+          ]
+        };
+      }
+    },
+    puppyWeight: {
+      small: function(predictedLbs) {
+        return {
+          title: 'Small-Breed Puppy Growth — Handle with Care',
+          items: [
+            `Your pup is projected to reach about ${predictedLbs} at adulthood. Small breeds mature fast — often reaching full size by 9-12 months.`,
+            'Feed a small-breed puppy formula with smaller kibble and higher calorie density to match their fast metabolism.',
+            'Because they\'re prone to hypoglycemia, never skip meals — 3-4 small feedings daily are ideal for toy and small breeds.',
+            'Protect growing joints: avoid high-impact jumping (off furniture, stairs) until growth plates close.',
+            'Socialize early and often — small dogs benefit hugely from confident, positive early experiences.'
+          ]
+        };
+      },
+      medium: function(predictedLbs) {
+        return {
+          title: 'Medium-Breed Puppy Growth — Steady & Balanced',
+          items: [
+            `Expected adult weight is around ${predictedLbs}. Medium breeds typically finish growing between 12-15 months.`,
+            'Feed a balanced puppy diet split into 3 meals daily, transitioning to 2 meals as they near maturity.',
+            'Use the predicted adult weight (not current weight) to choose the right portion and Life-stage food.',
+            'Build a foundation of training and exercise now — a well-conditioned medium dog stays fit for life.',
+            'Re-weigh monthly; adjust food if your pup is gaining too fast (ribs should stay easily felt under a thin fat cover).'
+          ]
+        };
+      },
+      large: function(predictedLbs) {
+        return {
+          title: 'Large-Breed Puppy Growth — Protect Those Joints',
+          items: [
+            `Projected adult weight is about ${predictedLbs}. Large and giant breeds grow slowly, often not maturing until 18-24 months.`,
+            'Feed a large-breed puppy formula with controlled calcium and calories — too-fast growth dramatically raises hip dysplasia risk.',
+            'Keep exercise low-impact: avoid forced running, long hikes, and stairs until growth plates close (~18 months).',
+            'Split food into 2-3 meals to lower the risk of gastric dilatation-volvulus (bloat), a life-threatening emergency in big dogs.',
+            'Use a slow-feeder bowl and avoid exercise for an hour after eating to further reduce bloat risk.'
+          ]
+        };
+      }
     }
   },
 
