@@ -28,6 +28,7 @@
   <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -40,6 +41,30 @@
     "description": "Calculate your dog's due date and weekly pregnancy milestones. Free, science-backed tool for breeders and pet parents.",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long are dogs pregnant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Canine gestation averages 63 days from ovulation, with a normal range of 58-68 days. The exact timing depends on when ovulation occurred relative to mating. Sperm can survive in the reproductive tract for 5-7 days, which is why due dates are estimates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the signs of dog pregnancy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Early signs (week 3-4): decreased appetite, morning sickness, slight nipple enlargement. Mid-pregnancy (week 4-5): clear vaginal discharge, weight gain, increased appetite. Late pregnancy (week 6-9): visible abdominal enlargement, milk production, nesting behavior about 24 hours before whelping."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -114,6 +139,8 @@
       <a href="../index.html">Home</a> <span class="separator">›</span>
       <span>Dog Pregnancy Calculator</span>
     </nav>
+
+    <div data-vet-reviewed></div>
 
     <div class="calc-layout">
       <div class="calc-main">
@@ -195,6 +222,7 @@ function calculateDogPregnancy() {
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
+  if (matingDate > today) { alert('The mating date cannot be in the future. Please select a date on or before today.'); return; }
   const daysRemaining = Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24));
   const daysElapsed = 63 - daysRemaining;
   const progressPct = Math.min(100, Math.max(0, (daysElapsed / 63) * 100));

@@ -28,6 +28,7 @@
   <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -40,6 +41,30 @@
     "description": "Predict your puppy's adult weight using 3 veterinary methods. Free, instant results.",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How accurate is the puppy weight calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For purebred puppies with known parents, accuracy is typically within 10-15% of adult weight. For mixed breeds, the estimate is rougher but still useful for planning. The calculator is most accurate when used between 8-16 weeks for small/medium breeds and 12-24 weeks for large/giant breeds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When do puppies stop growing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Small breeds reach adult size by 9-12 months. Medium breeds: 12-15 months. Large breeds: 15-18 months. Giant breeds may continue growing until 18-24 months. Note that dogs may \"fill out\" (gain muscle and body mass) even after height growth stops."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -114,6 +139,8 @@
       <a href="../index.html">Home</a> <span class="separator">›</span>
       <span>Puppy Weight Predictor</span>
     </nav>
+
+    <div data-vet-reviewed></div>
 
     <div class="calc-layout">
       <div class="calc-main">

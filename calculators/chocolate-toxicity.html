@@ -28,6 +28,7 @@
   <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -297,8 +298,8 @@
                 <tr><td>White Chocolate</td><td>~8</td><td><span class="tag tag-green">Very Low</span></td></tr>
                 <tr><td>Milk Chocolate</td><td>~44</td><td><span class="tag tag-yellow">Low-Moderate</span></td></tr>
                 <tr><td>Semi-Sweet Chips</td><td>~175</td><td><span class="tag tag-yellow">Moderate</span></td></tr>
-                <tr><td>Dark Chocolate (60-70%)</td><td>~210</td><td><span class="tag tag-orange">High</span></td></tr>
-                <tr><td>Dark Chocolate (85%+)</td><td>~300</td><td><span class="tag tag-red">High</span></td></tr>
+                <tr><td>Dark Chocolate (60-70%)</td><td>~210</td><td><span class="tag tag-orange">Moderate-High</span></td></tr>
+                <tr><td>Dark Chocolate (85%+)</td><td>~300</td><td><span class="tag tag-red">High-Severe</span></td></tr>
                 <tr><td>Baking Chocolate</td><td>~450</td><td><span class="tag tag-red">Severe</span></td></tr>
                 <tr><td>Cocoa Powder</td><td>~735</td><td><span class="tag tag-red">Severe</span></td></tr>
               </tbody>
@@ -396,6 +397,13 @@
       </aside>
     </div>
   </div>
+
+  <div class="info-box" style="margin-top:2rem;">
+    <strong>Related reading:</strong>
+    <a href="../blog/chocolate-toxicity-calculator-for-dogs.html">Chocolate Toxicity Calculator for Dogs: How to Know If Your Dog Is in Danger</a> — how the theobromine math turns chocolate type, amount, and weight into a risk band.
+    <br>
+    <a href="../blog/how-much-chocolate-can-a-dog-eat.html">How Much Chocolate Can a Dog Eat Before It's Dangerous?</a> — estimate the unsafe amount for your dog's size and the chocolate type.
+  </div>
 </main>
 
 <footer class="footer">
@@ -452,11 +460,11 @@ function calculateToxicity() {
     riskLevel = 'Moderate Risk'; riskColor = 'warning'; riskTag = 'yellow';
     action = 'Contact your veterinarian. Treatment may be needed — activated charcoal, IV fluids, and monitoring.';
   } else if (doseMgKg < 60) {
-    riskLevel = 'High Risk'; riskColor = 'danger'; riskTag = 'red';
-    action = 'Seek veterinary care immediately. Risk of cardiac arrhythmias, tremors, and seizures.';
+    riskLevel = 'Severe Risk'; riskColor = 'danger'; riskTag = 'red';
+    action = 'Seek veterinary care immediately. Severe toxicity begins at 40 mg/kg — risk of cardiac arrhythmias, tremors, and seizures.';
   } else {
-    riskLevel = 'SEVERE Risk — Emergency!'; riskColor = 'danger'; riskTag = 'red';
-    action = 'GO TO THE EMERGENCY VET NOW. Risk of life-threatening seizures, cardiac failure, and death. Do not wait for symptoms.';
+    riskLevel = 'LIFE-THREATENING — Emergency!'; riskColor = 'danger'; riskTag = 'red';
+    action = 'GO TO THE EMERGENCY VET NOW. At 60+ mg/kg there is risk of life-threatening seizures, cardiac failure, and death. Do not wait for symptoms.';
   }
 
   document.getElementById('toxResult').style.display = 'block';

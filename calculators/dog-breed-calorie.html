@@ -28,6 +28,7 @@
   <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -384,7 +385,7 @@ function calculateBreedCalories() {
 
   const multiplier = multipliers[activity];
   const dailyCalories = Math.round((rer * multiplier) / 10) * 10;
-  const cups = dailyCalories / 350;
+  const cups = dailyCalories / 380;
 
   const merDisplay = activity === 'working'
     ? multiplier.toFixed(1) + '× (range: 2.0–5.0×)'
@@ -406,7 +407,7 @@ function calculateBreedCalories() {
           <dt>RER (Resting)</dt><dd>${Math.round(rer)} kcal/day</dd>
           <dt>MER Multiplier</dt><dd>${merDisplay}</dd>
           <dt>Life Stage</dt><dd>${labels[activity]}</dd>
-          <dt>Recommended Cups of Dry Food</dt><dd>~${cups.toFixed(1)} cups/day (at ~350 kcal/cup)</dd>
+          <dt>Recommended Cups of Dry Food</dt><dd>~${cups.toFixed(1)} cups/day (at ~380 kcal/cup)</dd>
         </dl>
       </div>
       <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.75rem;">

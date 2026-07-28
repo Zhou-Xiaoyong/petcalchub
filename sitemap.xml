@@ -112,7 +112,37 @@
     <loc>https://petcalchub.com/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/dog-age-science.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/chocolate-toxicity-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/indoor-vs-outdoor-cats.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/chocolate-toxicity-calculator-for-dogs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/how-much-chocolate-can-a-dog-eat.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://petcalchub.com/calculators/dog-water.html</loc>

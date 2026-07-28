@@ -28,6 +28,7 @@
   <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -39,6 +40,38 @@
     "description": "Calculate your pet's Body Condition Score (BCS) and ideal weight. Free, science-backed tool for dogs and cats.",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a healthy Body Condition Score (BCS) for dogs and cats?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The veterinary-standard Body Condition Score uses a 9-point scale, where a score of 4 to 5 is considered ideal for most dogs and cats. At this range, your pet's ribs should be easily palpable with light pressure but not visible from a distance. You should see a noticeable waist when viewing your pet from above, and a slight abdominal tuck from the side. Scores below 4 indicate underweight, while scores above 5 indicate excess body fat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I tell if my pet is overweight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Perform three simple checks at home. First, the rib check: run your hands along your pet's ribcage — if you cannot feel the ribs without pressing firmly, there is likely too much fat covering. Second, the waist check: look down at your pet from above; an overweight pet will lack a visible hourglass waist behind the ribs. Third, the abdominal tuck: view your pet from the side — the belly should tuck upward behind the ribcage rather than hanging straight down or bulging outward."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I help my pet lose weight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start by measuring your pet's food precisely with a measuring cup rather than guessing. Reduce treats and table scraps, or switch to low-calorie alternatives like fresh vegetables (for dogs) or small pieces of lean protein. Gradually increase daily exercise through longer walks, play sessions, or interactive toys. Schedule regular weigh-ins every 2 to 4 weeks to track progress, and work with your veterinarian to set a safe target weight and rule out any underlying medical conditions that could contribute to weight gain."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -113,6 +146,8 @@
       <a href="../index.html">Home</a> <span class="separator">›</span>
       <span>Pet BMI & Ideal Weight</span>
     </nav>
+
+    <div data-vet-reviewed></div>
 
     <div class="calc-layout">
       <div class="calc-main">

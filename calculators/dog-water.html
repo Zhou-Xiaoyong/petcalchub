@@ -28,6 +28,7 @@
   <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -39,6 +40,38 @@
     "description": "Calculate your dog's daily water needs based on weight, diet type, and activity level. Veterinary-backed hydration guide.",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I know if my dog is dehydrated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Key signs of dehydration in dogs include: dry or sticky gums, loss of skin elasticity (gently pinch the skin between the shoulder blades — if it doesn't snap back quickly, dehydration may be present), sunken eyes, lethargy, and excessive panting. A well-hydrated dog's gums should be moist and pink. If your dog shows multiple dehydration signs, provide fresh water immediately and call your vet if symptoms persist. Severe dehydration is a medical emergency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can my dog drink too much water?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — excessive water intake (polydipsia) can indicate underlying health issues such as diabetes, kidney disease, Cushing's disease, or a urinary tract infection. Water intoxication (hyponatremia) is rare but can occur if a dog drinks extreme amounts in a short time, especially during pool play or after intense exercise. Symptoms include nausea, bloating, vomiting, lethargy, and in severe cases, seizures. If your dog is drinking significantly more than the calculated amount — especially more than 100ml per kg per day — consult your veterinarian."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my dog's diet affect how much water they need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Dogs eating dry kibble (only ~10% moisture) need significantly more drinking water than dogs on wet, raw, or fresh food diets (~70-75% moisture). A dog eating canned food gets most of their hydration from their meal and may drink noticeably less water — this is normal. This is why our calculator adjusts the recommended water intake based on diet type. If you recently switched your dog's food from dry to wet (or vice versa), expect their drinking habits to change accordingly."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -113,6 +146,8 @@
       <a href="../index.html">Home</a> <span class="separator">›</span>
       <span>Dog Water Intake Calculator</span>
     </nav>
+
+    <div data-vet-reviewed></div>
 
     <div class="calc-layout">
       <div class="calc-main">

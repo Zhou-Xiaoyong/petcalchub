@@ -27,6 +27,7 @@
   <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
   <link rel="stylesheet" href="../css/style.css">
 
   <script type="application/ld+json">
@@ -38,6 +39,38 @@
     "description": "Calculate aquarium volume in gallons and liters, safe fish stocking levels, heater wattage requirements, and filter flow rates for freshwater and saltwater tanks.",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate aquarium volume?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The formula is: Length × Width × Height (in inches) ÷ 231 = gallons (for rectangular tanks). For metric: Length × Width × Height (in cm) ÷ 1000 = liters. However, this gives you the theoretical volume of an empty tank. In practice, you lose volume to substrate (gravel/sand — typically 1-3 inches deep), decorations, equipment, and the fact that you never fill water to the very rim (leave ~1 inch gap). Our calculator accounts for all these factors to give you the actual usable water volume, which is what matters for stocking, dosing, and equipment sizing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many fish can I put in my tank?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The outdated \"1 inch of fish per gallon\" rule doesn't account for fish body mass, swimming behavior, or bioload. Modern aquarists use the surface area method and bioload approach. Our calculator uses a tiered system: small community fish (tetras, rasboras) can be stocked at ~1\" per gallon, medium fish (gouramis, angelfish) ~1\" per 2 gallons, and large/high-bioload fish (goldfish, cichlids, plecos) ~1\" per 3-5 gallons. Saltwater has stricter limits due to lower dissolved oxygen. Always stock gradually — add fish in small groups, wait 2-3 weeks between additions to let the biological filter adapt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size heater does my aquarium need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The basic rule is 3-5 watts per gallon, but this varies by room temperature and desired tank temperature. If your room is 68°F and you need 78°F (10°F increase), you need ~5 watts/gallon. If the room is already 75°F and you need 78°F, ~2.5 watts/gallon suffices. For tanks over 55 gallons, using two smaller heaters on opposite ends is better than one large heater — it provides more even heating and redundancy if one fails. Our calculator gives precise wattage based on your room temperature and tank type."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
