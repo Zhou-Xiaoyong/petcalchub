@@ -112,7 +112,7 @@
     <loc>https://petcalchub.com/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-01</lastmod>
   </url>
   <url>
     <loc>https://petcalchub.com/blog/dog-age-science.html</loc>
@@ -143,6 +143,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/signs-of-chocolate-poisoning-in-dogs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/what-to-do-if-dog-eats-chocolate.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-01</lastmod>
   </url>
   <url>
     <loc>https://petcalchub.com/calculators/dog-water.html</loc>
