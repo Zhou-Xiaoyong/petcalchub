@@ -4,216 +4,228 @@
     <loc>https://petcalchub.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-07-06</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/dog-age</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/cat-age</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/dog-calorie</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/puppy-weight</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/dog-pregnancy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/chocolate-toxicity</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-07-06</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/grape-toxicity</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-07-06</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/xylitol-toxicity</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-07-06</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/onion-toxicity</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-07-06</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/ibuprofen-toxicity</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-07-06</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/dog-breed-calorie</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-07-06</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/cat-life</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-07-06</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/cat-calorie</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/cat-pregnancy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/pet-bmi</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/food-cost</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-08-15</lastmod>
   </url>
   <url>
     <loc>https://petcalchub.com/about</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/privacy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-15</lastmod>
   </url>
   <url>
     <loc>https://petcalchub.com/blog/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2026-08-08</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/blog/dog-age-science</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-15</lastmod>
   </url>
   <url>
-    <loc>https://petcalchub.com/blog/chocolate-toxicity-guide</loc>
+    <loc>https://petcalchub.com/blog/can-a-small-amount-of-chocolate-kill-a-dog</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2026-07-28</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/blog/indoor-vs-outdoor-cats</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2026-07-28</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/blog/chocolate-toxicity-calculator-for-dogs</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2026-07-28</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/blog/how-much-chocolate-can-a-dog-eat</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2026-07-28</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/blog/signs-of-chocolate-poisoning-in-dogs</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2026-08-01</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/blog/what-to-do-if-dog-eats-chocolate</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-08-15</lastmod>
   </url>
   <url>
     <loc>https://petcalchub.com/blog/chocolate-toxicity-calculator-by-weight</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/chocolate-toxicity-calculator-for-dogs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/chocolate-toxicity-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/dog-age-science</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/how-long-does-chocolate-stay-in-a-dog-s-system</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/how-much-chocolate-can-a-dog-eat</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/indoor-vs-outdoor-cats</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-15</lastmod>
   </url>
   <url>
     <loc>https://petcalchub.com/blog/is-dark-chocolate-worse-for-dogs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-15</lastmod>
   </url>
   <url>
-    <loc>https://petcalchub.com/calculators/dog-water</loc>
+    <loc>https://petcalchub.com/blog/signs-of-chocolate-poisoning-in-dogs</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
+    <priority>0.6</priority>
+    <lastmod>2026-08-15</lastmod>
   </url>
   <url>
-    <loc>https://petcalchub.com/calculators/cat-water</loc>
+    <loc>https://petcalchub.com/blog/what-to-do-if-dog-eats-chocolate</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/dog-life</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/pet-insurance</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/pet-travel-cost</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://petcalchub.com/calculators/pet-sitting-rate</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
+    <priority>0.6</priority>
+    <lastmod>2026-08-15</lastmod>
   </url>
   <url>
     <loc>https://petcalchub.com/calculators/aquarium-calculator</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/cat-age</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/cat-calorie</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/cat-life</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/cat-pregnancy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/cat-water</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/chocolate-toxicity</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/dog-age</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/dog-breed-calorie</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/dog-calorie</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/dog-life</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/dog-pregnancy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/dog-water</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/food-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/grape-toxicity</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/ibuprofen-toxicity</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/onion-toxicity</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/pet-bmi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/pet-insurance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/pet-sitting-rate</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/pet-travel-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/puppy-weight</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/calculators/xylitol-toxicity</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-08-15</lastmod>
   </url>
 </urlset>
