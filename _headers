@@ -1,6 +1,7 @@
 # Cloudflare Pages Headers Configuration
 # Security & Performance Headers
-
+# NOTE: Cloudflare Pages Pretty URLs strips .html from request paths,
+# so /* matches all HTML pages at their clean URLs (e.g. /calculators/dog-calorie)
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
@@ -8,8 +9,9 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   X-XSS-Protection: 1; mode=block
+  Cache-Control: public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400
 
-# Cache static assets aggressively
+# Cache static assets aggressively (overrides /* Cache-Control for these paths)
 /css/*
   Cache-Control: public, max-age=31536000, immutable
 
@@ -19,14 +21,6 @@
 # Images - long cache
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
-
-# HTML pages - short cache during development/testing
-# After site is stable, change to: max-age=3600, s-maxage=86400 (1hr browser, 1day edge)
-/*.html
-  Cache-Control: public, max-age=60, s-maxage=60, must-revalidate
-
-/
-  Cache-Control: public, max-age=60, s-maxage=60, must-revalidate
 
 # Sitemap & robots
 /sitemap.xml
