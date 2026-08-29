@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://petcalchub.com/blog/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -49,6 +49,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://petcalchub.com/blog/dog-ate-brownie-what-to-do</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://petcalchub.com/blog/how-long-does-chocolate-stay-in-a-dog-s-system</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -75,6 +81,12 @@
   <url>
     <loc>https://petcalchub.com/blog/my-dog-ate-a-chocolate-chip-cookie</loc>
     <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/puppy-ate-chocolate-danger</loc>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -140,7 +152,7 @@
   </url>
   <url>
     <loc>https://petcalchub.com/calculators/chocolate-toxicity</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
