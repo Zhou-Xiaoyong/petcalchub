@@ -8,7 +8,13 @@
   </url>
   <url>
     <loc>https://petcalchub.com/blog/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/calories-needed-for-a-senior-dog</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -57,6 +63,12 @@
   <url>
     <loc>https://petcalchub.com/blog/dog-calorie-calculator-by-weight</loc>
     <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/dog-calorie-calculator-for-weight-loss</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -182,7 +194,7 @@
   </url>
   <url>
     <loc>https://petcalchub.com/calculators/dog-calorie</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

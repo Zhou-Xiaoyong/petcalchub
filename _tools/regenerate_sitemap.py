@@ -17,14 +17,14 @@ import xml.etree.ElementTree as ET
 REPO = r"E:\WorkBuddy\petcalchub"
 SITE = "https://petcalchub.com"
 SITEMAP = os.path.join(REPO, "sitemap.xml")
-TODAY = "2026-08-22"
+TODAY = "2026-09-12"
 
 # Pages explicitly modified today — bumped to today's lastmod
 MODIFIED_TODAY = {
-    "blog/chocolate-toxicity-calculator-mg-kg.html",
-    "blog/my-dog-ate-a-chocolate-chip-cookie.html",
+    "blog/calories-needed-for-a-senior-dog.html",
+    "blog/dog-calorie-calculator-for-weight-loss.html",
     "blog/index.html",
-    "calculators/chocolate-toxicity.html",
+    "calculators/dog-calorie.html",
 }
 
 # Read existing sitemap to inherit lastmod for unchanged pages
