@@ -5,8 +5,8 @@ Rules:
 - Walk repo, collect all indexable HTML files (skip noindex, hidden, drafts).
 - Convert each to Cloudflare Pages clean URL (no .html, dir/index.html -> dir/).
 - lastmod:
-    * pages modified this run -> 2026-08-22
-    * everything else -> keep existing lastmod from current sitemap.xml (fallback 2026-08-15)
+    * pages modified this run -> TODAY (see constant below)
+    * everything else -> keep existing lastmod from current sitemap.xml
 - Sort alphabetically by URL within top-level group.
 - Validate: parseable XML, no duplicate <loc>, no .html, URL count = total indexable HTMLs.
 """
@@ -17,12 +17,12 @@ import xml.etree.ElementTree as ET
 REPO = r"E:\WorkBuddy\petcalchub"
 SITE = "https://petcalchub.com"
 SITEMAP = os.path.join(REPO, "sitemap.xml")
-TODAY = "2026-09-12"
+TODAY = "2026-09-19"
 
 # Pages explicitly modified today — bumped to today's lastmod
 MODIFIED_TODAY = {
-    "blog/calories-needed-for-a-senior-dog.html",
-    "blog/dog-calorie-calculator-for-weight-loss.html",
+    "blog/how-much-to-feed-my-dog-to-lose-weight.html",
+    "blog/resting-energy-requirement-dog-calculator.html",
     "blog/index.html",
     "calculators/dog-calorie.html",
 }

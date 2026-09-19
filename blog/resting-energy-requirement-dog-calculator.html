@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKCZHTY5WH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WKCZHTY5WH');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resting Energy Requirement (RER) for Dogs: The Formula Behind the Calculator | PetCalcHub</title>
+  <meta name="description" content="RER = 70 × (body weight in kg) to the power of 0.75. Where that formula comes from, how to run it by hand, and the three errors that skew a dog's target.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://petcalchub.com/blog/resting-energy-requirement-dog-calculator">
+  <meta property="og:title" content="Resting Energy Requirement (RER) for Dogs: The Formula Behind the Calculator | PetCalcHub">
+  <meta property="og:description" content="Where the RER formula comes from, how to calculate it by hand in 30 seconds, and the three mistakes that throw a dog's calorie target off.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://petcalchub.com/blog/resting-energy-requirement-dog-calculator">
+  <meta property="og:image" content="https://petcalchub.com/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Resting Energy Requirement (RER) for Dogs: The Formula Behind the Calculator">
+  <meta name="twitter:description" content="RER is the number underneath every dog feeding recommendation. Here is the formula, the math by hand, and the errors that skew it.">
+  <meta name="twitter:image" content="https://petcalchub.com/og-image.svg">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Resting Energy Requirement (RER) for Dogs: The Formula Behind the Calculator",
+    "description": "RER = 70 × (body weight in kg) to the power of 0.75. Where that formula comes from, how to run it by hand, and the three errors that skew a dog's target.",
+    "image": "https://petcalchub.com/og-image.svg",
+    "author": { "@type": "Organization", "name": "PetCalcHub Editorial Team" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "PetCalcHub",
+      "logo": { "@type": "ImageObject", "url": "https://petcalchub.com/og-image.svg" }
+    },
+    "datePublished": "2026-09-19",
+    "dateModified": "2026-09-19",
+    "mainEntityOfPage": "https://petcalchub.com/blog/resting-energy-requirement-dog-calculator"
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="../" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🚨 Emergency</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../calculators/chocolate-toxicity" role="menuitem">Chocolate Toxicity</a>
+          <a href="../calculators/grape-toxicity" role="menuitem">Grape & Raisin Toxicity</a>
+          <a href="../calculators/xylitol-toxicity" role="menuitem">Xylitol Toxicity</a>
+          <a href="../calculators/onion-toxicity" role="menuitem">Onion & Garlic Toxicity</a>
+          <a href="../calculators/ibuprofen-toxicity" role="menuitem">Ibuprofen (Advil) Toxicity</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐕 Dogs</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../calculators/dog-age" role="menuitem">Dog Age Calculator</a>
+          <a href="../calculators/dog-calorie" role="menuitem">Dog Calorie Calculator</a>
+          <a href="../calculators/dog-breed-calorie" role="menuitem">Breed Calorie Calculator</a>
+          <a href="../calculators/puppy-weight" role="menuitem">Puppy Weight Predictor</a>
+          <a href="../calculators/dog-pregnancy" role="menuitem">Dog Pregnancy Calculator</a>
+          <a href="../calculators/chocolate-toxicity" role="menuitem">Chocolate Toxicity Calculator</a>
+          <a href="../calculators/dog-water" role="menuitem">Dog Water Intake</a>
+          <a href="../calculators/dog-life" role="menuitem">Life Expectancy</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐈 Cats</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../calculators/cat-age" role="menuitem">Cat Age Calculator</a>
+          <a href="../calculators/cat-calorie" role="menuitem">Cat Calorie Calculator</a>
+          <a href="../calculators/cat-life" role="menuitem">Cat Life Expectancy</a>
+          <a href="../calculators/cat-pregnancy" role="menuitem">Cat Pregnancy Calculator</a>
+          <a href="../calculators/cat-water" role="menuitem">Cat Water Intake</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">❤️ Health</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../calculators/pet-bmi" role="menuitem">Pet BMI & Ideal Weight</a>
+          <a href="../calculators/food-cost" role="menuitem">Pet Food Cost Calculator</a>
+          <a href="../calculators/pet-insurance" role="menuitem">Pet Insurance Cost</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">💲 Costs & Services</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../calculators/pet-travel-cost" role="menuitem">Pet Travel Cost</a>
+          <a href="../calculators/pet-sitting-rate" role="menuitem">Pet Sitting Rate</a>
+        </div>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="#" class="nav-dropdown-toggle" role="menuitem" aria-haspopup="true">🐠 Aquarium</a>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../calculators/aquarium-calculator" role="menuitem">Aquarium Calculator</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main style="padding:3rem 0 4rem;">
+  <div class="container" style="max-width:800px;">
+    <nav class="calc-breadcrumb" aria-label="Breadcrumb">
+      <a href="../">Home</a> <span class="separator">›</span>
+      <a href="/blog/">Blog</a> <span class="separator">›</span>
+      <span>Resting Energy Requirement (RER) for Dogs</span>
+    </nav>
+
+    <article>
+      <header style="margin-bottom:2rem;">
+        <div class="blog-card-category" style="margin-bottom:0.5rem;">Nutrition</div>
+        <h1>Resting Energy Requirement (RER) for Dogs: The Formula Behind the Calculator</h1>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.75rem;">By the PetCalcHub Editorial Team · Published September 19, 2026 · 8 min read</p>
+      </header>
+
+      <p>Every dog calorie calculator is doing the same piece of arithmetic under the hood, and it is not a subtraction of portions or a lookup in a breed table. It is an exponent. The calculator converts your dog's weight to kilograms, raises that number to the power of 0.75, and multiplies by 70. Everything else — the life-stage presets, the activity multipliers, the cups-per-day estimate — is layered on top. Knowing where the formula comes from makes the three ways people get it wrong obvious enough to avoid.</p>
+
+      <div class="info-box info" style="margin:1.5rem 0;">
+        <strong>Quick answer:</strong> <strong>RER = 70 × (body weight in kg)<sup>0.75</sup></strong> — the energy a dog burns at complete rest, fasting, in a thermo-neutral environment. It is not the amount you feed: a 30 lb dog (13.6 kg) has an RER of about <strong>496 kcal/day</strong>, but a neutered adult with moderate activity eats roughly 1.6 times that. Get both numbers from the <a href="/calculators/dog-calorie">Dog Calorie Calculator</a>, or follow the by-hand method below.
+      </div>
+
+      <h2>What RER Actually Measures</h2>
+      <p>Resting energy requirement is the baseline cost of being alive: the work of the heart, liver, kidneys and brain, the energy spent breathing and holding body temperature, and the turnover of cells and proteins. It excludes the three things that add real load — the energy cost of digesting food (worth roughly 10%), the energy spent moving around, and the extra demands of growth, pregnancy, lactation or cold weather.</p>
+      <p>In research, RER is measured by indirect calorimetry, with the dog in a chamber while oxygen consumption is tracked. Everywhere else it is estimated from the formula, which gets close enough for feeding decisions. What matters is knowing which question it answers: how much energy does this body need to exist at rest? Not: how much goes in the bowl?</p>
+
+      <h2>The Formula: 70 × (kg)<sup>0.75</sup></h2>
+      <p>The exponent is the interesting part, and it is not arbitrary. Metabolic rate does not scale linearly with body mass — it scales with mass raised to roughly <strong>0.75</strong>, the relationship known as allometric scaling. The reason is heat. Heat production is proportional to an animal's volume, while heat loss is proportional to its surface area, and small animals have far more surface area per kilogram. They lose heat faster per unit of tissue, so they burn more energy per kilogram to hold body temperature steady.</p>
+      <p>That is why a 10 lb Chihuahua burns roughly 48 kcal per kilogram per day at rest while a 100 lb Great Dane burns only about 27. A linear formula cannot capture that, and its errors grow at both ends of the size range. The constant 70 is a fitted scaling factor that makes the equation return kilocalories per day when weight is in kilograms; it replaced an older linear approximation, 30 × kg + 70, used from the mid-1980s until the National Research Council revised its energy equations.</p>
+
+      <div style="overflow-x:auto; margin:1.5rem 0;">
+        <table class="data-table" style="width:100%; border-collapse:collapse;">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:0.6rem; border-bottom:2px solid var(--border);">Body weight</th>
+              <th style="text-align:right; padding:0.6rem; border-bottom:2px solid var(--border);">RER (70 × kg<sup>0.75</sup>)</th>
+              <th style="text-align:right; padding:0.6rem; border-bottom:2px solid var(--border);">Old linear estimate (30 × kg + 70)</th>
+              <th style="text-align:right; padding:0.6rem; border-bottom:2px solid var(--border);">Gap</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">5 lb (2.3 kg)</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">129 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">138 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">+7%</td></tr>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">10 lb (4.5 kg)</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">218 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">206 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">−6%</td></tr>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">20 lb (9.1 kg)</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">366 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">342 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">−7%</td></tr>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">30 lb (13.6 kg)</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">496 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">478 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">−4%</td></tr>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">50 lb (22.7 kg)</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">727 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">750 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">+3%</td></tr>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">80 lb (36.3 kg)</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1,035 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1,159 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">+12%</td></tr>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">120 lb (54.4 kg)</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1,403 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1,703 kcal</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">+21%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Look at the last column. The two formulas agree closely in the middle of the size range, which is why the old linear version survived for twenty years — most dogs are medium dogs. But it overshoots a 120 lb dog by more than 300 kcal per day, and that is precisely the dog where an overshoot becomes obesity.</p>
+
+      <div class="info-box info" style="margin:1.5rem 0;">
+        <strong>RER lookup table (70 × kg<sup>0.75</sup>):</strong>
+        <div style="overflow-x:auto; margin-top:0.75rem;">
+          <table class="data-table" style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr>
+                <th style="text-align:left; padding:0.5rem; border-bottom:2px solid var(--border);">Weight</th>
+                <th style="text-align:right; padding:0.5rem; border-bottom:2px solid var(--border);">RER</th>
+                <th style="text-align:left; padding:0.5rem; border-bottom:2px solid var(--border);">Weight</th>
+                <th style="text-align:right; padding:0.5rem; border-bottom:2px solid var(--border);">RER</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding:0.5rem; border-bottom:1px solid var(--border);">5 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">129 kcal</td><td style="padding:0.5rem; border-bottom:1px solid var(--border);">50 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">727 kcal</td></tr>
+              <tr><td style="padding:0.5rem; border-bottom:1px solid var(--border);">10 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">218 kcal</td><td style="padding:0.5rem; border-bottom:1px solid var(--border);">60 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">834 kcal</td></tr>
+              <tr><td style="padding:0.5rem; border-bottom:1px solid var(--border);">15 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">295 kcal</td><td style="padding:0.5rem; border-bottom:1px solid var(--border);">70 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">936 kcal</td></tr>
+              <tr><td style="padding:0.5rem; border-bottom:1px solid var(--border);">20 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">366 kcal</td><td style="padding:0.5rem; border-bottom:1px solid var(--border);">80 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">1,035 kcal</td></tr>
+              <tr><td style="padding:0.5rem; border-bottom:1px solid var(--border);">25 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">433 kcal</td><td style="padding:0.5rem; border-bottom:1px solid var(--border);">100 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">1,223 kcal</td></tr>
+              <tr><td style="padding:0.5rem; border-bottom:1px solid var(--border);">30 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">496 kcal</td><td style="padding:0.5rem; border-bottom:1px solid var(--border);">120 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">1,403 kcal</td></tr>
+              <tr><td style="padding:0.5rem; border-bottom:1px solid var(--border);">40 lb</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">615 kcal</td><td style="padding:0.5rem; border-bottom:1px solid var(--border);">—</td><td style="padding:0.5rem; border-bottom:1px solid var(--border); text-align:right;">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2>Doing It by Hand in 30 Seconds</h2>
+      <p>Three steps, and any phone calculator can do the middle one.</p>
+      <p><strong>Step 1 — convert to kilograms.</strong> Divide pounds by 2.2046. A 45 lb dog is 45 ÷ 2.2046 = 20.41 kg.</p>
+      <p><strong>Step 2 — raise to the power of 0.75.</strong> Enter 20.41, press the x<sup>y</sup> or y<sup>x</sup> key, type 0.75, and press equals. The result is 9.60. With no power key, take the square root twice and multiply: √20.41 = 4.518, √4.518 = 2.126, and 4.518 × 2.126 = 9.60.</p>
+      <p><strong>Step 3 — multiply by 70.</strong> 9.60 × 70 = 672 kcal per day. That is the RER for a 45 lb dog.</p>
+      <p>Do the same for a 12 lb dog: 5.44 kg raised to 0.75 gives 3.56; × 70 = 249 kcal. Note the shape of the relationship — the 45 lb dog needs only about 2.7 times the energy of the 12 lb dog, not four times. Owners who scale portions linearly when they adopt a bigger dog are working from the wrong model.</p>
+
+      <h2>From RER to What Goes in the Bowl</h2>
+      <p>Nobody feeds RER except as the floor of a supervised weight-loss plan. Real feeding means multiplying it by an energy factor reflecting life stage, reproductive status and activity. The table uses our 45 lb example dog, with an RER of 672 kcal.</p>
+
+      <div style="overflow-x:auto; margin:1.5rem 0;">
+        <table class="data-table" style="width:100%; border-collapse:collapse;">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:0.6rem; border-bottom:2px solid var(--border);">Scenario</th>
+              <th style="text-align:right; padding:0.6rem; border-bottom:2px solid var(--border);">Factor</th>
+              <th style="text-align:right; padding:0.6rem; border-bottom:2px solid var(--border);">Daily calories</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">Supervised weight-loss program</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1.0</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">672 kcal</td></tr>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">Senior, low activity</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1.4</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">941 kcal</td></tr>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">Neutered adult, low activity</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1.28</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">860 kcal</td></tr>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">Neutered adult, moderate activity</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1.6</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1,075 kcal</td></tr>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">Intact adult, moderate activity</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1.8</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1,210 kcal</td></tr>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">Neutered adult, high activity</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1.92</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1,290 kcal</td></tr>
+            <tr><td style="padding:0.6rem; border-bottom:1px solid var(--border);">Active / working dog</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">2.5</td><td style="padding:0.6rem; border-bottom:1px solid var(--border); text-align:right;">1,680 kcal</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Same dog, same RER, and the daily allowance ranges from 672 to 1,680 kcal. That spread is why an RER table alone is not a feeding chart, and why a calculator that asks about life stage and activity beats a static number. Spaying or neutering alone shifts the factor by around 20% — the single most common reason a dog gains weight in the year after surgery.</p>
+
+      <h2>The Three Errors That Skew the Result</h2>
+
+      <h3>1. Feeding pounds into a kilograms formula</h3>
+      <p>By far the most common mistake, and the most damaging, because the exponent magnifies it. Plug 45 (pounds) into the formula instead of 20.41 (kilograms) and the result is 45<sup>0.75</sup> × 70 = 1,216 kcal — an 81% overshoot on a dog whose RER is 672. Anyone who has wondered why their dog's "calculated need" looked absurdly high has probably done this. Confirm the unit before pressing the power key.</p>
+
+      <h3>2. Using current weight for an overweight dog</h3>
+      <p>Fat tissue burns far less per kilogram than lean tissue, so calculating RER at an overweight dog's current weight overstates the requirement — and the error compounds when you multiply by 1.6. A dog now at 48 lb whose ideal weight is 40 lb has an RER of about 705 kcal at its current weight but only about 615 kcal at its target weight. That is 90 kcal of phantom allowance, roughly 15%, enough to make a working diet look like it is failing. Use the ideal weight, and use the <a href="/calculators/pet-bmi">Pet BMI &amp; Ideal Weight Calculator</a> if you are unsure what that is.</p>
+
+      <h3>3. Treating RER as the feeding amount</h3>
+      <p>RER is a floor, not a target. Feeding it to a healthy neutered adult puts the dog at roughly 672 kcal when it needs about 1,075 — a shortfall of about 37%. Dogs tolerate energy restriction for a while, but a maintenance diet scaled to RER cannot supply adequate protein, vitamins and minerals at that volume. Below-RER feeding is only appropriate with a therapeutic diet formulated for nutrient density, and only under veterinary supervision.</p>
+      <p>One qualification: the formula and the factors describe the average dog. Breed matters at the margins — some lines are genuinely thrifty, others burn hot — and the <a href="/calculators/dog-breed-calorie">Breed Calorie Calculator</a> factors that tendency in. Hydration runs on a parallel calculation, covered by the <a href="/calculators/dog-water">Dog Water Intake Calculator</a>.</p>
+
+      <h2>Why Use a Calculator at All?</h2>
+      <p>Because the arithmetic is trivial right up until it is not. The exponent is the part people fumble; the unit conversion is the part they do not notice they fumbled. A calculator does the 0.75 power correctly, insists on the unit, applies the life-stage factor, and gives you a number to compare against what you are actually feeding. Treat the result as a starting estimate: feed it for two to three weeks, then adjust on body condition and weight. The formula aims at a population average; your dog is a sample of one.</p>
+
+      <div class="cta-section" style="margin:2.5rem 0;">
+        <h2>See RER and Daily Requirement Side by Side</h2>
+        <p>Enter your dog's weight and life stage to get the resting energy requirement, the life-stage factor, the daily calorie target, and an approximate portion at 380 kcal per cup — no manual exponents required.</p>
+        <a href="/calculators/dog-calorie" class="btn btn-primary btn-lg" style="margin-top:0.5rem;">Try the Dog Calorie Calculator →</a>
+      </div>
+
+      <h2>The Bottom Line</h2>
+      <p>Underneath every dog calorie calculator is one expression: RER = 70 × (body weight in kg)<sup>0.75</sup>. The exponent reflects the fact that heat loss scales with surface area, which is why small dogs need more energy per kilogram than large ones. Calculate it in kilograms rather than pounds, at ideal weight rather than current weight, and never feed it as the ration — multiply by the life-stage factor first.</p>
+
+      <div class="info-box" style="margin-top:2rem; font-size:0.85rem; color:var(--text-muted);">
+        <strong>Sources:</strong> NRC (National Research Council), <em>Nutrient Requirements of Dogs and Cats</em>, National Academies Press (resting energy requirement equation and life-stage factors) · WSAVA Global Nutrition Committee Toolkit (RER formula, energy factors, body condition scoring) · AAHA Nutritional Assessment Guidelines for Dogs and Cats · Merck Veterinary Manual, "Nutritional Requirements and Related Diseases of Small Animals" · Kleiber M., "Body size and metabolic rate," Physiological Reviews 1947 (allometric scaling). This article is for informational purposes only and is not a substitute for professional veterinary advice. Individual energy needs vary; always confirm a feeding plan for a growing, pregnant, lactating, or medically managed dog with a veterinarian.
+      </div>
+
+      <div style="margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+        <h3 style="margin-bottom:1rem;">Related Tools &amp; Reading</h3>
+        <ul style="line-height:2; margin-left:1.5rem;">
+          <li><a href="/calculators/dog-calorie">Dog Calorie Calculator</a> — RER, the life-stage factor, and the daily kcal target in one step</li>
+          <li><a href="/calculators/dog-breed-calorie">Breed Calorie Calculator</a> — breed-level tendencies that shift the estimate up or down</li>
+          <li><a href="/calculators/pet-bmi">Pet BMI &amp; Ideal Weight Calculator</a> — establish the ideal weight to calculate RER from</li>
+          <li><a href="/calculators/dog-water">Dog Water Intake Calculator</a> — the hydration side of the same daily intake picture</li>
+          <li><a href="/blog/how-much-to-feed-my-dog-to-lose-weight">How Much to Feed My Dog to Lose Weight</a> — turning a calorie target into measured grams</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="../" class="nav-logo"><span class="nav-logo-icon">🐾</span>PetCalcHub</a><p>Free, science-backed pet calculators with AI-powered health insights.</p></div>
+      <div class="footer-col"><h4>Calculators</h4><ul><li><a href="../calculators/dog-age">Dog Age Calculator</a></li><li><a href="../calculators/cat-age">Cat Age Calculator</a></li><li><a href="../calculators/dog-calorie">Dog Calorie Calculator</a></li><li><a href="../calculators/cat-calorie">Cat Calorie Calculator</a></li><li><a href="../calculators/puppy-weight">Puppy Weight Predictor</a></li><li><a href="../calculators/dog-pregnancy">Dog Pregnancy Calculator</a></li><li><a href="../calculators/cat-pregnancy">Cat Pregnancy Calculator</a></li><li><a href="../calculators/pet-bmi">Pet BMI & Ideal Weight</a></li><li><a href="../calculators/food-cost">Food Cost Calculator</a></li><li><a href="../calculators/chocolate-toxicity">Chocolate Toxicity</a></li><li><a href="../calculators/dog-water">Dog Water Intake</a></li><li><a href="../calculators/cat-water">Cat Water Intake</a></li><li><a href="../calculators/dog-life">Life Expectancy</a></li><li><a href="../calculators/pet-insurance">Pet Insurance Cost</a></li><li><a href="../calculators/pet-travel-cost">Pet Travel Cost</a></li><li><a href="../calculators/pet-sitting-rate">Pet Sitting Rate</a></li><li><a href="../calculators/aquarium-calculator">Aquarium Calculator</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="/">Pet Care Blog</a></li><li><a href="../about">About Us</a></li><li><a href="../privacy">Privacy Policy</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="../privacy">Privacy Policy</a></li><li><a href="../privacy#disclaimer">Medical Disclaimer</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 PetCalcHub.</span><span>Estimates only. Consult your veterinarian.</span></div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
