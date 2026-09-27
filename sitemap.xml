@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://petcalchub.com/blog/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -73,6 +73,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://petcalchub.com/blog/dog-feeding-chart-by-weight-and-age</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://petcalchub.com/blog/how-long-does-chocolate-stay-in-a-dog-s-system</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -93,6 +99,12 @@
   <url>
     <loc>https://petcalchub.com/blog/how-much-to-feed-my-dog-to-lose-weight</loc>
     <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/how-to-calculate-dog-food-portions</loc>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -206,7 +218,7 @@
   </url>
   <url>
     <loc>https://petcalchub.com/calculators/dog-calorie</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
