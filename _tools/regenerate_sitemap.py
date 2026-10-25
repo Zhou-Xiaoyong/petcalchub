@@ -17,11 +17,11 @@ import xml.etree.ElementTree as ET
 REPO = r"E:\WorkBuddy\petcalchub"
 SITE = "https://petcalchub.com"
 SITEMAP = os.path.join(REPO, "sitemap.xml")
-TODAY = "2026-10-24"
+TODAY = "2026-10-25"
 
 # Pages explicitly modified today — bumped to today's lastmod
 MODIFIED_TODAY = {
-    "blog/german-shepherd-calorie-calculator.html",
+    "blog/how-much-to-feed-a-german-shepherd.html",
     "blog/index.html",
     "calculators/dog-calorie.html",
 }

@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://petcalchub.com/blog/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -141,6 +141,12 @@
   <url>
     <loc>https://petcalchub.com/blog/how-much-to-feed-a-french-bulldog</loc>
     <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://petcalchub.com/blog/how-much-to-feed-a-german-shepherd</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -284,7 +290,7 @@
   </url>
   <url>
     <loc>https://petcalchub.com/calculators/dog-calorie</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
