@@ -21,7 +21,7 @@ TODAY = "2026-10-30"
 
 # Pages explicitly modified today — bumped to today's lastmod
 MODIFIED_TODAY = {
-    "blog/beagle-calorie-calculator.html",
+    "blog/how-much-to-feed-a-beagle.html",
     "blog/index.html",
     "calculators/dog-calorie.html",
 }
