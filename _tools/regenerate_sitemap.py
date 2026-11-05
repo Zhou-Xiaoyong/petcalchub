@@ -17,11 +17,11 @@ import xml.etree.ElementTree as ET
 REPO = r"E:\WorkBuddy\petcalchub"
 SITE = "https://petcalchub.com"
 SITEMAP = os.path.join(REPO, "sitemap.xml")
-TODAY = "2026-11-04"
+TODAY = "2026-11-05"
 
 # Pages explicitly modified today — bumped to today's lastmod
 MODIFIED_TODAY = {
-    "blog/shih-tzu-calorie-calculator.html",
+    "blog/how-much-thanksgiving-food-can-a-dog-eat.html",
     "blog/index.html",
     "calculators/dog-calorie.html",
 }
@@ -66,6 +66,10 @@ def is_indexable(html_path: str) -> bool:
     # Skip drafts/templates by filename
     base = os.path.basename(html_path).lower()
     if base.startswith(("template", "draft", "test", "_")):
+        return False
+    # Skip tooling directories: helper HTML in _tools/ is not site content
+    rel = os.path.relpath(html_path, REPO).replace("\\", "/")
+    if rel.startswith("_tools/") or "/_tools/" in rel:
         return False
     return True
 
