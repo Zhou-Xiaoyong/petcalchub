@@ -21,9 +21,9 @@ TODAY = "2026-11-23"
 
 # Pages explicitly modified today — bumped to today's lastmod
 MODIFIED_TODAY = {
-    "blog/thanksgiving-stuffing-raisins-dogs.html",
+    "blog/turkey-brine-salt-poisoning-dogs.html",
     "blog/index.html",
-    "calculators/grape-toxicity.html",
+    "calculators/dog-water.html",
 }
 
 # Read existing sitemap to inherit lastmod for unchanged pages
